@@ -8,7 +8,7 @@ import classnames from 'classnames';
 import { keyframes } from 'styled-components';
 // import Controls from './Controls.jsx';
 import Inspector from './Inspector.jsx';
-import shapes from './../utils/shapes.jsx';
+import shapes from './../utils/shapes';
 import applyWithColors from './../utils/withColors';
 import applyWithSelect from './../utils/withSelect';
 
@@ -35,7 +35,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 			setAttributes } = this.props;
 
 		const { 
-			maxWidth,
+			width,
 			allowedBlocks } = attributes;
 
 		return (
@@ -55,7 +55,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
                 			'wp-block-my-container__wrapper'
 	                	) }
                 		style={ {
-                			maxWidth: maxWidth  ?  `${ parseInt( maxWidth ) }px`  :  undefined
+                			maxWidth: width  ?  `${ parseInt( width ) }px`  :  undefined
 						} }
                 	>
                 		{ ( Array.isArray( allowedBlocks ) && allowedBlocks.length ) ? (
