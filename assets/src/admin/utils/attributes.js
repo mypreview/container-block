@@ -18,14 +18,17 @@ const attributes = {
         default: []
     },
     img: {
-        id: undefined,
-        src: undefined,
-        width: undefined,
-        position: undefined,
-        focalPoint: undefined,
-        repeat: undefined,
-        size: undefined,
-        effect: undefined
+        type: 'object',
+        default: {
+            id: undefined,
+            src: undefined,
+            width: undefined,
+            position: undefined,
+            focalPoint: undefined,
+            repeat: undefined,
+            size: undefined,
+            effect: undefined
+        }
     },
     scroll: {
         type: 'object',
