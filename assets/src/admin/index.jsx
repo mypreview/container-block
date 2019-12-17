@@ -27,8 +27,8 @@ const settings = {
     title,
     description: _x( 'Container block is used to wrap several blocks in a parent wrapper and enables you to do more sophisticated styling as well.', 'block description', 'container-block' ),
     keywords: [
-        _x( 'Conj PowerPack', 'block keyword', 'container-block' ),
-        _x( 'Container', 'block keyword', 'container-block' ),
+        _x( 'Group', 'block keyword', 'container-block' ),
+        _x( 'Section', 'block keyword', 'container-block' ),
         _x( 'Wrapper', 'block keyword', 'container-block' )
     ],
     supports: {
