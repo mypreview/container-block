@@ -43,6 +43,15 @@ const attributes = {
             smartphone: undefined
         }
     },
+    alignment: {
+        type: 'object',
+        default: {
+            desktop: undefined,
+            laptop: undefined,
+            tablet: undefined,
+            smartphone: undefined
+        }
+    },
     link: {
         type: 'object',
         default: {
