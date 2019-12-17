@@ -17,6 +17,16 @@ const attributes = {
         type: 'array',
         default: []
     },
+    img: {
+        id: undefined,
+        src: undefined,
+        width: undefined,
+        position: undefined,
+        focalPoint: undefined,
+        repeat: undefined,
+        size: undefined,
+        effect: undefined
+    },
     scroll: {
         type: 'object',
         default: {
@@ -57,6 +67,14 @@ const attributes = {
         default: {
             url: undefined,
             target: false
+        }
+    },
+    border: {
+        type: 'object',
+        default: {
+            width: undefined,
+            radius: undefined,
+            color: undefined
         }
     },
     shape: {
