@@ -40,6 +40,8 @@ if ( ! defined( 'WPINC' ) ) {
  * @see 	https://codex.wordpress.org/Function_Reference/plugin_basename
  * @see 	http://php.net/manual/en/language.constants.predefined.php
  */
+$plugin_data = get_file_data( __FILE__, array( 'Version' => 'Version' ), 'plugin' );
+define( 'CONTAINER_BLOCK_VERSION', $plugin_data['Version'] );
 define( 'CONTAINER_BLOCK_FILE', __FILE__ );
 define( 'CONTAINER_BLOCK_BASENAME', basename( CONTAINER_BLOCK_FILE ) );
 define( 'CONTAINER_BLOCK_PLUGIN_BASENAME', plugin_basename( CONTAINER_BLOCK_FILE ) );
@@ -136,16 +138,23 @@ if ( ! class_exists( 'Container_Block' ) ) :
 	     */
 		public function editor_enqueue() {
 
+			// Enqueue the CSS stylesheet.
+			wp_enqueue_style( 'container-block', sprintf( '%sassets/dist/admin/style.css', CONTAINER_BLOCK_DIR_URL ), array( 'wp-edit-blocks' ), CONTAINER_BLOCK_VERSION, 'screen' );
+			// Add metadata to the CSS stylesheet.
+			wp_style_add_data( 'container-block', 'rtl', 'replace' );
+
 			$vendors_path = sprintf( '%sassets/dist/admin/vendors.js', CONTAINER_BLOCK_DIR_PATH );
 			$vendors_asset_path = sprintf( '%sassets/dist/admin/vendors.asset.php', CONTAINER_BLOCK_DIR_PATH );
 			$vendors_asset = file_exists( $vendors_asset_path )  ?  require( $vendors_asset_path )  :  array( 'dependencies' => array( 'wp-blocks', 'wp-dom-ready' ), 'version' => filemtime( $vendors_path ) );
 			$vendors_url = sprintf( '%sassets/dist/admin/vendors.js', CONTAINER_BLOCK_DIR_URL );
+			// Enqueue the vendor script.
 			wp_enqueue_script( 'container-block-vendors', $vendors_url, $vendors_asset['dependencies'], $vendors_asset['version'], TRUE );
 
 			$script_path = sprintf( '%sassets/dist/admin/script.js', CONTAINER_BLOCK_DIR_PATH );
 			$script_asset_path = sprintf( '%sassets/dist/admin/script.asset.php', CONTAINER_BLOCK_DIR_PATH );
 			$script_asset = file_exists( $script_asset_path )  ?  require( $script_asset_path )  :  array( 'dependencies' => array( 'wp-blocks', 'wp-dom-ready' ), 'version' => filemtime( $script_path ) );
 			$script_url = sprintf( '%sassets/dist/admin/script.js', CONTAINER_BLOCK_DIR_URL );
+			// Enqueue the script.
 			wp_enqueue_script( 'container-block', $script_url, $script_asset['dependencies'], $script_asset['version'], TRUE );
 
 		}
