@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"style.css","sourcesContent":[],"sourceRoot":""}
+{"version":3,"sources":["webpack:///./assets/src/admin/style.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA,C","file":"style.css","sourcesContent":[".components-base-control__flex {\n\tdisplay: flex;\n\talign-items: center;\n}"],"sourceRoot":""}
