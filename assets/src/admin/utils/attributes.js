@@ -1,6 +1,6 @@
 const attributes = {
     
-    maxWidth: {
+    width: {
         type: 'number'
     },
     isFH: {
