@@ -7,12 +7,10 @@ import './style.css';
  * Import custom/built-in editor blocks.
  */
 import * as container from './index.jsx';
-import * as loader from './loader/index.jsx';
 
 export function registerBlocks () {
 	[
 		container,
-		// loader
 	].forEach( block => {
 
 		if ( ! block ) {
