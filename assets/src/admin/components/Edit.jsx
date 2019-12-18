@@ -115,10 +115,10 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 			color: shapeColor } = shape;
 
 		let keyFrames = '';
-        if ( imgID && ( 'animate-left' === imgEffect || 'animate-right' === imgEffect ) ) {
+        if ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) {
             keyFrames = keyframes`
                 from { background-position: 0 0 } 
-                to { background-position: ${ 'animate-left' === imgEffect  ?  -Math.abs( imgWidth )  :  Math.abs( imgWidth ) }px 0 }
+                to { background-position: ${ imgEffect.includes( 'left' )  ?  -Math.abs( imgWidth )  :  Math.abs( imgWidth ) }px 0 }
             `;
         } // End If Statement
 
@@ -166,8 +166,8 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
                 		borderColor: borderColor,
 						backgroundColor: backgroundColor.color,
 						backgroundPosition: ( imgFocalPoint && 'custom' === imgPosition )  ?  `${ imgFocalPoint.x * 100 }% ${ imgFocalPoint.y * 100 }%`  :  undefined,
-						WebkitAnimation: ( imgID && ( 'animate-left' === imgEffect || 'animate-right' === imgEffect ) )  ?  `${ keyFrames } 40s linear infinite`  :  undefined,
-            			animation: ( imgID && ( 'animate-left' === imgEffect || 'animate-right' === imgEffect ) )  ?  `${ keyFrames } 40s linear infinite`  :  undefined
+						WebkitAnimation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) )  ?  `${ keyFrames } 40s linear infinite`  :  undefined,
+            			animation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) )  ?  `${ keyFrames } 40s linear infinite`  :  undefined
 					} }
 					data-aos={ aosType  ?  aosType  :  null }
 					data-aos-once={ ( aosType && aosOnce )  ?  'true'  :  null }
