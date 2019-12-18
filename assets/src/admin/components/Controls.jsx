@@ -1,0 +1,189 @@
+/**
+ * Block dependencies
+ */
+import icons from './../icons.jsx';
+
+/**
+ * Internal block libraries
+ */
+const { _x } = wp.i18n;
+const { Fragment, Component } = wp.element;
+const { BlockControls, BlockVerticalAlignmentToolbar, MediaUpload } = wp.blockEditor;
+const { Toolbar, IconButton } = wp.components;
+
+export default class Controls extends Component {
+
+	constructor( props ) {
+		super( ...arguments );
+	}
+
+	render() {
+
+		const { 
+			noticeUI,
+			setAttributes, 
+			attributes } = this.props;
+
+		const { 
+			isFH,
+			img,
+			video,
+			valign } = attributes;
+
+		// Image
+		const {
+			id: imgID,
+	        src: imgSRC,
+	        width: imgWidth,
+	        position: imgPosition,
+	        focalPoint: imgFocalPoint,
+	        repeat: imgRepeat,
+	        size: imgSize,
+	        effect: imgEffect } = img;
+	    // Video
+		const {
+			id: videoID,
+			src: videoSRC } = video;
+
+		// Image - Upload
+		const onUploadImage = value => {
+			if ( ! value || ! value.url ) {
+				return;
+			} // End If Statement
+			
+			setAttributes( { img: { 
+				id: value.id, 
+				src: value.url,
+				width: value.width,
+				position: imgPosition,
+		        focalPoint: imgFocalPoint,
+		        repeat: imgRepeat,
+		        size: imgSize,
+		        effect: imgEffect
+			} } );
+		};
+		// Video - Upload
+		const onUploadVideo = value => {
+			if ( ! value || ! value.url ) {
+				return;
+			} // End If Statement
+			
+			setAttributes( { video: { 
+				id: value.id, 
+				src: value.url
+			} } );
+		};
+		// Image & Video - Remove (trash)
+		const onClickRemoveMedia = () => {
+			setAttributes( { img: { 
+				id: undefined, 
+				src: undefined,
+				width: undefined,
+				position: undefined,
+		        focalPoint: undefined,
+		        repeat: undefined,
+		        size: undefined,
+		        effect: undefined
+			} } );
+			setAttributes( { video: { 
+				id: undefined, 
+				src: undefined
+			} } );
+		};
+		// Image - Effect
+		const onClickImgEffect = value => {
+			setAttributes( { img: { 
+				id: imgID, 
+				src: imgSRC,
+				width: imgWidth,
+				position: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgPosition,
+		        focalPoint: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgFocalPoint,
+		        repeat: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgRepeat,
+		        size: imgSize,
+		        effect: value
+			} } );
+		};
+		// Image - Effect controls
+		const imgEffectControls = [
+			{
+				icon: icons.rotateLeft,
+				title: _x( 'Animate left', 'toolbar button', 'container-block' ),
+				onClick: () => 'animate-left' === imgEffect  ?  onClickImgEffect( undefined )  :  onClickImgEffect( 'animate-left' ),
+				isActive: imgEffect === 'animate-left'
+			},
+			{
+				icon: icons.rotateRight,
+				title: _x( 'Animate right', 'toolbar button', 'container-block' ),
+				onClick: () => 'animate-right' === imgEffect  ?  onClickImgEffect( undefined )  :  onClickImgEffect( 'animate-right' ),
+				isActive: imgEffect === 'animate-right'
+			},
+			{
+				icon: icons.parallax,
+				title: _x( 'Parallax', 'toolbar button', 'container-block' ),
+				onClick: () => 'fixed' === imgEffect  ?  onClickImgEffect( undefined )  :  onClickImgEffect( 'fixed' ),
+				isActive: imgEffect === 'fixed'
+			}
+		];
+
+		return (
+			<Fragment>
+				<BlockControls>
+					{ isFH && (
+						<BlockVerticalAlignmentToolbar 
+							isCollapsed={ true }
+							value={ valign }
+							onChange={ value => setAttributes( { valign: value } ) }
+						/>
+					) }
+					<Toolbar>
+						{ ( ( ! imgID && ! videoID ) || imgID ) && (
+							<MediaUpload
+								allowedTypes="image"
+								notices={ noticeUI }
+								onSelect={ onUploadImage }
+								value={ imgID }
+								render={ ( { open } ) => (
+									<IconButton
+										className="components-toolbar__control"
+										label={ imgID ?	_x( 'Edit image', 'toolbar button', 'container-block' ) : _x( 'Add image', 'toolbar button', 'container-block' ) }
+										icon={ imgID  ?	icons.edit : icons.image }
+										onClick={ open }
+									/>
+								) }
+							/>
+						) }
+						{ ( ( ! imgID && ! videoID ) || videoID ) && (
+							<MediaUpload
+								allowedTypes="video"
+								notices={ noticeUI }
+								onSelect={ onUploadVideo }
+								value={ videoID }
+								render={ ( { open } ) => (
+									<IconButton
+										className="components-toolbar__control"
+										label={ videoID ? _x( 'Edit video', 'toolbar button', 'container-block' ) : _x( 'Add video', 'toolbar button', 'container-block' ) }
+										icon={ videoID  ? icons.edit : icons.video }
+										onClick={ open }
+									/>
+								) }
+							/>
+						) }
+						{ ( imgID || videoID ) && (
+							<IconButton
+								className="components-toolbar__control"
+								label={ _x( 'Remove media', 'toolbar button', 'container-block' ) }
+								icon={ icons.trash }
+								onClick={ onClickRemoveMedia }
+							/>
+						) }
+					</Toolbar>
+					{ imgID && (
+						<Toolbar 
+							controls={ imgEffectControls } 
+						/>
+					) }
+				</BlockControls>
+			</Fragment>
+		);
+	}
+}
