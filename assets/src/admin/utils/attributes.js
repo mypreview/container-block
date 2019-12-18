@@ -7,10 +7,22 @@ const attributes = {
         type: 'boolean',
         default: false
     },
+    valign: {
+        type: 'string'
+    },
     shadow: {
         type: 'string'
     },
     ariaLabel: {
+        type: 'string'
+    },
+    dim: {
+        type: 'number'
+    },
+    backgroundColor: {
+        type: 'string'
+    },
+    customBackgroundColor: {
         type: 'string'
     },
     allowedBlocks: {
@@ -28,6 +40,13 @@ const attributes = {
             repeat: undefined,
             size: undefined,
             effect: undefined
+        }
+    },
+    video: {
+        type: 'object',
+        default: {
+            id: undefined,
+            src: undefined
         }
     },
     scroll: {
