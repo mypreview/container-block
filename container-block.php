@@ -40,8 +40,9 @@ if ( ! defined( 'WPINC' ) ) {
  * @see 	https://codex.wordpress.org/Function_Reference/plugin_basename
  * @see 	http://php.net/manual/en/language.constants.predefined.php
  */
-$plugin_data = get_file_data( __FILE__, array( 'Version' => 'Version' ), 'plugin' );
-define( 'CONTAINER_BLOCK_VERSION', $plugin_data['Version'] );
+$plugin_data = get_file_data( __FILE__, array( 'author_uri' => 'Author URI', 'version' => 'Version' ), 'plugin' );
+define( 'CONTAINER_BLOCK_VERSION', $plugin_data['version'] );
+define( 'CONTAINER_BLOCK_AUTHOR_URI', $plugin_data['author_uri'] );
 define( 'CONTAINER_BLOCK_FILE', __FILE__ );
 define( 'CONTAINER_BLOCK_BASENAME', basename( CONTAINER_BLOCK_FILE ) );
 define( 'CONTAINER_BLOCK_PLUGIN_BASENAME', plugin_basename( CONTAINER_BLOCK_FILE ) );
@@ -170,7 +171,7 @@ if ( ! class_exists( 'Container_Block' ) ) :
 		public function additional_links( $links ) {
 
 			$plugin_links = array();
-			$plugin_links[] = sprintf( _x( '%sHire Me!%s', 'plugin link', 'container-block' ) , sprintf( '<a href="https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94/" class="button-link-delete" target="_blank" rel="noopener noreferrer nofollow" title="%s">', esc_attr_x( 'Looking for help? Hire Me!', 'upsell', 'container-block' ) ), '</a>' );
+			$plugin_links[] = sprintf( _x( '%sHire Me!%s', 'plugin link', 'container-block' ) , sprintf( '<a href="%s" class="button-link-delete" target="_blank" rel="noopener noreferrer nofollow" title="%s">', esc_url( CONTAINER_BLOCK_AUTHOR_URI ), esc_attr_x( 'Looking for help? Hire Me!', 'upsell', 'container-block' ) ), '</a>' );
 			$plugin_links[] = sprintf( _x( '%sSupport%s', 'plugin link', 'container-block' ) , '<a href="https://wordpress.org/support/plugin/container-block" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
 
 			return array_merge( $plugin_links, $links );
@@ -185,13 +186,13 @@ endif;
  *
  * @return  object(class) 	Container_Block::instance
  */
-if ( ! function_exists( 'woo_additional_terms_init' ) ) :
+if ( ! function_exists( 'container_block_init' ) ) :
 	
-	function woo_additional_terms_init() {
+	function container_block_init() {
 
 		return Container_Block::instance();
 
 	}
 
-	woo_additional_terms_init();
+	container_block_init();
 endif;
