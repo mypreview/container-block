@@ -34,16 +34,13 @@ export default class Controls extends Component {
 		const {
 			id: imgID,
 	        src: imgSRC,
-	        width: imgWidth,
 	        position: imgPosition,
 	        focalPoint: imgFocalPoint,
 	        repeat: imgRepeat,
-	        size: imgSize,
 	        effect: imgEffect } = img;
 	    // Video
 		const {
-			id: videoID,
-			src: videoSRC } = video;
+			id: videoID } = video;
 
 		// Image - Upload
 		const onUploadImage = value => {
@@ -52,14 +49,10 @@ export default class Controls extends Component {
 			} // End If Statement
 			
 			setAttributes( { img: { 
+				...img,
 				id: value.id, 
 				src: value.url,
-				width: value.width,
-				position: imgPosition,
-		        focalPoint: imgFocalPoint,
-		        repeat: imgRepeat,
-		        size: imgSize,
-		        effect: imgEffect
+				width: value.width
 			} } );
 		};
 		// Video - Upload
@@ -84,22 +77,19 @@ export default class Controls extends Component {
 		        repeat: undefined,
 		        size: undefined,
 		        effect: undefined
-			} } );
-			setAttributes( { video: { 
-				id: undefined, 
-				src: undefined
+			},
+				video: { 
+					id: undefined, 
+					src: undefined
 			} } );
 		};
 		// Image - Effect
 		const onClickImgEffect = value => {
 			setAttributes( { img: { 
-				id: imgID, 
-				src: imgSRC,
-				width: imgWidth,
+				...img,
 				position: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgPosition,
 		        focalPoint: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgFocalPoint,
 		        repeat: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgRepeat,
-		        size: imgSize,
 		        effect: value
 			} } );
 		};
