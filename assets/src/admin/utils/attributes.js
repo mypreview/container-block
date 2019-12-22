@@ -54,7 +54,8 @@ const attributes = {
         default: {
             show: false,
             target: undefined,
-            color: undefined
+            color: undefined,
+            customColor: undefined
         }
     },
     visible: {
@@ -96,7 +97,8 @@ const attributes = {
         default: {
             width: undefined,
             radius: undefined,
-            color: undefined
+            color: undefined,
+            customColor: undefined
         }
     },
     shape: {
@@ -104,7 +106,8 @@ const attributes = {
         default: {
             type: undefined,
             height: 5,
-            color: undefined
+            color: undefined,
+            customColor: undefined
         }
     },
     aos: {
