@@ -12,11 +12,11 @@ import applyWithSelect from './../utils/withSelect';
 /**
  * Internal block libraries
  */
-const { _x } = wp.i18n;
+const { _x, sprintf } = wp.i18n;
 const { Fragment, Component } = wp.element;
 const { compose } = wp.compose;
 const { URLInput, InspectorControls, InspectorAdvancedControls, AlignmentToolbar, PanelColorSettings, getColorObjectByColorValue, getColorClassName } = wp.blockEditor;
-const { ButtonGroup, Button, BaseControl, RangeControl, SelectControl, PanelBody, TextControl, TabPanel, FocalPointPicker, ToggleControl, ColorPalette, ColorIndicator, withFallbackStyles } = wp.components;
+const { ButtonGroup, Button, BaseControl, RangeControl, SelectControl, PanelBody, TextControl, TabPanel, FocalPointPicker, ToggleControl, ColorPalette, ColorIndicator, ExternalLink, withFallbackStyles } = wp.components;
 
 /**
  * Contrast checker
@@ -1081,6 +1081,29 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 		                    />
 	                    ) }
 					</PanelColorSettings>
+					<PanelBody 
+						title={ sprintf( _x( 'Looking for Help? %s', 'panel title', 'container-block' ), '⚡' ) }
+						initialOpen={ false }
+					>
+						<BaseControl>
+							<p>{ _x( 'I am a full-stack developer with over five years of experience in WordPress theme and plugin development, and would love to have the opportunity to discuss your project with you.', 'upsell', 'container-block' ) }</p>
+							<ExternalLink 
+	                            href={ 'https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94/' }
+	                        >
+	                            { _x( 'Hire Me!', 'upsell', 'container-block' ) }
+	                        </ExternalLink>
+						</BaseControl>
+						<BaseControl
+							className="components-base-control--label-block"
+							label={ _x( 'Enjoying this block?', 'upsell', 'container-block' ) }
+						>
+							<ExternalLink 
+	                            href={ 'https://wordpress.org/support/plugin/container-block/reviews' }
+	                        >
+	                            { sprintf( _x( 'Why not leave this plugin a %s review on WordPress.org!', 'upsell', 'container-block' ), '⭐⭐⭐⭐⭐' ) }
+	                        </ExternalLink>
+						</BaseControl>
+					</PanelBody>
 				</InspectorControls>
 				<InspectorAdvancedControls>
 					<TextControl
