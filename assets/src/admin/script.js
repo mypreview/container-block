@@ -27,8 +27,7 @@ export function registerBlocks () {
 				category, 
 				icon: { 
 					src: icon,
-					foreground: '#555d66',
-					background: '#F4F5FA'
+					foreground: '#007CBA'
 				}, 
 				...settings 
 			} 
