@@ -97,8 +97,7 @@ const attributes = {
         default: {
             width: undefined,
             radius: undefined,
-            color: undefined,
-            customColor: undefined
+            color: undefined
         }
     },
     shape: {
