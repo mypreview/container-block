@@ -128,10 +128,10 @@ export default class Save extends Component {
                 'has-background': backgroundColor || customBackgroundColor,
                 [ backgroundColorClass ]: backgroundColorClass
             },
-            isFH  ?  'wp-block-my-container--full-height'  :  null,
-            scrlShow  ?  'wp-block-my-container--scrl-icon'  :  null,
-            dim  ?  `wp-block-my-container--dim-${ parseInt( dim ) }` : null,
-            shadow  ?  `wp-block-my-container--shadow-${ shadow }`  :  null,
+            isFH  ?  'wp-block-mypreview-container--full-height'  :  null,
+            scrlShow  ?  'wp-block-mypreview-container--scrl-icon'  :  null,
+            dim  ?  `wp-block-mypreview-container--dim-${ parseInt( dim ) }` : null,
+            shadow  ?  `wp-block-mypreview-container--shadow-${ shadow }`  :  null,
             ( isFH && valign )  ?  `has-valign-${ valign }`  :  null,
             imgID  ?  'has-background-img'  :  null,
             imgPosition  ?  `has-background-img--${ imgPosition }`  :  null,
@@ -162,7 +162,7 @@ export default class Save extends Component {
 
         // Inner `div`
         const innerClasses = classnames( 
-            'wp-block-my-container__wrapper',
+            'wp-block-mypreview-container__wrapper',
             alignDesktop  ?  `hrz-align-dk-${ alignDesktop }`  :  null,
             alignLaptop  ?  `hrz-align-lp-${ alignLaptop }`  :  null,
             alignTablet  ?  `hrz-align-tb-${ alignTablet }`  :  null,
@@ -178,7 +178,7 @@ export default class Save extends Component {
                 [ scrlColorClass ]: scrlColorClass,
                 'has-text-color': scrlColor || customScrlColor
             },
-            'wp-block-my-container__scrl'
+            'wp-block-mypreview-container__scrl'
         );
 
         // Separator (Shape divider)
@@ -187,8 +187,8 @@ export default class Save extends Component {
                 'has-text-color': shapeColor || customShapeColor,
                 [ shapeColorClass ]: shapeColorClass
             },
-            'wp-block-my-container__shape',
-            shapeType  ?  `wp-block-my-container__shape--${ shapeType }`  :  null,
+            'wp-block-mypreview-container__shape',
+            shapeType  ?  `wp-block-mypreview-container__shape--${ shapeType }`  :  null,
         );
         const shapeStyles = {
             color: shapeColorClass  ?  undefined  :  customShapeColor,
@@ -233,7 +233,7 @@ export default class Save extends Component {
                 ) }
                 { videoID && ( 
                     <div 
-                        className="wp-block-my-container__video"
+                        className="wp-block-mypreview-container__video"
                     >
                         <video
                             id={ `wp-video-${ videoID }` }
