@@ -13,6 +13,7 @@
 import './style.css';
 import 'aos/dist/aos.css';
 import $ from 'jquery';
+import AOS from 'aos';
 import jump from 'jump.js';
 
 ( function( wp, $ ) {
@@ -24,6 +25,7 @@ import jump from 'jump.js';
 			container.vars = {};
 			container.vars.wpAdminBar = '#wpadminbar';
 			container.vars.el = '.wp-block-my-container';
+			container.vars.aos = $( `${ container.vars.el }[data-aos]` );
 			container.els.href = $( `${ container.vars.el }[data-href]` );
 			container.els.scrl = $( `${ container.vars.el }__scrl[href^="#!"]` );
 			container.els.svgs = $( `${ container.vars.el }__shape > svg` );
@@ -31,9 +33,17 @@ import jump from 'jump.js';
 		// Run after the window is loaded
 		ready: function() {
 			container.cache();
+			container.isAOS();
 			container.onHref();
 			container.onJump();
 			container.svgShim();
+		},
+		isAOS: function() {
+			if ( container.vars.aos.length ) {
+				AOS.init( {
+					startEvent: 'load'
+				} );
+			} // End If Statement
 		},
 		onHref: function() {
 			container.els.href.on( 'click', function( event ) {
