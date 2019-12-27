@@ -223,7 +223,7 @@ export default class Save extends Component {
                 </div>
                 { scrlShow && ( 
                     <a
-                        href={ scrlTarget ? `#${ scrlTarget }` : null }
+                        href={ scrlTarget ? `#!${ scrlTarget }` : null }
                         className={ scrlIconClasses }
                     />
                 ) }
