@@ -86,16 +86,18 @@ const editorConfig = {
         path: path.resolve( __dirname, './assets/dist/admin/' )
     },
     optimization: {
-        splitChunks: {
-            cacheGroups: {
-                commons: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all',
-                    enforce: true
+        minimizer: [ 
+            new UglifyJsPlugin( {
+                cache: true,
+                parallel: true,
+                uglifyOptions: {
+                    output: {
+                        ie8: false,
+                        comments: false
+                    }
                 }
-            }
-        }
+            } )
+        ]
     }
 };
 
@@ -118,23 +120,6 @@ const outputArgs = {
 };
 Object.assign( editorConfig.output, outputArgs );
 Object.assign( frontendConfig.output, outputArgs );
-
-const optimizationExtras = {
-    minimizer: [ 
-        new UglifyJsPlugin( {
-            cache: true,
-            parallel: true,
-            uglifyOptions: {
-                output: {
-                    ie8: false,
-                    comments: false
-                }
-            }
-        } )
-    ]
-}
-Object.assign( editorConfig.optimization, optimizationExtras );
-Object.assign( frontendConfig.optimization, optimizationExtras );
 
 // Export the following modules
 module.exports = [
