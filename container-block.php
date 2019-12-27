@@ -144,7 +144,7 @@ if ( ! class_exists( 'Container_Block' ) ) :
 			global $post;
 
             // Determine whether the current `$post` contains this block type.
-            if ( ! has_block( 'my/container', (object) $post ) ) {
+            if ( ! has_block( 'mypreview/container', (object) $post ) ) {
                 return;
             } // End If Statement
 
