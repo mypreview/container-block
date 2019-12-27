@@ -14,8 +14,8 @@
    "scripts": {
       "dev": "cross-env BABEL_ENV=default webpack --watch --info-verbosity none",
       "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
-      "makepot": "wp i18n make-pot . --merge=languages/conj-powerpack-js.pot --skip-js",
-      "makepot:php": "npx pot-to-php languages/conj-powerpack-js.pot languages/conj-powerpack-translations.php conj-powerpack"
+      "makepot": "wp i18n make-pot . --merge=languages/container-block-js.pot --skip-js",
+      "makepot:php": "npx pot-to-php languages/container-block-js.pot languages/container-block-translations.php container-block"
    },
    "devDependencies": {
       "@babel/core": "7.7.4",

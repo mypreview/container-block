@@ -6,7 +6,7 @@ module.exports = {
 			"useBuiltIns": true 
 		} ],
 		[ "@wordpress/babel-plugin-makepot", {
-		   "output": "languages/container-block.pot"
+		   "output": "languages/container-block-js.pot"
 		} ]
 	]
 };
