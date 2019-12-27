@@ -15,6 +15,18 @@ export default class Controls extends Component {
 
 	constructor( props ) {
 		super( ...arguments );
+		this.setObjUndefined = this.setObjUndefined.bind( this );
+	}
+
+	setObjUndefined( obj ) {
+		// Set all values of the object to undefined
+		for ( let key in obj ) {
+			if ( obj.hasOwnProperty( key ) ) {
+	  			obj[key] = undefined;
+	  		} // End If Statement
+		} // End of the loop
+
+		return obj;
 	}
 
 	render() {
@@ -68,28 +80,19 @@ export default class Controls extends Component {
 		};
 		// Image & Video - Remove (trash)
 		const onClickRemoveMedia = () => {
-			setAttributes( { img: { 
-				id: undefined, 
-				src: undefined,
-				width: undefined,
-				position: undefined,
-		        focalPoint: undefined,
-		        repeat: undefined,
-		        size: undefined,
-		        effect: undefined
-			},
-				video: { 
-					id: undefined, 
-					src: undefined
-			} } );
+			// Set all values of the object to undefined
+			setAttributes( { 
+				img: { ...this.setObjUndefined( img ) }, 
+				video: { ...this.setObjUndefined( video ) } 
+			} );
 		};
 		// Image - Effect
 		const onClickImgEffect = value => {
 			setAttributes( { img: { 
 				...img,
-				position: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgPosition,
-		        focalPoint: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgFocalPoint,
-		        repeat: ( value && value.includes( 'animate' ) )  ?  undefined  :  imgRepeat,
+				position: ( value && value.includes( 'animate' ) ) ? undefined : imgPosition,
+		        focalPoint: ( value && value.includes( 'animate' ) ) ? undefined : imgFocalPoint,
+		        repeat: ( value && value.includes( 'animate' ) ) ? undefined : imgRepeat,
 		        effect: value
 			} } );
 		};
@@ -98,19 +101,19 @@ export default class Controls extends Component {
 			{
 				icon: icons.rotateLeft,
 				title: _x( 'Animate left', 'toolbar button', 'container-block' ),
-				onClick: () => 'animate-left' === imgEffect  ?  onClickImgEffect( undefined )  :  onClickImgEffect( 'animate-left' ),
+				onClick: () => 'animate-left' === imgEffect ? onClickImgEffect( undefined ) : onClickImgEffect( 'animate-left' ),
 				isActive: imgEffect === 'animate-left'
 			},
 			{
 				icon: icons.rotateRight,
 				title: _x( 'Animate right', 'toolbar button', 'container-block' ),
-				onClick: () => 'animate-right' === imgEffect  ?  onClickImgEffect( undefined )  :  onClickImgEffect( 'animate-right' ),
+				onClick: () => 'animate-right' === imgEffect ? onClickImgEffect( undefined ) : onClickImgEffect( 'animate-right' ),
 				isActive: imgEffect === 'animate-right'
 			},
 			{
 				icon: icons.parallax,
 				title: _x( 'Parallax', 'toolbar button', 'container-block' ),
-				onClick: () => 'fixed' === imgEffect  ?  onClickImgEffect( undefined )  :  onClickImgEffect( 'fixed' ),
+				onClick: () => 'fixed' === imgEffect ? onClickImgEffect( undefined ) : onClickImgEffect( 'fixed' ),
 				isActive: imgEffect === 'fixed'
 			}
 		];
