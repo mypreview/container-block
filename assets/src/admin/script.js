@@ -21,12 +21,12 @@ export function registerBlocks () {
 		const { name, category, icon, settings } = block;
 
 		wp.blocks.registerBlockType( 
-			`my/${ name }`, 
+			`mypreview/${ name }`, 
 			{ 
 				category, 
 				icon: { 
 					src: icon,
-					foreground: '##555d66',
+					foreground: '#555d66',
 					background: '#F4F5FA'
 				}, 
 				...settings 
