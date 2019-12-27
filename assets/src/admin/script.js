@@ -2,6 +2,7 @@
  * Block dependencies
  */
 import './style.css';
+import 'aos/dist/aos.css';
 import './utils/block-category.js';
 
 /**
