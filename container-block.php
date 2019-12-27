@@ -175,13 +175,6 @@ if ( ! class_exists( 'Container_Block' ) ) :
 			// Add metadata to the CSS stylesheet.
 			wp_style_add_data( CONTAINER_BLOCK_SLUG, 'rtl', 'replace' );
 
-			$vendors_path = sprintf( '%sassets/dist/admin/vendors.js', CONTAINER_BLOCK_DIR_PATH );
-			$vendors_asset_path = sprintf( '%sassets/dist/admin/vendors.asset.php', CONTAINER_BLOCK_DIR_PATH );
-			$vendors_asset = file_exists( $vendors_asset_path )  ?  require( $vendors_asset_path )  :  array( 'dependencies' => array( 'wp-blocks', 'wp-dom-ready' ), 'version' => filemtime( $vendors_path ) );
-			$vendors_url = sprintf( '%sassets/dist/admin/vendors.js', CONTAINER_BLOCK_DIR_URL );
-			// Enqueue the vendor script.
-			wp_enqueue_script( sprintf( '%s-vendors', CONTAINER_BLOCK_SLUG ), $vendors_url, $vendors_asset['dependencies'], $vendors_asset['version'], TRUE );
-
 			$script_path = sprintf( '%sassets/dist/admin/script.js', CONTAINER_BLOCK_DIR_PATH );
 			$script_asset_path = sprintf( '%sassets/dist/admin/script.asset.php', CONTAINER_BLOCK_DIR_PATH );
 			$script_asset = file_exists( $script_asset_path )  ?  require( $script_asset_path )  :  array( 'dependencies' => array( 'wp-blocks', 'wp-dom-ready' ), 'version' => filemtime( $script_path ) );
