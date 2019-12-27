@@ -93,7 +93,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 		const {
 			width: borderWidth,
 			radius: borderRadius,
-			customColor: borderColor } = border;
+			color: borderColor } = border;
 		// Visibility
 		const {
 			desktop: visDesktop,

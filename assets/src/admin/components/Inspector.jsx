@@ -168,8 +168,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 		const {
 			width: borderWidth,
 			radius: borderRadius,
-			color: borderColor,
-			customColor: customBorderColor } = border;
+			color: borderColor } = border;
 		// Link-to
 		const {
 			url: linkUrl,
@@ -352,11 +351,9 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 		};
 		// Border — Color
 		const onChangeBorderColor = value => {
-			const colorObject = getColorObjectByColorValue( colors, value );
 			setAttributes( { border: { 
 				...border,
-				color: colorObject  ?  colorObject.slug  :  undefined,
-				customColor:value
+				color: value
 			} } );
 		};
 		// Border - Reset
@@ -800,16 +797,16 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 		                            >
 		                                { _x( 'Color', 'color label', 'container-block' ) }
 		                            </span>
-		                            { customBorderColor && (
+		                            { borderColor && (
 		                                <ColorIndicator 
-		                                    colorValue={ customBorderColor } 
+		                                    colorValue={ borderColor } 
 		                                />
 		                            ) }
 		                        </p>
 								<ColorPalette
 									clearable={ true }
 		                            colors={ colors || defaultColors }
-		                            value={ customBorderColor }
+		                            value={ borderColor }
 		                            onChange={ onChangeBorderColor }
 		                        />
 	                        </Fragment>
