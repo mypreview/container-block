@@ -24,7 +24,7 @@
  * Description:       		Add additional terms and condition checkbox to the WooCommerce checkout.
  * Version:           		1.0.0
  * Author:            		MyPreview
- * Author URI:        		https://www.mypreview.one
+ * Author URI:        		https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94
  * License:           		GPL-3.0
  * License URI:       		http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       		container-block
@@ -196,7 +196,7 @@ if ( ! class_exists( 'Container_Block' ) ) :
 
 			$plugin_links = array();
 			$plugin_links[] = sprintf( _x( '%sHire Me!%s', 'plugin link', 'container-block' ) , sprintf( '<a href="%s" class="button-link-delete" target="_blank" rel="noopener noreferrer nofollow" title="%s">', esc_url( CONTAINER_BLOCK_AUTHOR_URI ), esc_attr_x( 'Looking for help? Hire Me!', 'upsell', 'container-block' ) ), '</a>' );
-			$plugin_links[] = sprintf( _x( '%sSupport%s', 'plugin link', 'container-block' ) , '<a href="https://wordpress.org/support/plugin/container-block" target="_blank" rel="noopener noreferrer nofollow">', '</a>' );
+			$plugin_links[] = sprintf( _x( '%sSupport%s', 'plugin link', 'container-block' ) , sprintf( '<a href="https://wordpress.org/support/plugin/%s" target="_blank" rel="noopener noreferrer nofollow">', CONTAINER_BLOCK_SLUG ), '</a>' );
 
 			return array_merge( $plugin_links, $links );
 
