@@ -17,7 +17,7 @@ const { _x } = wp.i18n;
  */
 const name = 'container';
 const title = _x( 'Container', 'block title', 'container-block' );
-const category = 'layout';
+const category = 'mypreview';
 const icon = icons.container;
 
 /**
@@ -39,9 +39,7 @@ const settings = {
     attributes,
     transforms,
     edit,
-    save: function( props ) {
-        return null;
-    }
+    save
 };
 
 export { name, title, category, icon, settings };
