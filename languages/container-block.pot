@@ -3,550 +3,822 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "X-Generator: babel-plugin-makepot\n"
 
-#: assets/src/admin/components/Inspector.jsx:337
-msgctxt "control label"
-msgid "Width"
+#: assets/src/admin/components/Controls.jsx:103
+msgctxt "toolbar button"
+msgid "Animate left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:352
-msgctxt "control label"
-msgid "Full-height?"
+#: assets/src/admin/components/Controls.jsx:109
+msgctxt "toolbar button"
+msgid "Animate right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:358
-msgctxt "control label"
-msgid "Scroll down icon"
+#: assets/src/admin/components/Controls.jsx:115
+msgctxt "toolbar button"
+msgid "Parallax"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:366
-msgctxt "control label"
-msgid "Element ID"
+#: assets/src/admin/components/Controls.jsx:141
+msgctxt "toolbar button"
+msgid "Edit image"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:430
-msgctxt "control label"
-msgid "Hide from the view?"
+#: assets/src/admin/components/Controls.jsx:141
+msgctxt "toolbar button"
+msgid "Add image"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:566
-msgctxt "control label"
-msgid "Open in a new window?"
+#: assets/src/admin/components/Controls.jsx:157
+msgctxt "toolbar button"
+msgid "Edit video"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:626
-msgctxt "control label"
-msgid "Height"
+#: assets/src/admin/components/Controls.jsx:157
+msgctxt "toolbar button"
+msgid "Add video"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:662
-msgctxt "control label"
-msgid "Type"
+#: assets/src/admin/components/Controls.jsx:167
+msgctxt "toolbar button"
+msgid "Remove media"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:700
-msgctxt "control label"
-msgid "Ease"
+#: assets/src/admin/components/Inspector.jsx:114
+msgctxt "image position"
+msgid "None"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:728
-msgctxt "control label"
-msgid "Offset"
+#: assets/src/admin/components/Inspector.jsx:115
+msgctxt "image position"
+msgid "Left Top"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:736
-msgctxt "control label"
-msgid "Delay"
+#: assets/src/admin/components/Inspector.jsx:116
+msgctxt "image position"
+msgid "Left Center"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:744
-msgctxt "control label"
-msgid "Duration"
+#: assets/src/admin/components/Inspector.jsx:117
+msgctxt "image position"
+msgid "Left Bottom"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:754
+#: assets/src/admin/components/Inspector.jsx:118
+msgctxt "image position"
+msgid "Right Top"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:119
+msgctxt "image position"
+msgid "Right Center"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:120
+msgctxt "image position"
+msgid "Right Bottom"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:121
+msgctxt "image position"
+msgid "Center Top"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:122
+msgctxt "image position"
+msgid "Center Center"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:123
+msgctxt "image position"
+msgid "Center Bottom"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:128
+msgctxt "image position"
+msgid "Custom"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1000
 msgctxt "control label"
 msgid "Run once?"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:765
+#: assets/src/admin/components/Inspector.jsx:1016
+msgctxt "control label"
+msgid "Position"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1024
+msgctxt "control label"
+msgid "Focal Point Picker"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1031
+msgctxt "control label"
+msgid "Repeat"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1048
+msgctxt "control label"
+msgid "Size"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1062
+msgctxt "control label"
+msgid "Color Settings"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1072
+msgctxt "control label"
+msgid "Overlay"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1087
 msgctxt "control label"
 msgid "Aria Label"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:338
+#: assets/src/admin/components/Inspector.jsx:474
+msgctxt "control label"
+msgid "Width"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:489
+msgctxt "control label"
+msgid "Full-height?"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:495
+msgctxt "control label"
+msgid "Scroll down icon"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:503
+msgctxt "control label"
+msgid "Element ID"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:567
+msgctxt "control label"
+msgid "Hide from the view?"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:703
+msgctxt "control label"
+msgid "Open in a new window?"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:755
+msgctxt "control label"
+msgid "Rounded corners?"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:872
+msgctxt "control label"
+msgid "Height"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:908
+msgctxt "control label"
+msgid "Type"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:946
+msgctxt "control label"
+msgid "Ease"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:974
+msgctxt "control label"
+msgid "Offset"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:982
+msgctxt "control label"
+msgid "Delay"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:990
+msgctxt "control label"
+msgid "Duration"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1010
+msgctxt "panel title"
+msgid "Background Settings"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:475
 msgctxt "panel title"
 msgid "Maximum width of the inner wrapper."
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:348
+#: assets/src/admin/components/Inspector.jsx:485
 msgctxt "panel title"
-msgid "Display"
+msgid "Display Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:395
+#: assets/src/admin/components/Inspector.jsx:532
 msgctxt "panel title"
-msgid "Visibility"
+msgid "Visibility Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:442
+#: assets/src/admin/components/Inspector.jsx:579
 msgctxt "panel title"
-msgid "Spacing"
+msgid "Spacing Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:505
+#: assets/src/admin/components/Inspector.jsx:642
 msgctxt "panel title"
-msgid "Alignment"
+msgid "Alignment Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:552
+#: assets/src/admin/components/Inspector.jsx:689
 msgctxt "panel title"
-msgid "Link to"
+msgid "Link to Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:573
+#: assets/src/admin/components/Inspector.jsx:710
 msgctxt "panel title"
-msgid "Shadow"
+msgid "Border Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:592
+#: assets/src/admin/components/Inspector.jsx:819
 msgctxt "panel title"
-msgid "Shape"
+msgid "Shadow Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:658
+#: assets/src/admin/components/Inspector.jsx:838
 msgctxt "panel title"
-msgid "Animation"
+msgid "Shape Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:353
-msgctxt "control help"
-msgid "Stretches the container to fit the whole height of the browser window."
+#: assets/src/admin/components/Inspector.jsx:904
+msgctxt "panel title"
+msgid "Animation Settings"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:359
-msgctxt "control help"
-msgid ""
-"Displays a delicate scrolling mouse wheel animation that will offer "
-"direction to the user after the initial land on a website."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:367
-msgctxt "control help"
-msgid "Smoothly scroll the window to a specific element or tag ID within the page."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:578
-msgctxt "control help"
-msgid "Shadow utlities to add a box shadow to the element."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:597
-msgctxt "control help"
-msgid "Multiple shapes to use as separators for sections or as background images."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:663
-msgctxt "control help"
-msgid "This module allows you to animate elements as you scroll down, and up."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:701
-msgctxt "control help"
-msgid "Choose timing function to ease elements in different ways."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:729
-msgctxt "control help"
-msgid "Change offset to trigger animations sooner or later in pixels."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:737
-msgctxt "control help"
-msgid "Delay animation in milliseconds."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:745
-msgctxt "control help"
-msgid "Duration of animation in milliseconds."
-msgstr ""
-
-#: assets/src/admin/components/Inspector.jsx:755
+#: assets/src/admin/components/Inspector.jsx:1001
 msgctxt "control help"
 msgid ""
 "Choose wheter animation should fire once, or every time you scroll up/down "
 "to element."
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:766
+#: assets/src/admin/components/Inspector.jsx:1017
+msgctxt "control help"
+msgid "This property sets the starting position of a background image."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1032
+msgctxt "control help"
+msgid "This property sets if and how a background image will be repeated."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1049
+msgctxt "control help"
+msgid "This property specifies the size of the background images."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1073
+msgctxt "control help"
+msgid ""
+"This setting is useful if you are using a visually noisy background image "
+"or video and finding the content in your component difficult to read."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1088
 msgctxt "control help"
 msgid ""
 "This attribute is used to define a string that labels the current element. "
 "You might use it in cases where a text label is not visible on the screen."
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:640
+#: assets/src/admin/components/Inspector.jsx:490
+msgctxt "control help"
+msgid "Stretches the container to fit the whole height of the browser window."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:496
+msgctxt "control help"
+msgid ""
+"Displays a delicate scrolling mouse wheel animation that will offer "
+"direction to the user after the initial land on a website."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:504
+msgctxt "control help"
+msgid "Smoothly scroll the window to a specific element or tag ID within the page."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:756
+msgctxt "control help"
+msgid "Defines the radius of the corners."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:824
+msgctxt "control help"
+msgid "Shadow utlities to add a box shadow to the element."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:843
+msgctxt "control help"
+msgid "Multiple shapes to use as separators for sections or as background images."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:909
+msgctxt "control help"
+msgid "This module allows you to animate elements as you scroll down, and up."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:947
+msgctxt "control help"
+msgid "Choose timing function to ease elements in different ways."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:975
+msgctxt "control help"
+msgid "Change offset to trigger animations sooner or later in pixels."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:983
+msgctxt "control help"
+msgid "Delay animation in milliseconds."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:991
+msgctxt "control help"
+msgid "Duration of animation in milliseconds."
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1067
+msgctxt "color label"
+msgid "Background"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:886
 msgctxt "color label"
 msgid "Color"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:581
+#: assets/src/admin/components/Inspector.jsx:715
+msgctxt "aria label"
+msgid "Border Thickness"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:759
+msgctxt "aria label"
+msgid "Border Radius"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:723
+msgctxt "border thickness"
+msgid "Thin"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:731
+msgctxt "border thickness"
+msgid "Medium"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:739
+msgctxt "border thickness"
+msgid "Thick"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:792
+msgctxt "button label"
+msgid "Reset"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:767
+msgctxt "border radius"
+msgid "Edge"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:775
+msgctxt "border radius"
+msgid "Round"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:783
+msgctxt "border radius"
+msgid "Pill"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:827
 msgctxt "shadow style"
 msgid "None"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:582
+#: assets/src/admin/components/Inspector.jsx:828
 msgctxt "shadow style"
 msgid "Light"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:583
+#: assets/src/admin/components/Inspector.jsx:829
 msgctxt "shadow style"
 msgid "Light Large"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:584
+#: assets/src/admin/components/Inspector.jsx:830
 msgctxt "shadow style"
 msgid "Dark"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:585
+#: assets/src/admin/components/Inspector.jsx:831
 msgctxt "shadow style"
 msgid "Dark Large"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:586
+#: assets/src/admin/components/Inspector.jsx:832
 msgctxt "shadow style"
 msgid "Lift"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:600
+#: assets/src/admin/components/Inspector.jsx:846
 msgctxt "shape style"
 msgid "None"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:601
+#: assets/src/admin/components/Inspector.jsx:847
 msgctxt "shape style"
 msgid "Simple"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:602
+#: assets/src/admin/components/Inspector.jsx:848
 msgctxt "shape style"
 msgid "Concave Up"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:603
+#: assets/src/admin/components/Inspector.jsx:849
 msgctxt "shape style"
 msgid "Concave Up (Adjustable)"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:604
+#: assets/src/admin/components/Inspector.jsx:850
 msgctxt "shape style"
 msgid "Concave Down"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:605
+#: assets/src/admin/components/Inspector.jsx:851
 msgctxt "shape style"
 msgid "Concave Up, Increasing"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:606
+#: assets/src/admin/components/Inspector.jsx:852
 msgctxt "shape style"
 msgid "Concave Up, Decreasing"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:607
+#: assets/src/admin/components/Inspector.jsx:853
 msgctxt "shape style"
 msgid "Curve Left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:608
+#: assets/src/admin/components/Inspector.jsx:854
 msgctxt "shape style"
 msgid "Curve Right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:609
+#: assets/src/admin/components/Inspector.jsx:855
 msgctxt "shape style"
 msgid "Angle Top"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:610
+#: assets/src/admin/components/Inspector.jsx:856
 msgctxt "shape style"
 msgid "Angle Right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:611
+#: assets/src/admin/components/Inspector.jsx:857
 msgctxt "shape style"
 msgid "Angle Bottom"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:612
+#: assets/src/admin/components/Inspector.jsx:858
 msgctxt "shape style"
 msgid "Angle Left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:613
+#: assets/src/admin/components/Inspector.jsx:859
 msgctxt "shape style"
 msgid "Wave"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:614
+#: assets/src/admin/components/Inspector.jsx:860
 msgctxt "shape style"
 msgid "Blur 1"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:615
+#: assets/src/admin/components/Inspector.jsx:861
 msgctxt "shape style"
 msgid "Blur 2"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:616
+#: assets/src/admin/components/Inspector.jsx:862
 msgctxt "shape style"
 msgid "Blur 3"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:617
+#: assets/src/admin/components/Inspector.jsx:863
 msgctxt "shape style"
 msgid "Blur 4"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:666
+#: assets/src/admin/components/Inspector.jsx:912
 msgctxt "animation type"
 msgid "None"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:667
+#: assets/src/admin/components/Inspector.jsx:913
 msgctxt "animation type"
 msgid "Fade"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:668
+#: assets/src/admin/components/Inspector.jsx:914
 msgctxt "animation type"
 msgid "Fade-up"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:669
+#: assets/src/admin/components/Inspector.jsx:915
 msgctxt "animation type"
 msgid "Fade-down"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:670
+#: assets/src/admin/components/Inspector.jsx:916
 msgctxt "animation type"
 msgid "Fade-left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:671
+#: assets/src/admin/components/Inspector.jsx:917
 msgctxt "animation type"
 msgid "Fade-right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:672
+#: assets/src/admin/components/Inspector.jsx:918
 msgctxt "animation type"
 msgid "Fade-up-right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:673
+#: assets/src/admin/components/Inspector.jsx:919
 msgctxt "animation type"
 msgid "Fade-up-left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:674
+#: assets/src/admin/components/Inspector.jsx:920
 msgctxt "animation type"
 msgid "Fade-down-right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:675
+#: assets/src/admin/components/Inspector.jsx:921
 msgctxt "animation type"
 msgid "Fade-down-left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:676
+#: assets/src/admin/components/Inspector.jsx:922
 msgctxt "animation type"
 msgid "Flip-up"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:677
+#: assets/src/admin/components/Inspector.jsx:923
 msgctxt "animation type"
 msgid "Flip-down"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:678
+#: assets/src/admin/components/Inspector.jsx:924
 msgctxt "animation type"
 msgid "Flip-left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:679
+#: assets/src/admin/components/Inspector.jsx:925
 msgctxt "animation type"
 msgid "Flip-right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:680
+#: assets/src/admin/components/Inspector.jsx:926
 msgctxt "animation type"
 msgid "Slide-up"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:681
+#: assets/src/admin/components/Inspector.jsx:927
 msgctxt "animation type"
 msgid "Slide-down"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:682
+#: assets/src/admin/components/Inspector.jsx:928
 msgctxt "animation type"
 msgid "Slide-left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:683
+#: assets/src/admin/components/Inspector.jsx:929
 msgctxt "animation type"
 msgid "Slide-right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:684
+#: assets/src/admin/components/Inspector.jsx:930
 msgctxt "animation type"
 msgid "Zoom-in"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:685
+#: assets/src/admin/components/Inspector.jsx:931
 msgctxt "animation type"
 msgid "Zoom-in-up"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:686
+#: assets/src/admin/components/Inspector.jsx:932
 msgctxt "animation type"
 msgid "Zoom-in-down"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:687
+#: assets/src/admin/components/Inspector.jsx:933
 msgctxt "animation type"
 msgid "Zoom-in-left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:688
+#: assets/src/admin/components/Inspector.jsx:934
 msgctxt "animation type"
 msgid "Zoom-in-right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:689
+#: assets/src/admin/components/Inspector.jsx:935
 msgctxt "animation type"
 msgid "Zoom-out"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:690
+#: assets/src/admin/components/Inspector.jsx:936
 msgctxt "animation type"
 msgid "Zoom-out-up"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:691
+#: assets/src/admin/components/Inspector.jsx:937
 msgctxt "animation type"
 msgid "Zoom-out-down"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:692
+#: assets/src/admin/components/Inspector.jsx:938
 msgctxt "animation type"
 msgid "Zoom-out-left"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:693
+#: assets/src/admin/components/Inspector.jsx:939
 msgctxt "animation type"
 msgid "Zoom-out-right"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:704
+#: assets/src/admin/components/Inspector.jsx:950
 msgctxt "animation ease type"
 msgid "Linear"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:705
+#: assets/src/admin/components/Inspector.jsx:951
 msgctxt "animation ease type"
 msgid "Ease"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:706
+#: assets/src/admin/components/Inspector.jsx:952
 msgctxt "animation ease type"
 msgid "Ease-in"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:707
+#: assets/src/admin/components/Inspector.jsx:953
 msgctxt "animation ease type"
 msgid "Ease-out"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:708
+#: assets/src/admin/components/Inspector.jsx:954
 msgctxt "animation ease type"
 msgid "Ease-in-out"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:709
+#: assets/src/admin/components/Inspector.jsx:955
 msgctxt "animation ease type"
 msgid "Ease-in-back"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:710
+#: assets/src/admin/components/Inspector.jsx:956
 msgctxt "animation ease type"
 msgid "Ease-out-back"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:711
+#: assets/src/admin/components/Inspector.jsx:957
 msgctxt "animation ease type"
 msgid "Ease-in-out-back"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:712
+#: assets/src/admin/components/Inspector.jsx:958
 msgctxt "animation ease type"
 msgid "Ease-in-sine"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:713
+#: assets/src/admin/components/Inspector.jsx:959
 msgctxt "animation ease type"
 msgid "Ease-out-sine"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:714
+#: assets/src/admin/components/Inspector.jsx:960
 msgctxt "animation ease type"
 msgid "Ease-in-out-sine"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:715
+#: assets/src/admin/components/Inspector.jsx:961
 msgctxt "animation ease type"
 msgid "Ease-in-quad"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:716
+#: assets/src/admin/components/Inspector.jsx:962
 msgctxt "animation ease type"
 msgid "Ease-out-quad"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:717
+#: assets/src/admin/components/Inspector.jsx:963
 msgctxt "animation ease type"
 msgid "Ease-in-out-quad"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:718
+#: assets/src/admin/components/Inspector.jsx:964
 msgctxt "animation ease type"
 msgid "Ease-in-cubic"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:719
+#: assets/src/admin/components/Inspector.jsx:965
 msgctxt "animation ease type"
 msgid "Ease-out-cubic"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:720
+#: assets/src/admin/components/Inspector.jsx:966
 msgctxt "animation ease type"
 msgid "Ease-in-out-cubic"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:721
+#: assets/src/admin/components/Inspector.jsx:967
 msgctxt "animation ease type"
 msgid "Ease-in-quart"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:722
+#: assets/src/admin/components/Inspector.jsx:968
 msgctxt "animation ease type"
 msgid "Ease-out-quart"
 msgstr ""
 
-#: assets/src/admin/components/Inspector.jsx:723
+#: assets/src/admin/components/Inspector.jsx:969
 msgctxt "animation ease type"
 msgid "Ease-in-out-quart"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1035
+msgctxt "image repeat"
+msgid "None"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1036
+msgctxt "image repeat"
+msgid "Repeat"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1037
+msgctxt "image repeat"
+msgid "Repeat-X"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1038
+msgctxt "image repeat"
+msgid "Repeat-Y"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1039
+msgctxt "image repeat"
+msgid "No-repeat"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1040
+msgctxt "image repeat"
+msgid "Space"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1041
+msgctxt "image repeat"
+msgid "Round"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1052
+msgctxt "image size"
+msgid "None"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1053
+msgctxt "image size"
+msgid "Auto"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1054
+msgctxt "image size"
+msgid "Cover"
+msgstr ""
+
+#: assets/src/admin/components/Inspector.jsx:1055
+msgctxt "image size"
+msgid "Contain"
 msgstr ""
 
 #: assets/src/admin/index.jsx:19
@@ -576,38 +848,7 @@ msgctxt "block keyword"
 msgid "Wrapper"
 msgstr ""
 
-#: assets/src/admin/utils/colors.js:10
-#: assets/src/admin/utils/colors.jsx:10
-msgctxt "color pallet"
-msgid "White"
-msgstr ""
-
-#: assets/src/admin/utils/colors.js:16
-#: assets/src/admin/utils/colors.jsx:16
-msgctxt "color pallet"
-msgid "Black"
-msgstr ""
-
-#: assets/src/admin/utils/colors.js:22
-#: assets/src/admin/utils/colors.jsx:22
-msgctxt "color pallet"
-msgid "Blue"
-msgstr ""
-
-#: assets/src/admin/utils/colors.js:28
-#: assets/src/admin/utils/colors.jsx:28
-msgctxt "color pallet"
-msgid "Green"
-msgstr ""
-
-#: assets/src/admin/utils/colors.js:34
-#: assets/src/admin/utils/colors.jsx:34
-msgctxt "color pallet"
-msgid "Orange"
-msgstr ""
-
-#: assets/src/admin/utils/colors.js:40
-#: assets/src/admin/utils/colors.jsx:40
-msgctxt "color pallet"
-msgid "Red"
+#: assets/src/admin/utils/block-category.js:15
+msgctxt "block category"
+msgid "MyPreview"
 msgstr ""
