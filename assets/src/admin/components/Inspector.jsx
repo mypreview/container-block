@@ -73,7 +73,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 			return;
 		} else {
 			// Remove the `AOS` specific classnames so we can hard-refresh the animation manually.
-			$( `#block-${ clientId } .wp-block-conj-powerpack-container` ).removeClass( 'aos-init aos-animate' );
+			$( `#block-${ clientId } .wp-block-mypreview-container` ).removeClass( 'aos-init aos-animate' );
 			// Note that duration must match to whatever number that the user has chosen.
 			setTimeout( function() {
 				AOS.refreshHard();

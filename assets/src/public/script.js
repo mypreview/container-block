@@ -24,7 +24,7 @@ import jump from 'jump.js';
 			container.els = {};
 			container.vars = {};
 			container.vars.wpAdminBar = '#wpadminbar';
-			container.vars.el = '.wp-block-my-container';
+			container.vars.el = '.wp-block-mypreview-container';
 			container.vars.aos = $( `${ container.vars.el }[data-aos]` );
 			container.els.href = $( `${ container.vars.el }[data-href]` );
 			container.els.scrl = $( `${ container.vars.el }__scrl[href^="#!"]` );
