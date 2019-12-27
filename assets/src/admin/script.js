@@ -2,6 +2,7 @@
  * Block dependencies
  */
 import './style.css';
+import './utils/block-category.js';
 
 /**
  * Import custom/built-in editor blocks.
