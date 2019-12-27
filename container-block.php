@@ -171,7 +171,7 @@ if ( ! class_exists( 'Container_Block' ) ) :
 		public function editor_enqueue() {
 
 			// Enqueue the CSS stylesheet.
-			wp_enqueue_style( 'container-block', sprintf( '%sassets/dist/admin/style.css', CONTAINER_BLOCK_DIR_URL ), array( 'wp-edit-blocks' ), CONTAINER_BLOCK_VERSION, 'screen' );
+			wp_enqueue_style( CONTAINER_BLOCK_SLUG, sprintf( '%sassets/dist/admin/style.css', CONTAINER_BLOCK_DIR_URL ), array( 'wp-edit-blocks' ), CONTAINER_BLOCK_VERSION, 'screen' );
 			// Add metadata to the CSS stylesheet.
 			wp_style_add_data( CONTAINER_BLOCK_SLUG, 'rtl', 'replace' );
 
