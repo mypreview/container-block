@@ -43,6 +43,7 @@ if ( ! defined( 'WPINC' ) ) {
 $plugin_data = get_file_data( __FILE__, array( 'author_uri' => 'Author URI', 'version' => 'Version' ), 'plugin' );
 define( 'CONTAINER_BLOCK_VERSION', $plugin_data['version'] );
 define( 'CONTAINER_BLOCK_AUTHOR_URI', $plugin_data['author_uri'] );
+define( 'CONTAINER_BLOCK_SLUG', 'container-block' );
 define( 'CONTAINER_BLOCK_FILE', __FILE__ );
 define( 'CONTAINER_BLOCK_BASENAME', basename( CONTAINER_BLOCK_FILE ) );
 define( 'CONTAINER_BLOCK_PLUGIN_BASENAME', plugin_basename( CONTAINER_BLOCK_FILE ) );
@@ -89,6 +90,7 @@ if ( ! class_exists( 'Container_Block' ) ) :
 		protected function __construct() {
 
 			add_action( 'init', 																	array( $this, 'textdomain' ), 				10 );
+			add_action( 'wp_enqueue_scripts', 														array( $this, 'enqueue' ), 					10 );
 			add_action( 'enqueue_block_editor_assets', 												array( $this, 'editor_enqueue' ), 			10 );
 			add_filter( sprintf( 'plugin_action_links_%s', CONTAINER_BLOCK_PLUGIN_BASENAME ), 		array( $this, 'additional_links' ), 	 10, 1 );
 
@@ -132,7 +134,36 @@ if ( ! class_exists( 'Container_Block' ) ) :
 		}
 
 		/**
-	     * Register the JavaScript for the Gutenberg editor area.
+	     * Register the stylesheets and JavaScript for the public-facing side of the site.
+	     *
+	     * @access   public
+	     * @return   void
+	     */
+		public function enqueue() {
+
+			global $post;
+
+            // Determine whether the current `$post` contains this block type.
+            if ( ! has_block( 'my/container', (object) $post ) ) {
+                return;
+            } // End If Statement
+
+			// Enqueue the CSS stylesheet.
+			wp_enqueue_style( CONTAINER_BLOCK_SLUG, sprintf( '%sassets/dist/public/style.css', CONTAINER_BLOCK_DIR_URL ), array(), CONTAINER_BLOCK_VERSION, 'screen' );
+			// Add metadata to the CSS stylesheet.
+			wp_style_add_data( CONTAINER_BLOCK_SLUG, 'rtl', 'replace' );
+
+			$script_path = sprintf( '%sassets/dist/public/script.js', CONTAINER_BLOCK_DIR_PATH );
+			$script_asset_path = sprintf( '%sassets/dist/public/script.asset.php', CONTAINER_BLOCK_DIR_PATH );
+			$script_asset = file_exists( $script_asset_path )  ?  require( $script_asset_path )  :  array( 'dependencies' => array( 'jquery' ), 'version' => filemtime( $script_path ) );
+			$script_url = sprintf( '%sassets/dist/public/script.js', CONTAINER_BLOCK_DIR_URL );
+			// Enqueue the script.
+			wp_enqueue_script( CONTAINER_BLOCK_SLUG, $script_url, $script_asset['dependencies'], $script_asset['version'], TRUE );
+
+		}
+
+		/**
+	     * Register the stylesheets and JavaScript for the Gutenberg (editor) side of the site.
 	     *
 	     * @access   public
 	     * @return   void
@@ -142,21 +173,21 @@ if ( ! class_exists( 'Container_Block' ) ) :
 			// Enqueue the CSS stylesheet.
 			wp_enqueue_style( 'container-block', sprintf( '%sassets/dist/admin/style.css', CONTAINER_BLOCK_DIR_URL ), array( 'wp-edit-blocks' ), CONTAINER_BLOCK_VERSION, 'screen' );
 			// Add metadata to the CSS stylesheet.
-			wp_style_add_data( 'container-block', 'rtl', 'replace' );
+			wp_style_add_data( CONTAINER_BLOCK_SLUG, 'rtl', 'replace' );
 
 			$vendors_path = sprintf( '%sassets/dist/admin/vendors.js', CONTAINER_BLOCK_DIR_PATH );
 			$vendors_asset_path = sprintf( '%sassets/dist/admin/vendors.asset.php', CONTAINER_BLOCK_DIR_PATH );
 			$vendors_asset = file_exists( $vendors_asset_path )  ?  require( $vendors_asset_path )  :  array( 'dependencies' => array( 'wp-blocks', 'wp-dom-ready' ), 'version' => filemtime( $vendors_path ) );
 			$vendors_url = sprintf( '%sassets/dist/admin/vendors.js', CONTAINER_BLOCK_DIR_URL );
 			// Enqueue the vendor script.
-			wp_enqueue_script( 'container-block-vendors', $vendors_url, $vendors_asset['dependencies'], $vendors_asset['version'], TRUE );
+			wp_enqueue_script( sprintf( '%s-vendors', CONTAINER_BLOCK_SLUG ), $vendors_url, $vendors_asset['dependencies'], $vendors_asset['version'], TRUE );
 
 			$script_path = sprintf( '%sassets/dist/admin/script.js', CONTAINER_BLOCK_DIR_PATH );
 			$script_asset_path = sprintf( '%sassets/dist/admin/script.asset.php', CONTAINER_BLOCK_DIR_PATH );
 			$script_asset = file_exists( $script_asset_path )  ?  require( $script_asset_path )  :  array( 'dependencies' => array( 'wp-blocks', 'wp-dom-ready' ), 'version' => filemtime( $script_path ) );
 			$script_url = sprintf( '%sassets/dist/admin/script.js', CONTAINER_BLOCK_DIR_URL );
 			// Enqueue the script.
-			wp_enqueue_script( 'container-block', $script_url, $script_asset['dependencies'], $script_asset['version'], TRUE );
+			wp_enqueue_script( CONTAINER_BLOCK_SLUG, $script_url, $script_asset['dependencies'], $script_asset['version'], TRUE );
 
 		}
 
