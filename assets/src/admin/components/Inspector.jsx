@@ -837,7 +837,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 					>
 						<SelectControl
 					        label={ _x( 'Type', 'control label', 'container-block' ) }
-					        help={ _x( 'Multiple shapes to use as separators for sections or as background images.', 'control help', 'container-block' ) }
+					        help={ _x( 'Multiple shapes to use as separators for sections or as the background graphic.', 'control help', 'container-block' ) }
 					        value={ shapeType }
 					        options={ [
 					            { label: _x( 'None', 'shape style', 'container-block' ), value: '' },
@@ -995,7 +995,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 			                    />
 			                    <ToggleControl
 									label={ _x( 'Run once?', 'control label', 'container-block' ) }
-									help={ _x( 'Choose wheter animation should fire once, or every time you scroll up/down to element.', 'control help', 'container-block' ) }
+									help={ _x( 'Choose whether animation should fire once, or every time you scroll up/down to element.', 'control help', 'container-block' ) }
 									checked={ !! aosOnce }
 									onChange={ onChangeAosOnce }
 								/>
