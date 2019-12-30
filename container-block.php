@@ -21,7 +21,7 @@
  * @wordpress-plugin
  * Plugin Name:       		Container Block
  * Plugin URI:        		https://www.mypreview.one
- * Description:       		A Gutenberg editor block used for wrapping several blocks in a parent wrapper.
+ * Description:       		A fully customized Gutenberg editor block used for wrapping several blocks in a parent wrapper.
  * Version:           		1.0.0
  * Author:            		MyPreview
  * Author URI:        		https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94
