@@ -25,7 +25,7 @@ import jump from 'jump.js';
 			container.vars = {};
 			container.vars.wpAdminBar = '#wpadminbar';
 			container.vars.el = '.wp-block-mypreview-container';
-			container.vars.aos = $( `${ container.vars.el }[data-aos]` );
+			container.els.aos = $( `${ container.vars.el }[data-aos]` );
 			container.els.href = $( `${ container.vars.el }[data-href]` );
 			container.els.scrl = $( `${ container.vars.el }__scrl[href^="#!"]` );
 			container.els.svgs = $( `${ container.vars.el }__shape > svg` );
@@ -39,7 +39,7 @@ import jump from 'jump.js';
 			container.svgShim();
 		},
 		isAOS: function() {
-			if ( container.vars.aos.length ) {
+			if ( container.els.aos.length ) {
 				AOS.init( {
 					startEvent: 'load'
 				} );
