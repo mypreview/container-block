@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Container Block\n"
-"POT-Creation-Date: 2019-12-27 17:53+0300\n"
+"POT-Creation-Date: 2019-12-30 19:15+0300\n"
 "PO-Revision-Date: 2019-12-27 17:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -965,15 +965,19 @@ msgid "Container Block"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-#. Author URI of the plugin/theme
 msgid "https://www.mypreview.one"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Add additional terms and condition checkbox to the WooCommerce checkout."
+"A fully customizable Gutenberg editor block used for wrapping several blocks "
+"in a parent wrapper."
 msgstr ""
 
 #. Author of the plugin/theme
 msgid "MyPreview"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94"
 msgstr ""
