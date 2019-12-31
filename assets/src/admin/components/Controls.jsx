@@ -8,7 +8,7 @@ import icons from './../icons.jsx';
  */
 const { _x } = wp.i18n;
 const { Fragment, Component } = wp.element;
-const { BlockControls, BlockVerticalAlignmentToolbar, MediaUpload } = wp.blockEditor;
+const { BlockControls, BlockVerticalAlignmentToolbar, MediaUpload, MediaUploadCheck } = wp.blockEditor;
 const { Toolbar, IconButton } = wp.components;
 
 export default class Controls extends Component {
@@ -129,38 +129,40 @@ export default class Controls extends Component {
 						/>
 					) }
 					<Toolbar>
-						{ ( ( ! imgID && ! videoID ) || imgID ) && (
-							<MediaUpload
-								allowedTypes="image"
-								notices={ noticeUI }
-								onSelect={ onUploadImage }
-								value={ imgID }
-								render={ ( { open } ) => (
-									<IconButton
-										className="components-toolbar__control"
-										label={ imgID ?	_x( 'Edit image', 'toolbar button', 'container-block' ) : _x( 'Add image', 'toolbar button', 'container-block' ) }
-										icon={ imgID  ?	icons.edit : icons.image }
-										onClick={ open }
-									/>
-								) }
-							/>
-						) }
-						{ ( ( ! imgID && ! videoID ) || videoID ) && (
-							<MediaUpload
-								allowedTypes="video"
-								notices={ noticeUI }
-								onSelect={ onUploadVideo }
-								value={ videoID }
-								render={ ( { open } ) => (
-									<IconButton
-										className="components-toolbar__control"
-										label={ videoID ? _x( 'Edit video', 'toolbar button', 'container-block' ) : _x( 'Add video', 'toolbar button', 'container-block' ) }
-										icon={ videoID  ? icons.edit : icons.video }
-										onClick={ open }
-									/>
-								) }
-							/>
-						) }
+						<MediaUploadCheck>
+							{ ( ( ! imgID && ! videoID ) || imgID ) && (
+								<MediaUpload
+									allowedTypes="image"
+									notices={ noticeUI }
+									onSelect={ onUploadImage }
+									value={ imgID }
+									render={ ( { open } ) => (
+										<IconButton
+											className="components-toolbar__control"
+											label={ imgID ?	_x( 'Edit image', 'toolbar button', 'container-block' ) : _x( 'Add image', 'toolbar button', 'container-block' ) }
+											icon={ imgID  ?	icons.edit : icons.image }
+											onClick={ open }
+										/>
+									) }
+								/>
+							) }
+							{ ( ( ! imgID && ! videoID ) || videoID ) && (
+								<MediaUpload
+									allowedTypes="video"
+									notices={ noticeUI }
+									onSelect={ onUploadVideo }
+									value={ videoID }
+									render={ ( { open } ) => (
+										<IconButton
+											className="components-toolbar__control"
+											label={ videoID ? _x( 'Edit video', 'toolbar button', 'container-block' ) : _x( 'Add video', 'toolbar button', 'container-block' ) }
+											icon={ videoID  ? icons.edit : icons.video }
+											onClick={ open }
+										/>
+									) }
+								/>
+							) }
+						</MediaUploadCheck>
 						{ ( imgID || videoID ) && (
 							<IconButton
 								className="components-toolbar__control"
