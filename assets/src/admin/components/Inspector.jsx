@@ -15,7 +15,7 @@ import applyWithSelect from './../utils/withSelect';
 const { _x, sprintf } = wp.i18n;
 const { Fragment, Component } = wp.element;
 const { compose } = wp.compose;
-const { URLInput, InspectorControls, InspectorAdvancedControls, AlignmentToolbar, PanelColorSettings, getColorObjectByColorValue, getColorClassName } = wp.blockEditor;
+const { URLInput, InspectorControls, InspectorAdvancedControls, AlignmentToolbar, PanelColorSettings, getColorObjectByColorValue } = wp.blockEditor;
 const { ButtonGroup, Button, BaseControl, RangeControl, SelectControl, PanelBody, TextControl, TabPanel, FocalPointPicker, ToggleControl, ColorPalette, ColorIndicator, ExternalLink, withFallbackStyles } = wp.components;
 
 /**
