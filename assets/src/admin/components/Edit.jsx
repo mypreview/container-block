@@ -69,7 +69,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 	        repeat: imgRepeat,
 	        size: imgSize,
 	        effect: imgEffect } = img;
-	    // Image
+	    // Video
 		const {
 			id: videoID,
 			src: videoSRC } = video;
