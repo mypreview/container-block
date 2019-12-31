@@ -41,8 +41,7 @@ export default class Save extends Component {
 			aos,
 			valign,
             backgroundColor,
-            customBackgroundColor,
-			allowedBlocks } = attributes;
+            customBackgroundColor } = attributes;
 
         // Image
         const {
@@ -54,7 +53,7 @@ export default class Save extends Component {
             repeat: imgRepeat,
             size: imgSize,
             effect: imgEffect } = img;
-        // Image
+        // Video
         const {
             id: videoID,
             src: videoSRC } = video;
