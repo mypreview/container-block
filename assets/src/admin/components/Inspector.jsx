@@ -26,10 +26,10 @@ const { getComputedStyle } = window;
 const FallbackStyles = withFallbackStyles( ( node, ownProps ) => {
 	const { backgroundColor } = ownProps.attributes,
 		  editableNode = node.querySelector( '[contenteditable="true"]' ),
-		  computedStyles = editableNode  ?  getComputedStyle( editableNode )  :  null;
+		  computedStyles = editableNode ? getComputedStyle( editableNode ) : null;
 
 	return {
-		fallbackBackgroundColor: backgroundColor || ! computedStyles  ?  undefined  :  getComputedStyle.backgroundColor
+		fallbackBackgroundColor: backgroundColor || ! computedStyles ? undefined : getComputedStyle.backgroundColor
 	};
 } );
 
