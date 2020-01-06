@@ -57,7 +57,9 @@ const baseConfig = {
         ],
     },
     externals: {
-        jquery: 'jQuery'
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
     },
     optimization: {},
     plugins: [
