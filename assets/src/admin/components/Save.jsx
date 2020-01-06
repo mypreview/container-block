@@ -220,13 +220,13 @@ export default class Save extends Component {
                 >
                     <InnerBlocks.Content /> 
                 </div>
-                { scrlShow && ( 
+                { !! scrlShow && ( 
                     <a
                         href={ scrlTarget ? `#!${ scrlTarget }` : null }
                         className={ scrlIconClasses }
                     />
                 ) }
-                { videoID && ( 
+                { !! videoID && ( 
                     <div 
                         className="wp-block-mypreview-container__video"
                     >
@@ -239,7 +239,7 @@ export default class Save extends Component {
                         />
                     </div>
                 ) }
-                { shapeType && ( 
+                { !! shapeType && ( 
                     <div 
                         className={ shapeClasses }
                         style={ shapeStyles }

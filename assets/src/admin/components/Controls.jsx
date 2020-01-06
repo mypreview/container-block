@@ -130,7 +130,7 @@ export default class Controls extends Component {
 					) }
 					<Toolbar>
 						<MediaUploadCheck>
-							{ ( ( ! imgID && ! videoID ) || imgID ) && (
+							{ ( ( !!! imgID && !!! videoID ) || !! imgID ) && (
 								<MediaUpload
 									allowedTypes="image"
 									notices={ noticeUI }
@@ -146,7 +146,7 @@ export default class Controls extends Component {
 									) }
 								/>
 							) }
-							{ ( ( ! imgID && ! videoID ) || videoID ) && (
+							{ ( ( !!! imgID && !!! videoID ) || !! videoID ) && (
 								<MediaUpload
 									allowedTypes="video"
 									notices={ noticeUI }
@@ -163,7 +163,7 @@ export default class Controls extends Component {
 								/>
 							) }
 						</MediaUploadCheck>
-						{ ( imgID || videoID ) && (
+						{ ( !! imgID || !! videoID ) && (
 							<IconButton
 								className="components-toolbar__control"
 								label={ _x( 'Remove media', 'toolbar button', 'container-block' ) }
@@ -172,7 +172,7 @@ export default class Controls extends Component {
 							/>
 						) }
 					</Toolbar>
-					{ imgID && (
+					{ !! imgID && (
 						<Toolbar 
 							controls={ imgEffectControls } 
 						/>

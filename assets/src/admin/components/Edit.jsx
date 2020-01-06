@@ -201,7 +201,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 			    			/>
                 		}
 		    		</div>
-		    		{ scrlShow && ( 
+		    		{ !! scrlShow && ( 
 	    				<a
 	    					className="wp-block-mypreview-container__scrl"
 	    					style={ {
@@ -209,7 +209,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 							} }
 	    				/>
 	    			) }
-	    			{ videoID && ( 
+	    			{ !! videoID && ( 
 		    			<div 
                 			className="wp-block-mypreview-container__video"
                 		>
@@ -222,7 +222,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 							/>
                 		</div>
 		    		) }
-		    		{ shapeType && (
+		    		{ !! shapeType && (
 			    		<div 
 	            			className={ classnames( 
 	                			'wp-block-mypreview-container__shape',
