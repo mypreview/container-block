@@ -8,6 +8,7 @@ import defaultColors from './../utils/colors';
 import defaultTabs from './../utils/tabs';
 import applyWithColors from './../utils/withColors';
 import applyWithSelect from './../utils/withSelect';
+import applyWithFallbackStyles from './../utils/withFallbackStyles';
 
 /**
  * Internal block libraries
@@ -16,24 +17,9 @@ const { _x, sprintf } = wp.i18n;
 const { Fragment, Component } = wp.element;
 const { compose } = wp.compose;
 const { URLInput, InspectorControls, InspectorAdvancedControls, AlignmentToolbar, PanelColorSettings, getColorObjectByColorValue } = wp.blockEditor;
-const { ButtonGroup, Button, BaseControl, RangeControl, SelectControl, PanelBody, TextControl, TabPanel, FocalPointPicker, ToggleControl, ColorPalette, ColorIndicator, ExternalLink, withFallbackStyles } = wp.components;
+const { ButtonGroup, Button, BaseControl, RangeControl, SelectControl, PanelBody, TextControl, TabPanel, FocalPointPicker, ToggleControl, ColorPalette, ColorIndicator, ExternalLink } = wp.components;
 
-/**
- * Contrast checker
- */
-const { getComputedStyle } = window;
-
-const FallbackStyles = withFallbackStyles( ( node, ownProps ) => {
-	const { backgroundColor } = ownProps.attributes,
-		  editableNode = node.querySelector( '[contenteditable="true"]' ),
-		  computedStyles = editableNode ? getComputedStyle( editableNode ) : null;
-
-	return {
-		fallbackBackgroundColor: backgroundColor || ! computedStyles ? undefined : getComputedStyle.backgroundColor
-	};
-} );
-
-export default compose( applyWithColors, applyWithSelect ) ( class Inspector extends Component {
+export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyles ) ( class Inspector extends Component {
 
 	constructor( props ) {
 		super( ...arguments );
@@ -241,7 +227,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 			const colorObject = getColorObjectByColorValue( colors, value );
 			setAttributes( { scroll: { 
 				...scroll,
-				color: colorObject  ?  colorObject.slug  :  undefined,
+				color: colorObject ? colorObject.slug : undefined,
 				customColor:value
 			} } );
 		}
@@ -408,7 +394,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 			const colorObject = getColorObjectByColorValue( colors, value );
 			setAttributes( { shape: { 
 				...shape,
-				color: colorObject  ?  colorObject.slug  :  undefined,
+				color: colorObject ? colorObject.slug : undefined,
 				customColor:value
 			} } );
 		};
@@ -714,7 +700,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 								<Button 
 									isSmall
 									value="thin"
-									isPrimary={ 'thin' === borderWidth  ?  true  :  false }
+									isPrimary={ 'thin' === borderWidth ? true : false }
 									onClick={ onClickBorder }
 								>
 									{ _x( 'Thin', 'border thickness', 'container-block' ) }
@@ -722,7 +708,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 								<Button 
 									isSmall
 									value="medium"
-									isPrimary={ 'medium' === borderWidth  ?  true  :  false }
+									isPrimary={ 'medium' === borderWidth ? true : false }
 									onClick={ onClickBorder }
 								>
 									{ _x( 'Medium', 'border thickness', 'container-block' ) }
@@ -730,7 +716,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 								<Button 
 									isSmall
 									value="thick"
-									isPrimary={ 'thick' === borderWidth  ?  true  :  false }
+									isPrimary={ 'thick' === borderWidth ? true : false }
 									onClick={ onClickBorder }
 								>
 									{ _x( 'Thick', 'border thickness', 'container-block' ) }
@@ -758,7 +744,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 										<Button 
 											isSmall
 											value="edge"
-											isPrimary={ 'edge' === borderRadius  ?  true  :  false }
+											isPrimary={ 'edge' === borderRadius ? true : false }
 											onClick={ onClickBorderRadius }
 										>
 											{ _x( 'Edge', 'border radius', 'container-block' ) }
@@ -766,7 +752,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 										<Button 
 											isSmall
 											value="round"
-											isPrimary={ 'round' === borderRadius  ?  true  :  false }
+											isPrimary={ 'round' === borderRadius ? true : false }
 											onClick={ onClickBorderRadius }
 										>
 											{ _x( 'Round', 'border radius', 'container-block' ) }
@@ -774,7 +760,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 										<Button 
 											isSmall
 											value="pill"
-											isPrimary={ 'pill' === borderRadius  ?  true  :  false }
+											isPrimary={ 'pill' === borderRadius ? true : false }
 											onClick={ onClickBorderRadius }
 										>
 											{ _x( 'Pill', 'border radius', 'container-block' ) }
@@ -1002,7 +988,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 							</Fragment>
 						) }
 					</PanelBody>
-					{ imgID && (
+					{ !! imgID && (
 						<PanelBody 
 							title={ _x( 'Background Settings', 'panel title', 'container-block' ) }
 							initialOpen={ false }
@@ -1064,7 +1050,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Inspector ext
 							label: _x( 'Background', 'color label', 'container-block' )
 						} ] }
 					>
-						{ ( ( imgID || videoID ) && backgroundColor.color ) && (
+						{ ( ( !! imgID || !! videoID ) && backgroundColor.color ) && (
 							<RangeControl
 		                        label={ _x( 'Overlay', 'control label', 'container-block' ) }
 		                        help={ _x( 'This setting is useful if you are using a visually noisy background image or video and finding the content in your component difficult to read.', 'control help', 'container-block' ) }
