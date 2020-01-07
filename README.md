@@ -3,11 +3,8 @@
 
 ![Container Block](https://ps.w.org/container-block/assets/banner-1544x500.jpg?rev=1542924)
 
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 
-►► If you are not a developer, please use the offical [plugin post page](https://wordpress.org/plugins/container-block "Download Container Block plugin") on wordpress.org.
-
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+⚠️ If you are not a developer, please use the offical [plugin post page](https://wordpress.org/plugins/container-block "Download Container Block plugin") on wordpress.org.
 
 ## Installation
 
