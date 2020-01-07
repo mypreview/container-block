@@ -120,31 +120,31 @@ export default class Save extends Component {
         // Wrapper
         const wrapperClasses = classnames( 
             {
+                'wp-block-mypreview-container--full-height': !! isFH,
+                'wp-block-mypreview-container--scrl-icon': !! scrlShow,
+                [`wp-block-mypreview-container--dim-${ parseInt( dim ) }`]: dim,
+                [`wp-block-mypreview-container--shadow-${ shadow }`]: shadow,
+                [`has-valign-${ valign }`]: isFH && valign,
+                'has-background-img': imgID,
+                [`has-background-img--${ imgPosition }`]: imgPosition,
+                [`has-background-img--${ imgRepeat }`]: imgRepeat,
+                [`has-background-img--${ imgSize }`]: imgSize,
+                [`has-background-img--${ imgEffect }`]: imgEffect,
+                'has-background-video': videoID,
+                [`hrz-spacing-dk-${ hrzDesktop }`]: hrzDesktop,
+                [`hrz-spacing-lp-${ hrzLaptop }`]: hrzLaptop,
+                [`hrz-spacing-tb-${ hrzTablet }`]: hrzTablet,
+                [`hrz-spacing-sp-${ hrzSmartphone }`]: hrzSmartphone,
+                'has-border': borderColor,
+                [`has-border--width-${ borderWidth }`]: borderWidth,
+                [`has-border--radius-${ borderRadius }`]: borderRadius,
                 'has-background': backgroundColor || customBackgroundColor,
-                [ backgroundColorClass ]: backgroundColorClass
-            },
-            isFH ? 'wp-block-mypreview-container--full-height' : null,
-            scrlShow ? 'wp-block-mypreview-container--scrl-icon' : null,
-            dim ? `wp-block-mypreview-container--dim-${ parseInt( dim ) }` : null,
-            shadow ? `wp-block-mypreview-container--shadow-${ shadow }` : null,
-            ( isFH && valign ) ? `has-valign-${ valign }` : null,
-            imgID ? 'has-background-img' : null,
-            imgPosition ? `has-background-img--${ imgPosition }` : null,
-            imgRepeat ? `has-background-img--${ imgRepeat }` : null,
-            imgSize ? `has-background-img--${ imgSize }` : null,
-            imgEffect ? `has-background-img--${ imgEffect }` : null,
-            videoID ? 'has-background-video' : null,
-            hrzDesktop ? `hrz-spacing-dk-${ hrzDesktop }` : null,
-            hrzLaptop ? `hrz-spacing-lp-${ hrzLaptop }` : null,
-            hrzTablet ? `hrz-spacing-tb-${ hrzTablet }` : null,
-            hrzSmartphone  ? `hrz-spacing-sp-${ hrzSmartphone }` : null,
-            borderColor ? 'has-border' : null,
-            borderWidth ? `has-border--width-${ borderWidth }` : null,
-            borderRadius ? `has-border--radius-${ borderRadius }` : null,
-            visDesktop ? 'hide-dk' : null,
-            visLaptop ? 'hide-lp' : null,
-            visTablet ? 'hide-tb' : null,
-            visSmartphone ? 'hide-sp' : null
+                [backgroundColorClass]: backgroundColorClass,
+                'hide-dk': !! visDesktop,
+                'hide-lp': !! visLaptop,
+                'hide-tb': !! visTablet,
+                'hide-sp': !! visSmartphone
+            }
         );
         const wrapperStyles = {
             backgroundImage: imgSRC ? `url('${ encodeURI( imgSRC ) }')` : undefined,
@@ -158,10 +158,12 @@ export default class Save extends Component {
         // Inner `div`
         const innerClasses = classnames( 
             'wp-block-mypreview-container__wrapper',
-            alignDesktop ? `hrz-align-dk-${ alignDesktop }` : null,
-            alignLaptop ? `hrz-align-lp-${ alignLaptop }` : null,
-            alignTablet ? `hrz-align-tb-${ alignTablet }` : null,
-            alignSmartphone ? `hrz-align-sp-${ alignSmartphone }` : null
+            {
+                [`hrz-align-dk-${ alignDesktop }`]: !! alignDesktop,
+                [`hrz-align-lp-${ alignLaptop }`]: !! alignLaptop,
+                [`hrz-align-tb-${ alignTablet }`]: !! alignTablet,
+                [`hrz-align-sp-${ alignSmartphone }`]: !! alignSmartphone
+            }
         );
         const innerStyles  =  {
             maxWidth: width ? `${ parseInt( width ) }px` : undefined
@@ -169,21 +171,21 @@ export default class Save extends Component {
 
         // Scroll icon
         const scrlIconClasses = classnames( 
+            'wp-block-mypreview-container__scrl',
             {
-                [ scrlColorClass ]: scrlColorClass,
-                'has-text-color': scrlColor || customScrlColor
-            },
-            'wp-block-mypreview-container__scrl'
+                'has-text-color': scrlColor || customScrlColor,
+                [scrlColorClass]: scrlColorClass
+            }
         );
 
         // Separator (Shape divider)
         const shapeClasses = classnames( 
+            'wp-block-mypreview-container__shape',
             {
                 'has-text-color': shapeColor || customShapeColor,
-                [ shapeColorClass ]: shapeColorClass
-            },
-            'wp-block-mypreview-container__shape',
-            shapeType ? `wp-block-mypreview-container__shape--${ shapeType }` : null,
+                [shapeColorClass]: shapeColorClass,
+                [`wp-block-mypreview-container__shape--${ shapeType }`]: shapeType
+            }
         );
         const shapeStyles = {
             color: shapeColorClass ? undefined : customShapeColor,
