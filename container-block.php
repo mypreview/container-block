@@ -16,13 +16,13 @@
  * @since             		1.0.0
  * @package           		container-block
  * @author     		  		MyPreview (Github: @mahdiyazdani, @mypreview)
- * @copyright 		  		© 2015 - 2019 MyPreview. All Rights Reserved.
+ * @copyright 		  		© 2015 - 2020 MyPreview. All Rights Reserved.
  *
  * @wordpress-plugin
  * Plugin Name:       		Container Block
  * Plugin URI:        		https://www.mypreview.one
  * Description:       		A fully customizable Gutenberg editor block used for wrapping several blocks in a parent wrapper.
- * Version:           		1.0.0
+ * Version:           		1.1.0
  * Author:            		MyPreview
  * Author URI:        		https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94
  * License:           		GPL-3.0
