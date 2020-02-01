@@ -5,7 +5,7 @@ Donate link: https://www.mypreview.one
 Requires at least: 5.2
 Tested up to: 5.3.1
 Requires PHP: 7.2
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -88,18 +88,19 @@ Don't forget to rate this plugin [5 shining stars](https://wordpress.org/support
 == Installation ==
 = Minimum Requirements =
 
-* PHP 7.2 or greater is recommended
-* MySQL 5.6 or greater is recommended
+* PHP version 7.2 or greater.
+* MySQL version 5.6 or greater or MariaDB version 10.0 or greater.
+* WordPress version 5.0 or greater.
 
 = Automatic installation =
 
-Automatic installation is the easiest option — WordPress will handles the file transfer, and you won’t need to leave your web browser. To do an automatic install of the plugin, log in to your WordPress dashboard, navigate to the Plugins menu, and click “Add New.”
+Automatic installation is the easiest option — WordPress will handle the file transfer, and you won’t need to leave your web browser. To do an automatic install of the plugin, log in to your WordPress dashboard, navigate to the Plugins menu, and click “Add New.”
  
-In the search field type “Container Block,” then click “Search Plugins.” Once you’ve found the plugin, you can view details about it such as the point release, rating, and description. Click “Install Now,” and WordPress will take it from there.
+In the search field type “Container Block”, then click “Search Plugins.” Once you’ve found the plugin, you can view details about it such as the point release, rating, and description. Click “Install Now,” and WordPress will take it from there.
 
 = Manual installation =
 
-Manual installation method requires downloading the plugin plugin and uploading it to your web server via your favorite FTP application. The WordPress codex contains [instructions on how to do this here](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation "Manual plugin installation").
+The manual installation method requires downloading the plugin and uploading it to your webserver via your favorite FTP application. The WordPress codex contains [instructions on how to do this here](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation "Manual plugin installation").
 
 = Updating =
 
@@ -118,6 +119,7 @@ The container div, and sometimes content div, are almost always used to allow fo
 
 = I need help customizing this plugin? =
 I am a full-stack developer with over five years of experience in WordPress theme and plugin development and customization. I would love to have the opportunity to discuss your project with you.
+
 [Hire me at UpWork &#8594;](https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94/ "Mahdi Yazdani Freelancer Profile")
 
 == Screenshots ==
@@ -130,5 +132,9 @@ I am a full-stack developer with over five years of experience in WordPress them
 7. Sliding background effect
 
 == Changelog ==
+= 1.1.0 =
+* Code tidy.
+* New range controls to have full control over the margins.
+
 = 1.0.0 =
 * Initial release.
