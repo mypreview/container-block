@@ -3,9 +3,9 @@
  */
 import AOS from 'aos';
 import $ from 'jquery';
+import map from 'lodash/map';
 import includes from 'lodash/includes';
 import defaultColors from './../utils/colors';
-import defaultTabs from './../utils/tabs';
 import applyWithColors from './../utils/withColors';
 import applyWithSelect from './../utils/withSelect';
 import applyWithFallbackStyles from './../utils/withFallbackStyles';
@@ -17,13 +17,17 @@ const { _x, sprintf } = wp.i18n;
 const { Fragment, Component } = wp.element;
 const { compose } = wp.compose;
 const { URLInput, InspectorControls, InspectorAdvancedControls, AlignmentToolbar, PanelColorSettings, getColorObjectByColorValue } = wp.blockEditor;
-const { ButtonGroup, Button, BaseControl, RangeControl, SelectControl, PanelBody, TextControl, TabPanel, FocalPointPicker, ToggleControl, ColorPalette, ColorIndicator, ExternalLink } = wp.components;
+const { ButtonGroup, Button, BaseControl, HorizontalRule, Dashicon, RangeControl, SelectControl, PanelBody, TextControl, TabPanel, FocalPointPicker, ToggleControl, ColorPalette, ColorIndicator, ExternalLink } = wp.components;
+const devices = ['desktop', 'laptop', 'tablet', 'smartphone'];
+const arrows = ['arrow-up-alt', 'arrow-right-alt', 'arrow-down-alt', 'arrow-left-alt'];
 
 export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyles ) ( class Inspector extends Component {
 
 	constructor( props ) {
 		super( ...arguments );
 		this.setObjUndefined = this.setObjUndefined.bind( this );
+		this.reloadAOS = this.reloadAOS.bind( this );
+		this.generateTabs = this.generateTabs.bind( this );
 	}
 
 	setObjUndefined( obj ) {
@@ -37,35 +41,32 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 		return obj;
 	}
 
-	componentDidUpdate( prevProps ) {
-		const { 
-			aos: prevAOS } = prevProps.attributes;
-		const {
-			type: prevAosType,
-			duration: prevAosDuration,
-			ease: prevAosEase } = prevAOS;
-		const { 
-			clientId,
-			attributes } = this.props;
-		const { 
-			aos } = attributes;
-		const {
-			type: aosType,
-			duration: aosDuration,
-			ease: aosEase } = aos;
-
-		// Bail-out, in case the animation is turned off or hasn’t changed.
-		if ( ! aosType || ( aosType === prevAosType && aosEase === prevAosEase ) ) {
-			return;
-		} else {
-			// Remove the `AOS` specific classnames so we can hard-refresh the animation manually.
-			$( `#block-${ clientId } .wp-block-mypreview-container` ).removeClass( 'aos-init aos-animate' );
-			// Note that duration must match to whatever number that the user has chosen.
-			setTimeout( function() {
+	reloadAOS() {
+		const classname = 'aos-animate',
+			  el = $( `#block-${ this.props.clientId } .wp-block-mypreview-container` );
+		// Remove the `AOS` specific classnames so we can hard-refresh the animation manually.
+		el.removeClass( classname );
+		// Note that duration must match to whatever number that the user has chosen.
+		setTimeout( function() {
+			AOS.refreshHard();
+			if ( ! el.hasClass( classname ) ) {
+				el.addClass( classname );
 				AOS.refreshHard();
-			}, aosDuration || 400 );
-			clearTimeout();
-		} // End If Statement
+			}
+		}, this.props.attributes.aosDuration || 400 );
+		clearTimeout();
+	}
+
+	generateTabs( args ) {
+		const tabs = [];
+		args.map( item => {
+			let obj = {};
+			obj['name'] = item;
+			obj['title'] = <Dashicon icon={ item } />;
+			tabs.push( obj );
+		} );
+
+		return tabs;
 	}
 
 	render() {
@@ -86,6 +87,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 			scroll,
 			visible,
 			spacing,
+			margin,
 			alignment,
 			border,
 			shape,
@@ -144,6 +146,12 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 			laptop: hrzLaptop,
 			tablet: hrzTablet,
 			smartphone: hrzSmartphone } = spacing;
+		// Margin
+		const {
+			top: marginTop,
+			right: marginRight,
+			bottom: marginBottom,
+			left: marginLeft } = margin;
 		// Alignment
 		const {
 			desktop: alignDesktop,
@@ -204,7 +212,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 		};
 		// Scroll — Status
 		const onChangeScrlShow = value => {
-			if ( ! value ) {
+			if ( !!! value ) {
 				setAttributes( { 
 					scroll: { ...this.setObjUndefined( scroll ) }
 				} );
@@ -285,6 +293,34 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 			setAttributes( { spacing: { 
 				...spacing,
 				smartphone: value
+			} } );
+		};
+		// Margin — Top
+		const onChangeMarginTop = value => {
+			setAttributes( { margin: { 
+				...margin,
+				top: value
+			} } );
+		};
+		// Margin — Right
+		const onChangeMarginRight = value => {
+			setAttributes( { margin: { 
+				...margin,
+				right: value
+			} } );
+		};
+		// Margin — Bottom
+		const onChangeMarginBottom = value => {
+			setAttributes( { margin: { 
+				...margin,
+				bottom: value
+			} } );
+		};
+		// Margin — Left
+		const onChangeMarginLeft = value => {
+			setAttributes( { margin: { 
+				...margin,
+				left: value
 			} } );
 		};
 		// Alignment — Desktop
@@ -371,7 +407,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 		};
 		// Shape — Type
 		const onChangeShapeType = value => {
-			if ( ! value ) {
+			if ( !!! value ) {
 				setAttributes( { 
 					shape: { ...this.setObjUndefined( shape ) }
 				} );
@@ -400,7 +436,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 		};
 		// AOS — Type
 		const onChangeAosType = value => {
-			if ( ! value ) {
+			if ( !!! value ) {
 				setAttributes( { 
 					aos: { ...this.setObjUndefined( aos ) }
 				} );
@@ -409,6 +445,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 					...aos,
 					type: value
 				} } );
+				this.reloadAOS();
 			} // End If Statement
 		};
 		// AOS — Ease
@@ -417,6 +454,10 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 				...aos,
 				ease: value
 			} } );
+
+			if ( !! value ) {
+				this.reloadAOS();
+			} // End If Statement
 		};
 		// AOS — Offset
 		const onChangeAosOffset = value => {
@@ -424,6 +465,9 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 				...aos,
 				offset: value
 			} } );
+			if ( !! value ) {
+				this.reloadAOS();
+			} // End If Statement
 		};
 		// AOS — Delay
 		const onChangeAosDelay = value => {
@@ -431,6 +475,9 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 				...aos,
 				delay: value
 			} } );
+			if ( !! value ) {
+				this.reloadAOS();
+			} // End If Statement
 		};
 		// AOS — Duration
 		const onChangeAosDuration = value => {
@@ -438,6 +485,9 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 				...aos,
 				duration: value
 			} } );
+			if ( !! value ) {
+				this.reloadAOS();
+			} // End If Statement
 		};
 		// AOS — Once
 		const onChangeAosOnce = value => {
@@ -518,7 +568,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						<TabPanel 
                         	className="components-tab-panel components-insp-tabs"
 					        activeClass="components-insp-tabs__active"
-					        tabs={ defaultTabs }
+					        tabs={ this.generateTabs( devices ) }
 					    >
 					        {
 					            tab => {
@@ -562,64 +612,129 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						title={ _x( 'Spacing Settings', 'panel title', 'container-block' ) }
 						initialOpen={ false }
 					>
-                        <TabPanel 
-                        	className="components-tab-panel components-insp-tabs"
-				        	activeClass="components-insp-tabs__active"
-					        tabs={ defaultTabs }
+						<BaseControl
+					    	label={ _x( 'Horizontal Padding', 'control label', 'container-block' ) }
+							help={ _x( 'Controls above are used to generate space around the container block’s content, inside of any defined borders.', 'control help', 'container-block' ) }
 					    >
-					        {
-					            tab => {
-					            	return (
-					            		<Fragment>
-						            		{ 'desktop' === tab.name && (
-						            			<RangeControl
-						            				readonly="readonly"
-							                        allowReset={ true }
-							                        value={ hrzDesktop }
-							                        onChange={ onChangeHrzDesktop }
-							                        step="5"
-							                        min="0"
-							                        max="50"
-							                    />
-						            		) }
-						            		{ 'laptop' === tab.name && (
-						            			<RangeControl
-						            				readonly="readonly"
-							                        allowReset={ true }
-							                        value={ hrzLaptop }
-							                        onChange={ onChangeHrzLaptop }
-							                        step="5"
-							                        min="0"
-							                        max="50"
-							                    />
-						            		) }
-						            		{ 'tablet' === tab.name && (
-						            			<RangeControl
-						            				readonly="readonly"
-							                        allowReset={ true }
-							                        value={ hrzTablet }
-							                        onChange={ onChangeHrzTablet }
-							                        step="5"
-							                        min="0"
-							                        max="50"
-							                    />
-						            		) }
-						            		{ 'smartphone' === tab.name && (
-						            			<RangeControl
-						            				readonly="readonly"
-							                        allowReset={ true }
-							                        value={ hrzSmartphone }
-							                        onChange={ onChangeHrzSmartphone }
-							                        step="5"
-							                        min="0"
-							                        max="50"
-							                    />
-						            		) }
-					            		</Fragment>
-					            	)
-					            }
-					        }
-					    </TabPanel>
+	                        <TabPanel 
+	                        	className="components-tab-panel components-insp-tabs"
+					        	activeClass="components-insp-tabs__active"
+						        tabs={ this.generateTabs( devices ) }
+						    >
+						        {
+						            tab => {
+						            	return (
+						            		<Fragment>
+							            		{ 'desktop' === tab.name && (
+							            			<RangeControl
+							            				readonly="readonly"
+								                        allowReset={ true }
+								                        value={ hrzDesktop }
+								                        onChange={ onChangeHrzDesktop }
+								                        step="5"
+								                        min="0"
+								                        max="50"
+								                    />
+							            		) }
+							            		{ 'laptop' === tab.name && (
+							            			<RangeControl
+							            				readonly="readonly"
+								                        allowReset={ true }
+								                        value={ hrzLaptop }
+								                        onChange={ onChangeHrzLaptop }
+								                        step="5"
+								                        min="0"
+								                        max="50"
+								                    />
+							            		) }
+							            		{ 'tablet' === tab.name && (
+							            			<RangeControl
+							            				readonly="readonly"
+								                        allowReset={ true }
+								                        value={ hrzTablet }
+								                        onChange={ onChangeHrzTablet }
+								                        step="5"
+								                        min="0"
+								                        max="50"
+								                    />
+							            		) }
+							            		{ 'smartphone' === tab.name && (
+							            			<RangeControl
+							            				readonly="readonly"
+								                        allowReset={ true }
+								                        value={ hrzSmartphone }
+								                        onChange={ onChangeHrzSmartphone }
+								                        step="5"
+								                        min="0"
+								                        max="50"
+								                    />
+							            		) }
+						            		</Fragment>
+						            	)
+						            }
+						        }
+						    </TabPanel>
+						</BaseControl>
+					    <HorizontalRule />
+					    <BaseControl
+					    	label={ _x( 'Margins', 'control label', 'container-block' ) }
+							help={ _x( 'Controls above are used to create space around the container block, outside of any defined borders.', 'control help', 'container-block' ) }
+					    >
+					    	<TabPanel 
+	                        	className="components-tab-panel components-insp-tabs"
+						        activeClass="components-insp-tabs__active"
+						        tabs={ this.generateTabs( arrows ) }
+						    >
+						        {
+						            tab => {
+						            	return (
+						            		<Fragment>
+							            		{ 'arrow-up-alt' === tab.name && (
+							            			<RangeControl
+												    	allowReset={ true }
+								                        value={ marginTop }
+								                        onChange={ onChangeMarginTop }
+								                        step="1"
+								                        min="-150"
+								                        max="150"
+								                    />
+							            		) }
+							            		{ 'arrow-right-alt' === tab.name && (
+							            			<RangeControl
+												    	allowReset={ true }
+								                        value={ marginRight }
+								                        onChange={ onChangeMarginRight }
+								                        step="1"
+								                        min="-150"
+								                        max="150"
+								                    />
+							            		) }
+							            		{ 'arrow-down-alt' === tab.name && (
+							            			<RangeControl
+												    	allowReset={ true }
+								                        value={ marginBottom }
+								                        onChange={ onChangeMarginBottom }
+								                        step="1"
+								                        min="-150"
+								                        max="150"
+								                    />
+							            		) }
+							            		{ 'arrow-left-alt' === tab.name && (
+							            			<RangeControl
+												    	allowReset={ true }
+								                        value={ marginLeft }
+								                        onChange={ onChangeMarginLeft }
+								                        step="1"
+								                        min="-150"
+								                        max="150"
+								                    />
+							            		) }
+						            		</Fragment>
+						            	)
+						            }
+						        }
+						    </TabPanel>
+					    </BaseControl>
                     </PanelBody>
                     <PanelBody 
 						title={ _x( 'Alignment Settings', 'panel title', 'container-block' ) }
@@ -628,7 +743,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
                         <TabPanel 
                         	className="components-tab-panel components-insp-tabs"
 				        	activeClass="components-insp-tabs__active"
-					        tabs={ defaultTabs }
+					        tabs={ this.generateTabs( devices ) }
 					    >
 					        {
 					            tab => {
