@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Container Block\n"
-"POT-Creation-Date: 2019-12-30 19:15+0300\n"
+"POT-Creation-Date: 2020-02-01 13:44+0300\n"
 "PO-Revision-Date: 2019-12-27 17:52+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -145,736 +145,761 @@ msgstr ""
 
 #: languages/container-block-translations.php:62
 msgctxt "control label"
-msgid "Position"
+msgid "Type"
 msgstr ""
 
 #: languages/container-block-translations.php:65
 msgctxt "control label"
-msgid "Focal Point Picker"
+msgid "Ease"
 msgstr ""
 
 #: languages/container-block-translations.php:68
 msgctxt "control label"
-msgid "Repeat"
+msgid "Offset"
 msgstr ""
 
 #: languages/container-block-translations.php:71
 msgctxt "control label"
-msgid "Size"
+msgid "Delay"
 msgstr ""
 
 #: languages/container-block-translations.php:74
 msgctxt "control label"
-msgid "Color Settings"
+msgid "Duration"
 msgstr ""
 
 #: languages/container-block-translations.php:77
 msgctxt "control label"
-msgid "Overlay"
+msgid "Run once?"
 msgstr ""
 
 #: languages/container-block-translations.php:80
 msgctxt "control label"
-msgid "Aria Label"
+msgid "Position"
 msgstr ""
 
 #: languages/container-block-translations.php:83
 msgctxt "control label"
-msgid "Width"
+msgid "Focal Point Picker"
 msgstr ""
 
 #: languages/container-block-translations.php:86
 msgctxt "control label"
-msgid "Full-height?"
+msgid "Repeat"
 msgstr ""
 
 #: languages/container-block-translations.php:89
 msgctxt "control label"
-msgid "Scroll down icon"
+msgid "Size"
 msgstr ""
 
 #: languages/container-block-translations.php:92
 msgctxt "control label"
-msgid "Element ID"
+msgid "Color Settings"
 msgstr ""
 
 #: languages/container-block-translations.php:95
 msgctxt "control label"
-msgid "Hide from the view?"
+msgid "Overlay"
 msgstr ""
 
 #: languages/container-block-translations.php:98
 msgctxt "control label"
-msgid "Open in a new window?"
+msgid "Aria Label"
 msgstr ""
 
 #: languages/container-block-translations.php:101
 msgctxt "control label"
-msgid "Rounded corners?"
+msgid "Width"
 msgstr ""
 
 #: languages/container-block-translations.php:104
 msgctxt "control label"
-msgid "Height"
+msgid "Full-height?"
 msgstr ""
 
 #: languages/container-block-translations.php:107
 msgctxt "control label"
-msgid "Type"
+msgid "Scroll down icon"
 msgstr ""
 
 #: languages/container-block-translations.php:110
 msgctxt "control label"
-msgid "Ease"
+msgid "Element ID"
 msgstr ""
 
 #: languages/container-block-translations.php:113
 msgctxt "control label"
-msgid "Offset"
+msgid "Hide from the view?"
 msgstr ""
 
 #: languages/container-block-translations.php:116
 msgctxt "control label"
-msgid "Delay"
+msgid "Horizontal Padding"
 msgstr ""
 
 #: languages/container-block-translations.php:119
 msgctxt "control label"
-msgid "Duration"
+msgid "Margins"
 msgstr ""
 
 #: languages/container-block-translations.php:122
 msgctxt "control label"
-msgid "Run once?"
+msgid "Open in a new window?"
 msgstr ""
 
 #: languages/container-block-translations.php:125
+msgctxt "control label"
+msgid "Rounded corners?"
+msgstr ""
+
+#: languages/container-block-translations.php:128
+msgctxt "control label"
+msgid "Height"
+msgstr ""
+
+#: languages/container-block-translations.php:131
+msgctxt "panel title"
+msgid "Animation Settings"
+msgstr ""
+
+#: languages/container-block-translations.php:134
 msgctxt "panel title"
 msgid "Background Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:128
+#: languages/container-block-translations.php:137
 #, php-format
 msgctxt "panel title"
 msgid "Looking for Help? %s"
 msgstr ""
 
-#: languages/container-block-translations.php:131
+#: languages/container-block-translations.php:140
 msgctxt "panel title"
 msgid "Maximum width of the inner wrapper."
 msgstr ""
 
-#: languages/container-block-translations.php:134
+#: languages/container-block-translations.php:143
 msgctxt "panel title"
 msgid "Display Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:137
+#: languages/container-block-translations.php:146
 msgctxt "panel title"
 msgid "Visibility Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:140
+#: languages/container-block-translations.php:149
 msgctxt "panel title"
 msgid "Spacing Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:143
+#: languages/container-block-translations.php:152
 msgctxt "panel title"
 msgid "Alignment Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:146
+#: languages/container-block-translations.php:155
 msgctxt "panel title"
 msgid "Link to Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:149
+#: languages/container-block-translations.php:158
 msgctxt "panel title"
 msgid "Border Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:152
+#: languages/container-block-translations.php:161
 msgctxt "panel title"
 msgid "Shadow Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:155
+#: languages/container-block-translations.php:164
 msgctxt "panel title"
 msgid "Shape Settings"
 msgstr ""
 
-#: languages/container-block-translations.php:158
-msgctxt "panel title"
-msgid "Animation Settings"
+#: languages/container-block-translations.php:167
+msgctxt "control help"
+msgid "This module allows you to animate elements as you scroll down, and up."
 msgstr ""
 
-#: languages/container-block-translations.php:161
+#: languages/container-block-translations.php:170
+msgctxt "control help"
+msgid "Choose timing function to ease elements in different ways."
+msgstr ""
+
+#: languages/container-block-translations.php:173
+msgctxt "control help"
+msgid "Change offset to trigger animations sooner or later in pixels."
+msgstr ""
+
+#: languages/container-block-translations.php:176
+msgctxt "control help"
+msgid "Delay animation in milliseconds."
+msgstr ""
+
+#: languages/container-block-translations.php:179
+msgctxt "control help"
+msgid "Duration of animation in milliseconds."
+msgstr ""
+
+#: languages/container-block-translations.php:182
+msgctxt "control help"
+msgid ""
+"Choose whether animation should fire once, or every time you scroll up/down "
+"to element."
+msgstr ""
+
+#: languages/container-block-translations.php:185
 msgctxt "control help"
 msgid "This property sets the starting position of a background image."
 msgstr ""
 
-#: languages/container-block-translations.php:164
+#: languages/container-block-translations.php:188
 msgctxt "control help"
 msgid "This property sets if and how a background image will be repeated."
 msgstr ""
 
-#: languages/container-block-translations.php:167
+#: languages/container-block-translations.php:191
 msgctxt "control help"
 msgid "This property specifies the size of the background images."
 msgstr ""
 
-#: languages/container-block-translations.php:170
+#: languages/container-block-translations.php:194
 msgctxt "control help"
 msgid ""
 "This setting is useful if you are using a visually noisy background image or "
 "video and finding the content in your component difficult to read."
 msgstr ""
 
-#: languages/container-block-translations.php:173
+#: languages/container-block-translations.php:197
 msgctxt "control help"
 msgid ""
 "This attribute is used to define a string that labels the current element. "
 "You might use it in cases where a text label is not visible on the screen."
 msgstr ""
 
-#: languages/container-block-translations.php:176
+#: languages/container-block-translations.php:200
 msgctxt "control help"
 msgid "Stretches the container to fit the whole height of the browser window."
 msgstr ""
 
-#: languages/container-block-translations.php:179
+#: languages/container-block-translations.php:203
 msgctxt "control help"
 msgid ""
 "Displays a delicate scrolling mouse wheel animation that will offer "
 "direction to the user after the initial land on a website."
 msgstr ""
 
-#: languages/container-block-translations.php:182
+#: languages/container-block-translations.php:206
 msgctxt "control help"
 msgid ""
 "Smoothly scroll the window to a specific element or tag ID within the page."
 msgstr ""
 
-#: languages/container-block-translations.php:185
+#: languages/container-block-translations.php:209
+msgctxt "control help"
+msgid ""
+"Controls above are used to generate space around the container block’s "
+"content, inside of any defined borders."
+msgstr ""
+
+#: languages/container-block-translations.php:212
+msgctxt "control help"
+msgid ""
+"Controls above are used to create space around the container block, outside "
+"of any defined borders."
+msgstr ""
+
+#: languages/container-block-translations.php:215
 msgctxt "control help"
 msgid "Defines the radius of the corners."
 msgstr ""
 
-#: languages/container-block-translations.php:188
+#: languages/container-block-translations.php:218
 msgctxt "control help"
 msgid "Shadow utlities to add a box shadow to the element."
 msgstr ""
 
-#: languages/container-block-translations.php:191
+#: languages/container-block-translations.php:221
 msgctxt "control help"
 msgid ""
-"Multiple shapes to use as separators for sections or as background images."
+"Multiple shapes to use as separators for sections or as the background "
+"graphic."
 msgstr ""
 
-#: languages/container-block-translations.php:194
-msgctxt "control help"
-msgid "This module allows you to animate elements as you scroll down, and up."
-msgstr ""
-
-#: languages/container-block-translations.php:197
-msgctxt "control help"
-msgid "Choose timing function to ease elements in different ways."
-msgstr ""
-
-#: languages/container-block-translations.php:200
-msgctxt "control help"
-msgid "Change offset to trigger animations sooner or later in pixels."
-msgstr ""
-
-#: languages/container-block-translations.php:203
-msgctxt "control help"
-msgid "Delay animation in milliseconds."
-msgstr ""
-
-#: languages/container-block-translations.php:206
-msgctxt "control help"
-msgid "Duration of animation in milliseconds."
-msgstr ""
-
-#: languages/container-block-translations.php:209
-msgctxt "control help"
-msgid ""
-"Choose wheter animation should fire once, or every time you scroll up/down "
-"to element."
-msgstr ""
-
-#: languages/container-block-translations.php:212
+#: languages/container-block-translations.php:224
 msgctxt "color label"
 msgid "Background"
 msgstr ""
 
-#: languages/container-block-translations.php:215
+#: languages/container-block-translations.php:227
 msgctxt "color label"
 msgid "Color"
 msgstr ""
 
-#: languages/container-block-translations.php:218
+#: languages/container-block-translations.php:230
 msgctxt "aria label"
 msgid "Border Thickness"
 msgstr ""
 
-#: languages/container-block-translations.php:221
+#: languages/container-block-translations.php:233
 msgctxt "aria label"
 msgid "Border Radius"
 msgstr ""
 
-#: languages/container-block-translations.php:224
+#: languages/container-block-translations.php:236
 msgctxt "border thickness"
 msgid "Thin"
 msgstr ""
 
-#: languages/container-block-translations.php:227
+#: languages/container-block-translations.php:239
 msgctxt "border thickness"
 msgid "Medium"
 msgstr ""
 
-#: languages/container-block-translations.php:230
+#: languages/container-block-translations.php:242
 msgctxt "border thickness"
 msgid "Thick"
 msgstr ""
 
-#: languages/container-block-translations.php:233
+#: languages/container-block-translations.php:245
 msgctxt "button label"
 msgid "Reset"
 msgstr ""
 
-#: languages/container-block-translations.php:236
+#: languages/container-block-translations.php:248
 msgctxt "border radius"
 msgid "Edge"
 msgstr ""
 
-#: languages/container-block-translations.php:239
+#: languages/container-block-translations.php:251
 msgctxt "border radius"
 msgid "Round"
 msgstr ""
 
-#: languages/container-block-translations.php:242
+#: languages/container-block-translations.php:254
 msgctxt "border radius"
 msgid "Pill"
 msgstr ""
 
-#: languages/container-block-translations.php:245
-msgctxt "shadow style"
-msgid "None"
-msgstr ""
-
-#: languages/container-block-translations.php:248
-msgctxt "shadow style"
-msgid "Light"
-msgstr ""
-
-#: languages/container-block-translations.php:251
-msgctxt "shadow style"
-msgid "Light Large"
-msgstr ""
-
-#: languages/container-block-translations.php:254
-msgctxt "shadow style"
-msgid "Dark"
-msgstr ""
-
 #: languages/container-block-translations.php:257
 msgctxt "shadow style"
-msgid "Dark Large"
+msgid "None"
 msgstr ""
 
 #: languages/container-block-translations.php:260
 msgctxt "shadow style"
-msgid "Lift"
+msgid "Light"
 msgstr ""
 
 #: languages/container-block-translations.php:263
-msgctxt "shape style"
-msgid "None"
+msgctxt "shadow style"
+msgid "Light Large"
 msgstr ""
 
 #: languages/container-block-translations.php:266
-msgctxt "shape style"
-msgid "Simple"
+msgctxt "shadow style"
+msgid "Dark"
 msgstr ""
 
 #: languages/container-block-translations.php:269
-msgctxt "shape style"
-msgid "Concave Up"
+msgctxt "shadow style"
+msgid "Dark Large"
 msgstr ""
 
 #: languages/container-block-translations.php:272
-msgctxt "shape style"
-msgid "Concave Up (Adjustable)"
+msgctxt "shadow style"
+msgid "Lift"
 msgstr ""
 
 #: languages/container-block-translations.php:275
 msgctxt "shape style"
-msgid "Concave Down"
+msgid "None"
 msgstr ""
 
 #: languages/container-block-translations.php:278
 msgctxt "shape style"
-msgid "Concave Up, Increasing"
+msgid "Simple"
 msgstr ""
 
 #: languages/container-block-translations.php:281
 msgctxt "shape style"
-msgid "Concave Up, Decreasing"
+msgid "Concave Up"
 msgstr ""
 
 #: languages/container-block-translations.php:284
 msgctxt "shape style"
-msgid "Curve Left"
+msgid "Concave Up (Adjustable)"
 msgstr ""
 
 #: languages/container-block-translations.php:287
 msgctxt "shape style"
-msgid "Curve Right"
+msgid "Concave Down"
 msgstr ""
 
 #: languages/container-block-translations.php:290
 msgctxt "shape style"
-msgid "Angle Top"
+msgid "Concave Up, Increasing"
 msgstr ""
 
 #: languages/container-block-translations.php:293
 msgctxt "shape style"
-msgid "Angle Right"
+msgid "Concave Up, Decreasing"
 msgstr ""
 
 #: languages/container-block-translations.php:296
 msgctxt "shape style"
-msgid "Angle Bottom"
+msgid "Curve Left"
 msgstr ""
 
 #: languages/container-block-translations.php:299
 msgctxt "shape style"
-msgid "Angle Left"
+msgid "Curve Right"
 msgstr ""
 
 #: languages/container-block-translations.php:302
 msgctxt "shape style"
-msgid "Wave"
+msgid "Angle Top"
 msgstr ""
 
 #: languages/container-block-translations.php:305
 msgctxt "shape style"
-msgid "Blur 1"
+msgid "Angle Right"
 msgstr ""
 
 #: languages/container-block-translations.php:308
 msgctxt "shape style"
-msgid "Blur 2"
+msgid "Angle Bottom"
 msgstr ""
 
 #: languages/container-block-translations.php:311
 msgctxt "shape style"
-msgid "Blur 3"
+msgid "Angle Left"
 msgstr ""
 
 #: languages/container-block-translations.php:314
 msgctxt "shape style"
-msgid "Blur 4"
+msgid "Wave"
 msgstr ""
 
 #: languages/container-block-translations.php:317
-msgctxt "animation type"
-msgid "None"
+msgctxt "shape style"
+msgid "Blur 1"
 msgstr ""
 
 #: languages/container-block-translations.php:320
-msgctxt "animation type"
-msgid "Fade"
+msgctxt "shape style"
+msgid "Blur 2"
 msgstr ""
 
 #: languages/container-block-translations.php:323
-msgctxt "animation type"
-msgid "Fade-up"
+msgctxt "shape style"
+msgid "Blur 3"
 msgstr ""
 
 #: languages/container-block-translations.php:326
-msgctxt "animation type"
-msgid "Fade-down"
+msgctxt "shape style"
+msgid "Blur 4"
 msgstr ""
 
 #: languages/container-block-translations.php:329
 msgctxt "animation type"
-msgid "Fade-left"
+msgid "None"
 msgstr ""
 
 #: languages/container-block-translations.php:332
 msgctxt "animation type"
-msgid "Fade-right"
+msgid "Fade"
 msgstr ""
 
 #: languages/container-block-translations.php:335
 msgctxt "animation type"
-msgid "Fade-up-right"
+msgid "Fade-up"
 msgstr ""
 
 #: languages/container-block-translations.php:338
 msgctxt "animation type"
-msgid "Fade-up-left"
+msgid "Fade-down"
 msgstr ""
 
 #: languages/container-block-translations.php:341
 msgctxt "animation type"
-msgid "Fade-down-right"
+msgid "Fade-left"
 msgstr ""
 
 #: languages/container-block-translations.php:344
 msgctxt "animation type"
-msgid "Fade-down-left"
+msgid "Fade-right"
 msgstr ""
 
 #: languages/container-block-translations.php:347
 msgctxt "animation type"
-msgid "Flip-up"
+msgid "Fade-up-right"
 msgstr ""
 
 #: languages/container-block-translations.php:350
 msgctxt "animation type"
-msgid "Flip-down"
+msgid "Fade-up-left"
 msgstr ""
 
 #: languages/container-block-translations.php:353
 msgctxt "animation type"
-msgid "Flip-left"
+msgid "Fade-down-right"
 msgstr ""
 
 #: languages/container-block-translations.php:356
 msgctxt "animation type"
-msgid "Flip-right"
+msgid "Fade-down-left"
 msgstr ""
 
 #: languages/container-block-translations.php:359
 msgctxt "animation type"
-msgid "Slide-up"
+msgid "Flip-up"
 msgstr ""
 
 #: languages/container-block-translations.php:362
 msgctxt "animation type"
-msgid "Slide-down"
+msgid "Flip-down"
 msgstr ""
 
 #: languages/container-block-translations.php:365
 msgctxt "animation type"
-msgid "Slide-left"
+msgid "Flip-left"
 msgstr ""
 
 #: languages/container-block-translations.php:368
 msgctxt "animation type"
-msgid "Slide-right"
+msgid "Flip-right"
 msgstr ""
 
 #: languages/container-block-translations.php:371
 msgctxt "animation type"
-msgid "Zoom-in"
+msgid "Slide-up"
 msgstr ""
 
 #: languages/container-block-translations.php:374
 msgctxt "animation type"
-msgid "Zoom-in-up"
+msgid "Slide-down"
 msgstr ""
 
 #: languages/container-block-translations.php:377
 msgctxt "animation type"
-msgid "Zoom-in-down"
+msgid "Slide-left"
 msgstr ""
 
 #: languages/container-block-translations.php:380
 msgctxt "animation type"
-msgid "Zoom-in-left"
+msgid "Slide-right"
 msgstr ""
 
 #: languages/container-block-translations.php:383
 msgctxt "animation type"
-msgid "Zoom-in-right"
+msgid "Zoom-in"
 msgstr ""
 
 #: languages/container-block-translations.php:386
 msgctxt "animation type"
-msgid "Zoom-out"
+msgid "Zoom-in-up"
 msgstr ""
 
 #: languages/container-block-translations.php:389
 msgctxt "animation type"
-msgid "Zoom-out-up"
+msgid "Zoom-in-down"
 msgstr ""
 
 #: languages/container-block-translations.php:392
 msgctxt "animation type"
-msgid "Zoom-out-down"
+msgid "Zoom-in-left"
 msgstr ""
 
 #: languages/container-block-translations.php:395
 msgctxt "animation type"
-msgid "Zoom-out-left"
+msgid "Zoom-in-right"
 msgstr ""
 
 #: languages/container-block-translations.php:398
 msgctxt "animation type"
-msgid "Zoom-out-right"
+msgid "Zoom-out"
 msgstr ""
 
 #: languages/container-block-translations.php:401
-msgctxt "animation ease type"
-msgid "Linear"
+msgctxt "animation type"
+msgid "Zoom-out-up"
 msgstr ""
 
 #: languages/container-block-translations.php:404
-msgctxt "animation ease type"
-msgid "Ease"
+msgctxt "animation type"
+msgid "Zoom-out-down"
 msgstr ""
 
 #: languages/container-block-translations.php:407
-msgctxt "animation ease type"
-msgid "Ease-in"
+msgctxt "animation type"
+msgid "Zoom-out-left"
 msgstr ""
 
 #: languages/container-block-translations.php:410
-msgctxt "animation ease type"
-msgid "Ease-out"
+msgctxt "animation type"
+msgid "Zoom-out-right"
 msgstr ""
 
 #: languages/container-block-translations.php:413
 msgctxt "animation ease type"
-msgid "Ease-in-out"
+msgid "Linear"
 msgstr ""
 
 #: languages/container-block-translations.php:416
 msgctxt "animation ease type"
-msgid "Ease-in-back"
+msgid "Ease"
 msgstr ""
 
 #: languages/container-block-translations.php:419
 msgctxt "animation ease type"
-msgid "Ease-out-back"
+msgid "Ease-in"
 msgstr ""
 
 #: languages/container-block-translations.php:422
 msgctxt "animation ease type"
-msgid "Ease-in-out-back"
+msgid "Ease-out"
 msgstr ""
 
 #: languages/container-block-translations.php:425
 msgctxt "animation ease type"
-msgid "Ease-in-sine"
+msgid "Ease-in-out"
 msgstr ""
 
 #: languages/container-block-translations.php:428
 msgctxt "animation ease type"
-msgid "Ease-out-sine"
+msgid "Ease-in-back"
 msgstr ""
 
 #: languages/container-block-translations.php:431
 msgctxt "animation ease type"
-msgid "Ease-in-out-sine"
+msgid "Ease-out-back"
 msgstr ""
 
 #: languages/container-block-translations.php:434
 msgctxt "animation ease type"
-msgid "Ease-in-quad"
+msgid "Ease-in-out-back"
 msgstr ""
 
 #: languages/container-block-translations.php:437
 msgctxt "animation ease type"
-msgid "Ease-out-quad"
+msgid "Ease-in-sine"
 msgstr ""
 
 #: languages/container-block-translations.php:440
 msgctxt "animation ease type"
-msgid "Ease-in-out-quad"
+msgid "Ease-out-sine"
 msgstr ""
 
 #: languages/container-block-translations.php:443
 msgctxt "animation ease type"
-msgid "Ease-in-cubic"
+msgid "Ease-in-out-sine"
 msgstr ""
 
 #: languages/container-block-translations.php:446
 msgctxt "animation ease type"
-msgid "Ease-out-cubic"
+msgid "Ease-in-quad"
 msgstr ""
 
 #: languages/container-block-translations.php:449
 msgctxt "animation ease type"
-msgid "Ease-in-out-cubic"
+msgid "Ease-out-quad"
 msgstr ""
 
 #: languages/container-block-translations.php:452
 msgctxt "animation ease type"
-msgid "Ease-in-quart"
+msgid "Ease-in-out-quad"
 msgstr ""
 
 #: languages/container-block-translations.php:455
 msgctxt "animation ease type"
-msgid "Ease-out-quart"
+msgid "Ease-in-cubic"
 msgstr ""
 
 #: languages/container-block-translations.php:458
 msgctxt "animation ease type"
-msgid "Ease-in-out-quart"
+msgid "Ease-out-cubic"
 msgstr ""
 
 #: languages/container-block-translations.php:461
-msgctxt "image repeat"
-msgid "None"
+msgctxt "animation ease type"
+msgid "Ease-in-out-cubic"
 msgstr ""
 
 #: languages/container-block-translations.php:464
-msgctxt "image repeat"
-msgid "Repeat"
+msgctxt "animation ease type"
+msgid "Ease-in-quart"
 msgstr ""
 
 #: languages/container-block-translations.php:467
-msgctxt "image repeat"
-msgid "Repeat-X"
+msgctxt "animation ease type"
+msgid "Ease-out-quart"
 msgstr ""
 
 #: languages/container-block-translations.php:470
-msgctxt "image repeat"
-msgid "Repeat-Y"
+msgctxt "animation ease type"
+msgid "Ease-in-out-quart"
 msgstr ""
 
 #: languages/container-block-translations.php:473
 msgctxt "image repeat"
-msgid "No-repeat"
+msgid "None"
 msgstr ""
 
 #: languages/container-block-translations.php:476
 msgctxt "image repeat"
-msgid "Space"
+msgid "Repeat"
 msgstr ""
 
 #: languages/container-block-translations.php:479
 msgctxt "image repeat"
-msgid "Round"
+msgid "Repeat-X"
 msgstr ""
 
 #: languages/container-block-translations.php:482
+msgctxt "image repeat"
+msgid "Repeat-Y"
+msgstr ""
+
+#: languages/container-block-translations.php:485
+msgctxt "image repeat"
+msgid "No-repeat"
+msgstr ""
+
+#: languages/container-block-translations.php:488
+msgctxt "image repeat"
+msgid "Space"
+msgstr ""
+
+#: languages/container-block-translations.php:491
+msgctxt "image repeat"
+msgid "Round"
+msgstr ""
+
+#: languages/container-block-translations.php:494
 msgctxt "image size"
 msgid "None"
 msgstr ""
 
-#: languages/container-block-translations.php:485
+#: languages/container-block-translations.php:497
 msgctxt "image size"
 msgid "Auto"
 msgstr ""
 
-#: languages/container-block-translations.php:488
+#: languages/container-block-translations.php:500
 msgctxt "image size"
 msgid "Cover"
 msgstr ""
 
-#: languages/container-block-translations.php:491
+#: languages/container-block-translations.php:503
 msgctxt "image size"
 msgid "Contain"
 msgstr ""
 
-#: languages/container-block-translations.php:494
+#: languages/container-block-translations.php:506
 msgctxt "upsell"
 msgid ""
 "I am a full-stack developer with over five years of experience in WordPress "
@@ -882,80 +907,80 @@ msgid ""
 "discuss your project with you."
 msgstr ""
 
-#: languages/container-block-translations.php:497
+#: languages/container-block-translations.php:509
 msgctxt "upsell"
 msgid "Hire Me!"
 msgstr ""
 
-#: languages/container-block-translations.php:500
+#: languages/container-block-translations.php:512
 msgctxt "upsell"
 msgid "Enjoying this block?"
 msgstr ""
 
-#: languages/container-block-translations.php:503
+#: languages/container-block-translations.php:515
 #, php-format
 msgctxt "upsell"
 msgid "Why not leave this plugin a %s review on WordPress.org!"
 msgstr ""
 
-#: languages/container-block-translations.php:506
+#: languages/container-block-translations.php:518
 msgctxt "block title"
 msgid "Container"
 msgstr ""
 
-#: languages/container-block-translations.php:509
+#: languages/container-block-translations.php:521
 msgctxt "block description"
 msgid ""
 "Container block is used to wrap several blocks in a parent wrapper and "
 "enables you to do more sophisticated styling as well."
 msgstr ""
 
-#: languages/container-block-translations.php:512
+#: languages/container-block-translations.php:524
 msgctxt "block keyword"
 msgid "Group"
 msgstr ""
 
-#: languages/container-block-translations.php:515
+#: languages/container-block-translations.php:527
 msgctxt "block keyword"
 msgid "Section"
 msgstr ""
 
-#: languages/container-block-translations.php:518
+#: languages/container-block-translations.php:530
 msgctxt "block keyword"
 msgid "Wrapper"
 msgstr ""
 
-#: languages/container-block-translations.php:521
+#: languages/container-block-translations.php:533
 msgctxt "block category"
 msgid "MyPreview"
 msgstr ""
 
-#: languages/container-block-translations.php:524
+#: languages/container-block-translations.php:536
 msgctxt "color pallet"
 msgid "White"
 msgstr ""
 
-#: languages/container-block-translations.php:527
+#: languages/container-block-translations.php:539
 msgctxt "color pallet"
 msgid "Black"
 msgstr ""
 
-#: languages/container-block-translations.php:530
+#: languages/container-block-translations.php:542
 msgctxt "color pallet"
 msgid "Blue"
 msgstr ""
 
-#: languages/container-block-translations.php:533
+#: languages/container-block-translations.php:545
 msgctxt "color pallet"
 msgid "Green"
 msgstr ""
 
-#: languages/container-block-translations.php:536
+#: languages/container-block-translations.php:548
 msgctxt "color pallet"
 msgid "Orange"
 msgstr ""
 
-#: languages/container-block-translations.php:539
+#: languages/container-block-translations.php:551
 msgctxt "color pallet"
 msgid "Red"
 msgstr ""
