@@ -49,6 +49,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 			scroll,
 			visible,
 			spacing,
+			margin,
 			alignment,
 			border,
 			shape,
@@ -83,6 +84,12 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 			laptop: hrzLaptop,
 			tablet: hrzTablet,
 			smartphone: hrzSmartphone } = spacing;
+		// Margin
+		const {
+			top: marginTop,
+			right: marginRight,
+			bottom: marginBottom,
+			left: marginLeft } = margin;
 		// Alignment
 		const {
 			desktop: alignDesktop,
@@ -160,7 +167,8 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 							'hide-dk': !! visDesktop,
 		                    'hide-lp': !! visLaptop,
 		                    'hide-tb': !! visTablet,
-		                    'hide-sp': !! visSmartphone
+		                    'hide-sp': !! visSmartphone,
+		                    'aos-init': !! aosType
                     	}
                 	) }
                 	style={ {
@@ -169,7 +177,11 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 						backgroundColor: backgroundColor.color,
 						backgroundPosition: ( imgFocalPoint && 'custom' === imgPosition ) ? `${ imgFocalPoint.x * 100 }% ${ imgFocalPoint.y * 100 }%` : undefined,
 						WebkitAnimation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) ? `${ keyFrames } 40s linear infinite` : undefined,
-            			animation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) ? `${ keyFrames } 40s linear infinite` : undefined
+            			animation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) ? `${ keyFrames } 40s linear infinite` : undefined,
+            			marginTop: marginTop ? marginTop : undefined,
+            			marginRight: marginRight ? marginRight : undefined,
+            			marginBottom: marginBottom ? marginBottom : undefined,
+            			marginLeft: marginLeft ? marginLeft : undefined
 					} }
 					data-aos={ aosType ? aosType : null }
 					data-aos-once={ ( aosType && aosOnce ) ? 'true' : null }

@@ -31,6 +31,7 @@ export default class Save extends Component {
 			scroll,
 			visible,
 			spacing,
+            margin,
 			alignment,
 			border,
 			shape,
@@ -69,6 +70,12 @@ export default class Save extends Component {
             laptop: hrzLaptop,
             tablet: hrzTablet,
             smartphone: hrzSmartphone } = spacing;
+        // Margin
+        const {
+            top: marginTop,
+            right: marginRight,
+            bottom: marginBottom,
+            left: marginLeft } = margin;
         // Alignment
         const {
             desktop: alignDesktop,
@@ -152,7 +159,11 @@ export default class Save extends Component {
             backgroundColor: backgroundColorClass ? undefined : customBackgroundColor,
             backgroundPosition: ( imgFocalPoint && 'custom' === imgPosition ) ? `${ imgFocalPoint.x * 100 }% ${ imgFocalPoint.y * 100 }%` : undefined,
             WebkitAnimation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) ? `${ keyFrames } 40s linear infinite` : undefined,
-            animation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) ? `${ keyFrames } 40s linear infinite` : undefined
+            animation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) ? `${ keyFrames } 40s linear infinite` : undefined,
+            marginTop: marginTop ? marginTop : undefined,
+            marginRight: marginRight ? marginRight : undefined,
+            marginBottom: marginBottom ? marginBottom : undefined,
+            marginLeft: marginLeft ? marginLeft : undefined
         };
 
         // Inner `div`
