@@ -76,6 +76,15 @@ const attributes = {
             smartphone: undefined
         }
     },
+    margin: {
+        type: 'object',
+        default: {
+            top: undefined,
+            right: undefined,
+            bottom: undefined,
+            left: undefined
+        }
+    },
     alignment: {
         type: 'object',
         default: {
