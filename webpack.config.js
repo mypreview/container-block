@@ -8,11 +8,13 @@
  */
 const path = require( 'path' );
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
-const CleanWebpackPlugin = require( 'clean-webpack-plugin' );
+const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
+const { BundleAnalyzerPlugin } = require( 'webpack-bundle-analyzer' );
 const ProgressBarPlugin = require( 'progress-bar-webpack-plugin' );
 const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
 const WebpackRTLPlugin = require( 'webpack-rtl-plugin' );
+const WebpackNotifierPlugin = require( 'webpack-notifier' );
 const chalk = require( 'chalk' );
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
@@ -64,6 +66,9 @@ const baseConfig = {
     optimization: {},
     plugins: [
         new CleanWebpackPlugin(),
+        new BundleAnalyzerPlugin( {
+            openAnalyzer: false
+        } ),
         new MiniCssExtractPlugin( {
             filename: 'style.css'
         } ),
@@ -75,6 +80,11 @@ const baseConfig = {
         } ),
         new DependencyExtractionWebpackPlugin( { 
             injectPolyfill: true 
+        } ),
+        new WebpackNotifierPlugin( { 
+            title: 'Container Block',
+            alwaysNotify: true,
+            skipFirstNotification: true
         } )
     ]
 };
