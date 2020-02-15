@@ -514,22 +514,22 @@ $generated_i18n_strings = array(
 	// Reference: assets/src/admin/components/Inspector.jsx:1201
 	_x( 'Why not leave this plugin a %s review on WordPress.org!', 'upsell', 'container-block' ),
 
-	// Reference: assets/src/admin/index.jsx:19
+	// Reference: assets/src/admin/index.js:19
 	_x( 'Container', 'block title', 'container-block' ),
 
-	// Reference: assets/src/admin/index.jsx:28
+	// Reference: assets/src/admin/index.js:28
 	_x( 'Container block is used to wrap several blocks in a parent wrapper and enables you to do more sophisticated styling as well.', 'block description', 'container-block' ),
 
-	// Reference: assets/src/admin/index.jsx:30
+	// Reference: assets/src/admin/index.js:30
 	_x( 'Group', 'block keyword', 'container-block' ),
 
-	// Reference: assets/src/admin/index.jsx:31
+	// Reference: assets/src/admin/index.js:31
 	_x( 'Section', 'block keyword', 'container-block' ),
 
-	// Reference: assets/src/admin/index.jsx:32
+	// Reference: assets/src/admin/index.js:32
 	_x( 'Wrapper', 'block keyword', 'container-block' ),
 
-	// Reference: assets/src/admin/utils/block-category.js:15
+	// Reference: assets/src/admin/utils/category.js:15
 	_x( 'MyPreview', 'block category', 'container-block' ),
 
 	// Reference: assets/src/admin/utils/colors.js:10
