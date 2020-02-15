@@ -32,7 +32,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 
 	setObjUndefined( obj ) {
 		// Set all values of the object to undefined
-		for ( let key in obj ) {
+		for ( const key in obj ) {
 			if ( obj.hasOwnProperty( key ) ) {
 	  			obj[key] = undefined;
 	  		} // End If Statement
@@ -60,9 +60,9 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 	generateTabs( args ) {
 		const tabs = [];
 		args.map( item => {
-			let obj = {};
-			obj['name'] = item;
-			obj['title'] = <Dashicon icon={ item } />;
+			const obj = {};
+			obj.name = item;
+			obj.title = <Dashicon icon={ item } />;
 			tabs.push( obj );
 		} );
 
@@ -504,14 +504,14 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						initialOpen={ true }
 					>
 						<RangeControl
-	                        label={ _x( 'Width', 'control label', 'container-block' ) }
-	                        help={ _x( 'Maximum width of the inner wrapper.', 'panel title', 'container-block' ) }
-	                        allowReset={ true }
-	                        value={ width }
-	                        onChange={ value => setAttributes( { width: value || undefined } ) }
-	                        step="1"
-	                        min="100"
-	                        max="1920"
+							label={ _x( 'Width', 'control label', 'container-block' ) }
+							help={ _x( 'Maximum width of the inner wrapper.', 'panel title', 'container-block' ) }
+							allowReset={ true }
+							value={ width }
+							onChange={ value => setAttributes( { width: value || undefined } ) }
+							step="1"
+							min="100"
+							max="1920"
 	                    />
 					</PanelBody>
 					<PanelBody 
@@ -533,30 +533,30 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						{ scrlShow && (
 							<Fragment>
 								<TextControl
-							        label={ _x( 'Element ID', 'control label', 'container-block' ) }
-							        help={ _x( 'Smoothly scroll the window to a specific element or tag ID within the page.', 'control help', 'container-block' ) }
-							        value={ scrlTarget }
-							        onChange={ onChangeScrlTarget }
+									label={ _x( 'Element ID', 'control label', 'container-block' ) }
+									help={ _x( 'Smoothly scroll the window to a specific element or tag ID within the page.', 'control help', 'container-block' ) }
+									value={ scrlTarget }
+									onChange={ onChangeScrlTarget }
 							    />
-							    <p
-		                            className="components-base-control__field components-base-control__flex"
+								<p
+									className="components-base-control__field components-base-control__flex"
 		                        >
-		                            <span
-		                                className="components-base-control__label"
+									<span
+										className="components-base-control__label"
 		                            >
-		                                { _x( 'Color', 'color label', 'container-block' ) }
-		                            </span>
-		                            { customScrlColor && (
-		                                <ColorIndicator 
-		                                    colorValue={ customScrlColor } 
+										{ _x( 'Color', 'color label', 'container-block' ) }
+									</span>
+									{ customScrlColor && (
+									<ColorIndicator 
+										colorValue={ customScrlColor } 
 		                                />
 		                            ) }
-		                        </p>
+								</p>
 								<ColorPalette
 									clearable={ true }
-		                            colors={ colors || defaultColors }
-		                            value={ customScrlColor }
-		                            onChange={ onChangeScrlColor }
+									colors={ colors || defaultColors }
+									value={ customScrlColor }
+									onChange={ onChangeScrlColor }
 		                        />
 							</Fragment>
 						) }
@@ -566,223 +566,223 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						initialOpen={ false }
 					>
 						<TabPanel 
-                        	className="components-tab-panel components-insp-tabs"
-					        activeClass="components-insp-tabs__active"
-					        tabs={ this.generateTabs( devices ) }
+							className="components-tab-panel components-insp-tabs"
+							activeClass="components-insp-tabs__active"
+							tabs={ this.generateTabs( devices ) }
 					    >
-					        {
+							{
 					            tab => {
 					            	return (
-					            		<Fragment>
-						            		{ 'desktop' === tab.name && (
-						            			<ToggleControl
-													label={ _x( 'Hide from the view?', 'control label', 'container-block' ) }
-													checked={ !! visDesktop }
-													onChange={ onChangeVisDesktop }
+						<Fragment>
+							{ 'desktop' === tab.name && (
+							<ToggleControl
+								label={ _x( 'Hide from the view?', 'control label', 'container-block' ) }
+								checked={ !! visDesktop }
+								onChange={ onChangeVisDesktop }
 												/>
 						            		) }
-						            		{ 'laptop' === tab.name && (
-						            			<ToggleControl
-													label={ _x( 'Hide from the view?', 'control label', 'container-block' ) }
-													checked={ !! visLaptop }
-													onChange={ onChangeVisLaptop }
+							{ 'laptop' === tab.name && (
+							<ToggleControl
+								label={ _x( 'Hide from the view?', 'control label', 'container-block' ) }
+								checked={ !! visLaptop }
+								onChange={ onChangeVisLaptop }
 												/>
 						            		) }
-						            		{ 'tablet' === tab.name && (
-						            			<ToggleControl
-													label={ _x( 'Hide from the view?', 'control label', 'container-block' ) }
-													checked={ !! visTablet }
-													onChange={ onChangeVisTablet }
+							{ 'tablet' === tab.name && (
+							<ToggleControl
+								label={ _x( 'Hide from the view?', 'control label', 'container-block' ) }
+								checked={ !! visTablet }
+								onChange={ onChangeVisTablet }
 												/>
 						            		) }
-						            		{ 'smartphone' === tab.name && (
-						            			<ToggleControl
-													label={ _x( 'Hide from the view?', 'control label', 'container-block' ) }
-													checked={ !! visSmartphone }
-													onChange={ onChangeVisSmartphone }
+							{ 'smartphone' === tab.name && (
+							<ToggleControl
+								label={ _x( 'Hide from the view?', 'control label', 'container-block' ) }
+								checked={ !! visSmartphone }
+								onChange={ onChangeVisSmartphone }
 												/>
 						            		) }
-					            		</Fragment>
+						</Fragment>
 					            	)
 					            }
 					        }
-					    </TabPanel>
+						</TabPanel>
 					</PanelBody>
 					<PanelBody 
 						title={ _x( 'Spacing Settings', 'panel title', 'container-block' ) }
 						initialOpen={ false }
 					>
 						<BaseControl
-					    	label={ _x( 'Horizontal Padding', 'control label', 'container-block' ) }
+							label={ _x( 'Horizontal Padding', 'control label', 'container-block' ) }
 							help={ _x( 'Controls above are used to generate space around the container block’s content, inside of any defined borders.', 'control help', 'container-block' ) }
 					    >
-	                        <TabPanel 
-	                        	className="components-tab-panel components-insp-tabs"
-					        	activeClass="components-insp-tabs__active"
-						        tabs={ this.generateTabs( devices ) }
+							<TabPanel 
+								className="components-tab-panel components-insp-tabs"
+								activeClass="components-insp-tabs__active"
+								tabs={ this.generateTabs( devices ) }
 						    >
-						        {
+								{
 						            tab => {
 						            	return (
-						            		<Fragment>
-							            		{ 'desktop' === tab.name && (
-							            			<RangeControl
-							            				readonly="readonly"
-								                        allowReset={ true }
-								                        value={ hrzDesktop }
-								                        onChange={ onChangeHrzDesktop }
-								                        step="5"
-								                        min="0"
-								                        max="50"
+							<Fragment>
+								{ 'desktop' === tab.name && (
+								<RangeControl
+									readonly="readonly"
+									allowReset={ true }
+									value={ hrzDesktop }
+									onChange={ onChangeHrzDesktop }
+									step="5"
+									min="0"
+									max="50"
 								                    />
 							            		) }
-							            		{ 'laptop' === tab.name && (
-							            			<RangeControl
-							            				readonly="readonly"
-								                        allowReset={ true }
-								                        value={ hrzLaptop }
-								                        onChange={ onChangeHrzLaptop }
-								                        step="5"
-								                        min="0"
-								                        max="50"
+								{ 'laptop' === tab.name && (
+								<RangeControl
+									readonly="readonly"
+									allowReset={ true }
+									value={ hrzLaptop }
+									onChange={ onChangeHrzLaptop }
+									step="5"
+									min="0"
+									max="50"
 								                    />
 							            		) }
-							            		{ 'tablet' === tab.name && (
-							            			<RangeControl
-							            				readonly="readonly"
-								                        allowReset={ true }
-								                        value={ hrzTablet }
-								                        onChange={ onChangeHrzTablet }
-								                        step="5"
-								                        min="0"
-								                        max="50"
+								{ 'tablet' === tab.name && (
+								<RangeControl
+									readonly="readonly"
+									allowReset={ true }
+									value={ hrzTablet }
+									onChange={ onChangeHrzTablet }
+									step="5"
+									min="0"
+									max="50"
 								                    />
 							            		) }
-							            		{ 'smartphone' === tab.name && (
-							            			<RangeControl
-							            				readonly="readonly"
-								                        allowReset={ true }
-								                        value={ hrzSmartphone }
-								                        onChange={ onChangeHrzSmartphone }
-								                        step="5"
-								                        min="0"
-								                        max="50"
+								{ 'smartphone' === tab.name && (
+								<RangeControl
+									readonly="readonly"
+									allowReset={ true }
+									value={ hrzSmartphone }
+									onChange={ onChangeHrzSmartphone }
+									step="5"
+									min="0"
+									max="50"
 								                    />
 							            		) }
-						            		</Fragment>
+							</Fragment>
 						            	)
 						            }
 						        }
-						    </TabPanel>
+							</TabPanel>
 						</BaseControl>
-					    <HorizontalRule />
-					    <BaseControl
-					    	label={ _x( 'Margins', 'control label', 'container-block' ) }
+						<HorizontalRule />
+						<BaseControl
+							label={ _x( 'Margins', 'control label', 'container-block' ) }
 							help={ _x( 'Controls above are used to create space around the container block, outside of any defined borders.', 'control help', 'container-block' ) }
 					    >
-					    	<TabPanel 
-	                        	className="components-tab-panel components-insp-tabs"
-						        activeClass="components-insp-tabs__active"
-						        tabs={ this.generateTabs( arrows ) }
+							<TabPanel 
+								className="components-tab-panel components-insp-tabs"
+								activeClass="components-insp-tabs__active"
+								tabs={ this.generateTabs( arrows ) }
 						    >
-						        {
+								{
 						            tab => {
 						            	return (
-						            		<Fragment>
-							            		{ 'arrow-up-alt' === tab.name && (
-							            			<RangeControl
-												    	allowReset={ true }
-								                        value={ marginTop }
-								                        onChange={ onChangeMarginTop }
-								                        step="1"
-								                        min="-150"
-								                        max="150"
+							<Fragment>
+								{ 'arrow-up-alt' === tab.name && (
+								<RangeControl
+									allowReset={ true }
+									value={ marginTop }
+									onChange={ onChangeMarginTop }
+									step="1"
+									min="-150"
+									max="150"
 								                    />
 							            		) }
-							            		{ 'arrow-right-alt' === tab.name && (
-							            			<RangeControl
-												    	allowReset={ true }
-								                        value={ marginRight }
-								                        onChange={ onChangeMarginRight }
-								                        step="1"
-								                        min="-150"
-								                        max="150"
+								{ 'arrow-right-alt' === tab.name && (
+								<RangeControl
+									allowReset={ true }
+									value={ marginRight }
+									onChange={ onChangeMarginRight }
+									step="1"
+									min="-150"
+									max="150"
 								                    />
 							            		) }
-							            		{ 'arrow-down-alt' === tab.name && (
-							            			<RangeControl
-												    	allowReset={ true }
-								                        value={ marginBottom }
-								                        onChange={ onChangeMarginBottom }
-								                        step="1"
-								                        min="-150"
-								                        max="150"
+								{ 'arrow-down-alt' === tab.name && (
+								<RangeControl
+									allowReset={ true }
+									value={ marginBottom }
+									onChange={ onChangeMarginBottom }
+									step="1"
+									min="-150"
+									max="150"
 								                    />
 							            		) }
-							            		{ 'arrow-left-alt' === tab.name && (
-							            			<RangeControl
-												    	allowReset={ true }
-								                        value={ marginLeft }
-								                        onChange={ onChangeMarginLeft }
-								                        step="1"
-								                        min="-150"
-								                        max="150"
+								{ 'arrow-left-alt' === tab.name && (
+								<RangeControl
+									allowReset={ true }
+									value={ marginLeft }
+									onChange={ onChangeMarginLeft }
+									step="1"
+									min="-150"
+									max="150"
 								                    />
 							            		) }
-						            		</Fragment>
+							</Fragment>
 						            	)
 						            }
 						        }
-						    </TabPanel>
-					    </BaseControl>
-                    </PanelBody>
-                    <PanelBody 
+							</TabPanel>
+						</BaseControl>
+					</PanelBody>
+					<PanelBody 
 						title={ _x( 'Alignment Settings', 'panel title', 'container-block' ) }
 						initialOpen={ false }
 					>
-                        <TabPanel 
-                        	className="components-tab-panel components-insp-tabs"
-				        	activeClass="components-insp-tabs__active"
-					        tabs={ this.generateTabs( devices ) }
+						<TabPanel 
+							className="components-tab-panel components-insp-tabs"
+							activeClass="components-insp-tabs__active"
+							tabs={ this.generateTabs( devices ) }
 					    >
-					        {
+							{
 					            tab => {
 					            	return (
-					            		<Fragment>
-						            		{ 'desktop' === tab.name && (
-						            			<AlignmentToolbar
-						                    		isCollapsed={ false }
-													value={ alignDesktop }
-													onChange={ onChangeAlignDesktop }
+						<Fragment>
+							{ 'desktop' === tab.name && (
+							<AlignmentToolbar
+								isCollapsed={ false }
+								value={ alignDesktop }
+								onChange={ onChangeAlignDesktop }
 												/>
 						            		) }
-						            		{ 'laptop' === tab.name && (
-						            			<AlignmentToolbar
-						                    		isCollapsed={ false }
-													value={ alignLaptop }
-													onChange={ onChangeAlignLaptop }
+							{ 'laptop' === tab.name && (
+							<AlignmentToolbar
+								isCollapsed={ false }
+								value={ alignLaptop }
+								onChange={ onChangeAlignLaptop }
 												/>
 						            		) }
-						            		{ 'tablet' === tab.name && (
-						            			<AlignmentToolbar
-						                    		isCollapsed={ false }
-													value={ alignTablet }
-													onChange={ onChangeAlignTablet }
+							{ 'tablet' === tab.name && (
+							<AlignmentToolbar
+								isCollapsed={ false }
+								value={ alignTablet }
+								onChange={ onChangeAlignTablet }
 												/>
 						            		) }
-						            		{ 'smartphone' === tab.name && (
-						            			<AlignmentToolbar
-						                    		isCollapsed={ false }
-													value={ alignSmartphone }
-													onChange={ onChangeAlignSmartphone }
+							{ 'smartphone' === tab.name && (
+							<AlignmentToolbar
+								isCollapsed={ false }
+								value={ alignSmartphone }
+								onChange={ onChangeAlignSmartphone }
 												/>
 						            		) }
-					            		</Fragment>
+						</Fragment>
 					            	)
 					            }
 					        }
-					    </TabPanel>
-                    </PanelBody>
+						</TabPanel>
+					</PanelBody>
 					<PanelBody 
 						title={ _x( 'Link to Settings', 'panel title', 'container-block' ) }
 						initialOpen={ false }
@@ -790,17 +790,17 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						<URLInput
 							hasBorder
 							isFullWidth
-                            value={ linkUrl }
-                            autoFocus={ false }
-                            className="components-base-control"
-                            disableSuggestions={ ! isSelected }
-                            onChange={ onChangeLinkUrl }
+							value={ linkUrl }
+							autoFocus={ false }
+							className="components-base-control"
+							disableSuggestions={ ! isSelected }
+							onChange={ onChangeLinkUrl }
                         />
-                        { linkUrl && (
-                        	<ToggleControl
-								label={ _x( 'Open in a new window?', 'control label', 'container-block' ) }
-								checked={ !! linkTarget }
-								onChange={ onChangeLinkTarget }
+						{ linkUrl && (
+						<ToggleControl
+							label={ _x( 'Open in a new window?', 'control label', 'container-block' ) }
+							checked={ !! linkTarget }
+							onChange={ onChangeLinkTarget }
 							/>
 						) }
 					</PanelBody>
@@ -891,26 +891,26 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 									</Button>
 								</BaseControl>
 								<p
-		                            className="components-base-control__field components-base-control__flex"
+									className="components-base-control__field components-base-control__flex"
 		                        >
-		                            <span
-		                                className="components-base-control__label"
+									<span
+										className="components-base-control__label"
 		                            >
-		                                { _x( 'Color', 'color label', 'container-block' ) }
-		                            </span>
-		                            { borderColor && (
-		                                <ColorIndicator 
-		                                    colorValue={ borderColor } 
+										{ _x( 'Color', 'color label', 'container-block' ) }
+									</span>
+									{ borderColor && (
+									<ColorIndicator 
+										colorValue={ borderColor } 
 		                                />
 		                            ) }
-		                        </p>
+								</p>
 								<ColorPalette
 									clearable={ true }
-		                            colors={ colors || defaultColors }
-		                            value={ borderColor }
-		                            onChange={ onChangeBorderColor }
+									colors={ colors || defaultColors }
+									value={ borderColor }
+									onChange={ onChangeBorderColor }
 		                        />
-	                        </Fragment>
+							</Fragment>
 						) }
 					</PanelBody>
 					<PanelBody 
@@ -918,10 +918,10 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						initialOpen={ false }
 					>
 						<SelectControl
-					        label={ _x( 'Type', 'control label', 'container-block' ) }
-					        help={ _x( 'Shadow utlities to add a box shadow to the element.', 'control help', 'container-block' ) }
-					        value={ shadow }
-					        options={ [
+							label={ _x( 'Type', 'control label', 'container-block' ) }
+							help={ _x( 'Shadow utlities to add a box shadow to the element.', 'control help', 'container-block' ) }
+							value={ shadow }
+							options={ [
 					            { label: _x( 'None', 'shadow style', 'container-block' ), value: '' },
 					            { label: _x( 'Light', 'shadow style', 'container-block' ), value: 'light' },
 					            { label: _x( 'Light Large', 'shadow style', 'container-block' ), value: 'light-lg' },
@@ -929,7 +929,7 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 					            { label: _x( 'Dark Large', 'shadow style', 'container-block' ), value: 'dark-lg' },
 					            { label: _x( 'Lift', 'shadow style', 'container-block' ), value: 'lift' },
 					        ] }
-					        onChange={ value => setAttributes( { shadow: value || undefined } ) }
+							onChange={ value => setAttributes( { shadow: value || undefined } ) }
 					    />
 					</PanelBody>
 					<PanelBody 
@@ -937,10 +937,10 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						initialOpen={ false }
 					>
 						<SelectControl
-					        label={ _x( 'Type', 'control label', 'container-block' ) }
-					        help={ _x( 'Multiple shapes to use as separators for sections or as the background graphic.', 'control help', 'container-block' ) }
-					        value={ shapeType }
-					        options={ [
+							label={ _x( 'Type', 'control label', 'container-block' ) }
+							help={ _x( 'Multiple shapes to use as separators for sections or as the background graphic.', 'control help', 'container-block' ) }
+							value={ shapeType }
+							options={ [
 					            { label: _x( 'None', 'shape style', 'container-block' ), value: '' },
 					            { label: _x( 'Simple', 'shape style', 'container-block' ), value: 'simple-custom' },
 					            { label: _x( 'Concave Up', 'shape style', 'container-block' ), value: 'concave-up' },
@@ -960,40 +960,40 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 					            { label: _x( 'Blur 3', 'shape style', 'container-block' ), value: 'blur-3' },
 					            { label: _x( 'Blur 4', 'shape style', 'container-block' ), value: 'blur-4' }
 					        ] }
-					        onChange={ onChangeShapeType }
+							onChange={ onChangeShapeType }
 					    />
-					    { shapeType && (
+						{ shapeType && (
 						    <Fragment>
-						    	{ shapeType.includes( 'custom' ) && (
+							{ shapeType.includes( 'custom' ) && (
 							    	<RangeControl
 								    	readonly="readonly"
-				                        label={ _x( 'Height', 'control label', 'container-block' ) }
-				                        value={ shapeHeight }
-				                        onChange={ onChangeShapeHeight }
-				                        step="0.5"
-				                        min="5"
-				                        max="100"
+								label={ _x( 'Height', 'control label', 'container-block' ) }
+								value={ shapeHeight }
+								onChange={ onChangeShapeHeight }
+								step="0.5"
+								min="5"
+								max="100"
 				                    />
 			                    ) }
-			                    <p
-		                            className="components-base-control__field components-base-control__flex"
+							<p
+								className="components-base-control__field components-base-control__flex"
 		                        >
-		                            <span
-		                                className="components-base-control__label"
+								<span
+									className="components-base-control__label"
 		                            >
-		                                { _x( 'Color', 'color label', 'container-block' ) }
-		                            </span>
-		                            { customShapeColor && (
-		                                <ColorIndicator 
-		                                    colorValue={ customShapeColor } 
+									{ _x( 'Color', 'color label', 'container-block' ) }
+								</span>
+								{ customShapeColor && (
+								<ColorIndicator 
+									colorValue={ customShapeColor } 
 		                                />
 		                            ) }
-		                        </p>
-								<ColorPalette
-									clearable={ true }
-		                            colors={ colors || defaultColors }
-		                            value={ customShapeColor }
-		                            onChange={ onChangeShapeColor }
+							</p>
+							<ColorPalette
+								clearable={ true }
+								colors={ colors || defaultColors }
+								value={ customShapeColor }
+								onChange={ onChangeShapeColor }
 		                        />
 						    </Fragment>
 	                    ) }
@@ -1003,10 +1003,10 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						initialOpen={ false }
 					>
 						<SelectControl
-					        label={ _x( 'Type', 'control label', 'container-block' ) }
-					        help={ _x( 'This module allows you to animate elements as you scroll down, and up.', 'control help', 'container-block' ) }
-					        value={ aosType }
-					        options={ [
+							label={ _x( 'Type', 'control label', 'container-block' ) }
+							help={ _x( 'This module allows you to animate elements as you scroll down, and up.', 'control help', 'container-block' ) }
+							value={ aosType }
+							options={ [
 					            { label: _x( 'None', 'animation type', 'container-block' ), value: '' },
 					            { label: _x( 'Fade', 'animation type', 'container-block' ), value: 'fade' },
 					            { label: _x( 'Fade-up', 'animation type', 'container-block' ), value: 'fade-up' },
@@ -1036,15 +1036,15 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 					            { label: _x( 'Zoom-out-left', 'animation type', 'container-block' ), value: 'zoom-out-left' },
 					            { label: _x( 'Zoom-out-right', 'animation type', 'container-block' ), value: 'zoom-out-right' }
 					        ] }
-					        onChange={ onChangeAosType }
+							onChange={ onChangeAosType }
 					    />
-					    { aosType && (
-					    	<Fragment>
-								<SelectControl
-							        label={ _x( 'Ease', 'control label', 'container-block' ) }
-							        help={ _x( 'Choose timing function to ease elements in different ways.', 'control help', 'container-block' ) }
-							        value={ aosEase }
-							        options={ [
+						{ aosType && (
+						<Fragment>
+							<SelectControl
+								label={ _x( 'Ease', 'control label', 'container-block' ) }
+								help={ _x( 'Choose timing function to ease elements in different ways.', 'control help', 'container-block' ) }
+								value={ aosEase }
+								options={ [
 							            { label: _x( 'Linear', 'animation ease type', 'container-block' ), value: 'linear' },
 							            { label: _x( 'Ease', 'animation ease type', 'container-block' ), value: 'ease' },
 							            { label: _x( 'Ease-in', 'animation ease type', 'container-block' ), value: 'ease-in' },
@@ -1066,41 +1066,41 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 							            { label: _x( 'Ease-out-quart', 'animation ease type', 'container-block' ), value: 'ease-out-quart' },
 							            { label: _x( 'Ease-in-out-quart', 'animation ease type', 'container-block' ), value: 'ease-in-out-quart' }
 							        ] }
-							        onChange={ onChangeAosEase }
+								onChange={ onChangeAosEase }
 							    />
-								<RangeControl
-			                        label={ _x( 'Offset', 'control label', 'container-block' ) }
-			                        help={ _x( 'Change offset to trigger animations sooner or later in pixels.', 'control help', 'container-block' ) }
-			                        value={ aosOffset }
-			                        onChange={ onChangeAosOffset }
-			                        step="1"
-			                        min="0"
+							<RangeControl
+								label={ _x( 'Offset', 'control label', 'container-block' ) }
+								help={ _x( 'Change offset to trigger animations sooner or later in pixels.', 'control help', 'container-block' ) }
+								value={ aosOffset }
+								onChange={ onChangeAosOffset }
+								step="1"
+								min="0"
 			                    />
-			                    <RangeControl
-			                        label={ _x( 'Delay', 'control label', 'container-block' ) }
-			                        help={ _x( 'Delay animation in milliseconds.', 'control help', 'container-block' ) }
-			                        value={ aosDelay }
-			                        onChange={ onChangeAosDelay }
-			                        step="1"
-			                        min="0"
+							<RangeControl
+								label={ _x( 'Delay', 'control label', 'container-block' ) }
+								help={ _x( 'Delay animation in milliseconds.', 'control help', 'container-block' ) }
+								value={ aosDelay }
+								onChange={ onChangeAosDelay }
+								step="1"
+								min="0"
 			                    />
-			                    <RangeControl
-			                        label={ _x( 'Duration', 'control label', 'container-block' ) }
-			                        help={ _x( 'Duration of animation in milliseconds.', 'control help', 'container-block' ) }
-			                        readonly="readonly"
-			                        value={ aosDuration }
-			                        onChange={ onChangeAosDuration }
-			                        step="50"
-			                        min="50"
-			                        max="3000"
+							<RangeControl
+								label={ _x( 'Duration', 'control label', 'container-block' ) }
+								help={ _x( 'Duration of animation in milliseconds.', 'control help', 'container-block' ) }
+								readonly="readonly"
+								value={ aosDuration }
+								onChange={ onChangeAosDuration }
+								step="50"
+								min="50"
+								max="3000"
 			                    />
-			                    <ToggleControl
-									label={ _x( 'Run once?', 'control label', 'container-block' ) }
-									help={ _x( 'Choose whether animation should fire once, or every time you scroll up/down to element.', 'control help', 'container-block' ) }
-									checked={ !! aosOnce }
-									onChange={ onChangeAosOnce }
+							<ToggleControl
+								label={ _x( 'Run once?', 'control label', 'container-block' ) }
+								help={ _x( 'Choose whether animation should fire once, or every time you scroll up/down to element.', 'control help', 'container-block' ) }
+								checked={ !! aosOnce }
+								onChange={ onChangeAosOnce }
 								/>
-							</Fragment>
+						</Fragment>
 						) }
 					</PanelBody>
 					{ !! imgID && (
@@ -1111,25 +1111,25 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 							{ ( 'animate-left' !== imgEffect && 'animate-right' !== imgEffect ) && (
 								<Fragment>
 									<SelectControl
-								        label={ _x( 'Position', 'control label', 'container-block' ) }
-								        help={ _x( 'This property sets the starting position of a background image.', 'control help', 'container-block' ) }
-								        value={ imgPosition }
-								        options={ imgPositionControls }
-								        onChange={ onChangeImgPosition }
+										label={ _x( 'Position', 'control label', 'container-block' ) }
+										help={ _x( 'This property sets the starting position of a background image.', 'control help', 'container-block' ) }
+										value={ imgPosition }
+										options={ imgPositionControls }
+										onChange={ onChangeImgPosition }
 								    />
-								    { 'custom' === imgPosition && (
+									{ 'custom' === imgPosition && (
 									    <FocalPointPicker
-											label={ _x( 'Focal Point Picker', 'control label', 'container-block' ) }
-											url={ imgSRC }
-											value={ imgFocalPoint }
-											onChange={ onChangeFocalPoint }
+										label={ _x( 'Focal Point Picker', 'control label', 'container-block' ) }
+										url={ imgSRC }
+										value={ imgFocalPoint }
+										onChange={ onChangeFocalPoint }
 										/>
 									) }
-								    <SelectControl
-								        label={ _x( 'Repeat', 'control label', 'container-block' ) }
-								        help={ _x( 'This property sets if and how a background image will be repeated.', 'control help', 'container-block' ) }
-								        value={ imgRepeat }
-								        options={ [
+									<SelectControl
+										label={ _x( 'Repeat', 'control label', 'container-block' ) }
+										help={ _x( 'This property sets if and how a background image will be repeated.', 'control help', 'container-block' ) }
+										value={ imgRepeat }
+										options={ [
 								            { label: _x( 'None', 'image repeat', 'container-block' ), value: '' },
 								            { label: _x( 'Repeat', 'image repeat', 'container-block' ), value: 'repeat' },
 								            { label: _x( 'Repeat-X', 'image repeat', 'container-block' ), value: 'repeat-x' },
@@ -1138,21 +1138,21 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 								            { label: _x( 'Space', 'image repeat', 'container-block' ), value: 'space' },
 								            { label: _x( 'Round', 'image repeat', 'container-block' ), value: 'round' }
 								        ] }
-								        onChange={ onChangeImgRepeat }
+										onChange={ onChangeImgRepeat }
 								    />
-							    </Fragment>
+								</Fragment>
 						    ) }
-						    <SelectControl
-						        label={ _x( 'Size', 'control label', 'container-block' ) }
-						        help={ _x( 'This property specifies the size of the background images.', 'control help', 'container-block' ) }
-						        value={ imgSize }
-						        options={ [
+							<SelectControl
+								label={ _x( 'Size', 'control label', 'container-block' ) }
+								help={ _x( 'This property specifies the size of the background images.', 'control help', 'container-block' ) }
+								value={ imgSize }
+								options={ [
 						        	{ label: _x( 'None', 'image size', 'container-block' ), value: '' },
 						        	{ label: _x( 'Auto', 'image size', 'container-block' ), value: 'auto' },
 						        	{ label: _x( 'Cover', 'image size', 'container-block' ), value: 'cover' },
 						        	{ label: _x( 'Contain', 'image size', 'container-block' ), value: 'contain' }
 						        ] }
-						        onChange={ onChangeImgSize }
+								onChange={ onChangeImgSize }
 						    />
 						</PanelBody>
 					) }
@@ -1167,15 +1167,15 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 					>
 						{ ( ( !! imgID || !! videoID ) && backgroundColor.color ) && (
 							<RangeControl
-		                        label={ _x( 'Overlay', 'control label', 'container-block' ) }
-		                        help={ _x( 'This setting is useful if you are using a visually noisy background image or video and finding the content in your component difficult to read.', 'control help', 'container-block' ) }
-		                        readonly="readonly"
-		                        allowReset={ true }
-		                        value={ dim }
-		                        onChange={ value => setAttributes( { dim: value } ) }
-		                        step="10"
-		                        min="10"
-		                        max="100"
+								label={ _x( 'Overlay', 'control label', 'container-block' ) }
+								help={ _x( 'This setting is useful if you are using a visually noisy background image or video and finding the content in your component difficult to read.', 'control help', 'container-block' ) }
+								readonly="readonly"
+								allowReset={ true }
+								value={ dim }
+								onChange={ value => setAttributes( { dim: value } ) }
+								step="10"
+								min="10"
+								max="100"
 		                    />
 	                    ) }
 					</PanelColorSettings>
@@ -1186,29 +1186,29 @@ export default compose( applyWithColors, applyWithSelect, applyWithFallbackStyle
 						<BaseControl>
 							<p>{ _x( 'I am a full-stack developer with over five years of experience in WordPress theme and plugin development, and would love to have the opportunity to discuss your project with you.', 'upsell', 'container-block' ) }</p>
 							<ExternalLink 
-	                            href={ 'https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94/' }
+								href={ 'https://www.upwork.com/o/profiles/users/_~016ad17ad3fc5cce94/' }
 	                        >
-	                            { _x( 'Hire Me!', 'upsell', 'container-block' ) }
-	                        </ExternalLink>
+								{ _x( 'Hire Me!', 'upsell', 'container-block' ) }
+							</ExternalLink>
 						</BaseControl>
 						<BaseControl
 							className="components-base-control--label-block"
 							label={ _x( 'Enjoying this block?', 'upsell', 'container-block' ) }
 						>
 							<ExternalLink 
-	                            href={ 'https://wordpress.org/support/plugin/container-block/reviews' }
+								href={ 'https://wordpress.org/support/plugin/container-block/reviews' }
 	                        >
-	                            { sprintf( _x( 'Why not leave this plugin a %s review on WordPress.org!', 'upsell', 'container-block' ), '⭐⭐⭐⭐⭐' ) }
-	                        </ExternalLink>
+								{ sprintf( _x( 'Why not leave this plugin a %s review on WordPress.org!', 'upsell', 'container-block' ), '⭐⭐⭐⭐⭐' ) }
+							</ExternalLink>
 						</BaseControl>
 					</PanelBody>
 				</InspectorControls>
 				<InspectorAdvancedControls>
 					<TextControl
-				        label={ _x( 'Aria Label', 'control label', 'container-block' ) }
-				        help={ _x( 'This attribute is used to define a string that labels the current element. You might use it in cases where a text label is not visible on the screen.', 'control help', 'container-block' ) }
-				        value={ ariaLabel }
-				        onChange={ value => setAttributes( { ariaLabel: value } ) }
+						label={ _x( 'Aria Label', 'control label', 'container-block' ) }
+						help={ _x( 'This attribute is used to define a string that labels the current element. You might use it in cases where a text label is not visible on the screen.', 'control help', 'container-block' ) }
+						value={ ariaLabel }
+						onChange={ value => setAttributes( { ariaLabel: value } ) }
 				    />
 				</InspectorAdvancedControls>
 			</Fragment>

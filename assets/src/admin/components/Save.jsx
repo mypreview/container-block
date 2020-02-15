@@ -204,22 +204,21 @@ export default class Save extends Component {
         };
 
         return (
-            <div 
-                className={ wrapperClasses }
-                style={ wrapperStyles }
-                data-href={ linkUrl ? encodeURI( linkUrl ) : null }
-                data-href-target={ ( linkUrl && linkTarget ) ? '_blank' : null }
-                data-aos={ aosType ? aosType : null }
-                data-aos-once={ ( aosType && aosOnce ) ? 'true' : null }
-                data-aos-offset={ ( aosType && aosOffset ) ? parseInt( aosOffset ) : null }
-                data-aos-duration={ ( aosType && aosDuration ) ? parseInt( aosDuration ) : null }
-                data-aos-delay={ ( aosType && aosDelay ) ? parseInt( aosDelay ) : null }
-                data-aos-easing={ ( aosType && aosEase ) ? aosEase : null }
-                aria-label={ ariaLabel ? escape( ariaLabel ) : null }
+	<div 
+		className={ wrapperClasses }
+		style={ wrapperStyles }
+		data-href={ linkUrl ? encodeURI( linkUrl ) : null }
+		data-href-target={ ( linkUrl && linkTarget ) ? '_blank' : null }
+		data-aos={ aosType ? aosType : null }
+		data-aos-once={ ( aosType && aosOnce ) ? 'true' : null }
+		data-aos-offset={ ( aosType && aosOffset ) ? parseInt( aosOffset ) : null }
+		data-aos-duration={ ( aosType && aosDuration ) ? parseInt( aosDuration ) : null }
+		data-aos-delay={ ( aosType && aosDelay ) ? parseInt( aosDelay ) : null }
+		data-aos-easing={ ( aosType && aosEase ) ? aosEase : null }
+		aria-label={ ariaLabel ? escape( ariaLabel ) : null }
             >
-                { ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) && (
-                    <style dangerouslySetInnerHTML=
-                        { { __html: `
+		{ ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) && (
+		<style dangerouslySetInnerHTML={ { __html: `
                             @keyframes ${ keyFrames } {
                                 from { background-position: 0 0 } 
                                 to { background-position: ${ imgEffect.includes( 'left' ) ? -Math.abs( imgWidth ) : Math.abs( imgWidth ) }px 0 }
@@ -227,42 +226,42 @@ export default class Save extends Component {
                         } }
                     />
                 ) }
-                <div 
-                    className={ innerClasses }
-                    style={ innerStyles }
+		<div 
+			className={ innerClasses }
+			style={ innerStyles }
                 >
-                    <InnerBlocks.Content /> 
-                </div>
-                { !! scrlShow && ( 
-                    <a
-                        href={ scrlTarget ? `#!${ scrlTarget }` : null }
-                        className={ scrlIconClasses }
+			<InnerBlocks.Content /> 
+		</div>
+		{ !! scrlShow && ( 
+		<a
+			href={ scrlTarget ? `#!${ scrlTarget }` : null }
+			className={ scrlIconClasses }
                     />
                 ) }
-                { !! videoID && ( 
-                    <div 
-                        className="wp-block-mypreview-container__video"
+		{ !! videoID && ( 
+		<div 
+			className="wp-block-mypreview-container__video"
                     >
-                        <video
-                            id={ `wp-video-${ videoID }` }
-                            src={ encodeURI( videoSRC ) }
-                            autoPlay
-                            muted
-                            loop
+			<video
+				id={ `wp-video-${ videoID }` }
+				src={ encodeURI( videoSRC ) }
+				autoPlay
+				muted
+				loop
                         />
-                    </div>
+		</div>
                 ) }
-                { !! shapeType && ( 
-                    <div 
-                        className={ shapeClasses }
-                        style={ shapeStyles }
+		{ !! shapeType && ( 
+		<div 
+			className={ shapeClasses }
+			style={ shapeStyles }
                     >
-                        { shapes.hasOwnProperty( shapeType ) && (
+			{ shapes.hasOwnProperty( shapeType ) && (
                             shapes[shapeType]
                         ) }
-                    </div>
+		</div>
                 ) }
-            </div>
+	</div>
         );
 	}
 };

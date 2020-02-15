@@ -142,7 +142,7 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 					/>
 				) }
 				<div 
-                    className={ classnames( 
+					className={ classnames( 
                     	className,
                     	{
                     		'wp-block-mypreview-container--full-height': !! isFH,
@@ -171,9 +171,9 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 		                    'aos-init': !! aosType
                     	}
                 	) }
-                	style={ {
+					style={ {
                 		backgroundImage: imgSRC ? `url('${ encodeURI( imgSRC ) }')` : undefined,
-                		borderColor: borderColor,
+                		borderColor,
 						backgroundColor: backgroundColor.color,
 						backgroundPosition: ( imgFocalPoint && 'custom' === imgPosition ) ? `${ imgFocalPoint.x * 100 }% ${ imgFocalPoint.y * 100 }%` : undefined,
 						WebkitAnimation: ( imgID && imgEffect && imgEffect.includes( 'animate' ) ) ? `${ keyFrames } 40s linear infinite` : undefined,
@@ -191,8 +191,8 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 					data-aos-easing={ ( aosType && aosEase ) ? aosEase : null }
 					aria-label={ ariaLabel ? escape( ariaLabel ) : null }
                 >
-                	<div 
-                		className={ classnames( 
+					<div 
+						className={ classnames( 
                 			'wp-block-mypreview-container__wrapper',
                 			{
                 				[`hrz-align-dk-${ alignDesktop }`]: !! alignDesktop,
@@ -201,61 +201,61 @@ export default compose( applyWithColors, applyWithSelect ) ( class Edit extends 
 			                    [`hrz-align-sp-${ alignSmartphone }`]: !! alignSmartphone
                 			}
 	                	) }
-                		style={ {
+						style={ {
                 			maxWidth: width ? `${ parseInt( width ) }px` : undefined
 						} }
                 	>
-                		{ ( Array.isArray( allowedBlocks ) && allowedBlocks.length ) ? (
-                			<InnerBlocks 
-			    				templateLock={ false }
-			    				allowedBlocks={ allowedBlocks }
-			    				renderAppender={ ! hasInnerBlocks && InnerBlocks.ButtonBlockAppender }
+						{ ( Array.isArray( allowedBlocks ) && allowedBlocks.length ) ? (
+							<InnerBlocks 
+								templateLock={ false }
+								allowedBlocks={ allowedBlocks }
+								renderAppender={ ! hasInnerBlocks && InnerBlocks.ButtonBlockAppender }
 			    			/>
                 		) : 
-                			<InnerBlocks 
-			    				renderAppender={ ! hasInnerBlocks && InnerBlocks.ButtonBlockAppender }
+							<InnerBlocks 
+								renderAppender={ ! hasInnerBlocks && InnerBlocks.ButtonBlockAppender }
 			    			/>
                 		}
-		    		</div>
-		    		{ !! scrlShow && ( 
-	    				<a
-	    					className="wp-block-mypreview-container__scrl"
-	    					style={ {
+					</div>
+					{ !! scrlShow && ( 
+					<a
+						className="wp-block-mypreview-container__scrl"
+						style={ {
 								color: scrlColor ? scrlColor : null
 							} }
 	    				/>
 	    			) }
-	    			{ !! videoID && ( 
-		    			<div 
-                			className="wp-block-mypreview-container__video"
+					{ !! videoID && ( 
+					<div 
+						className="wp-block-mypreview-container__video"
                 		>
-                			<video
-                				id={ `wp-video-${ videoID }` }
-								src={ encodeURI( videoSRC ) }
-								autoPlay
-								muted
-								loop
+						<video
+							id={ `wp-video-${ videoID }` }
+							src={ encodeURI( videoSRC ) }
+							autoPlay
+							muted
+							loop
 							/>
-                		</div>
+					</div>
 		    		) }
-		    		{ !! shapeType && (
-			    		<div 
-	            			className={ classnames( 
+					{ !! shapeType && (
+					<div 
+						className={ classnames( 
 	                			'wp-block-mypreview-container__shape',
 			                    {
 			                    	'has-text-color': shapeColor,
 	                				[`wp-block-mypreview-container__shape--${ shapeType }`]: shapeType,
 			                    }
 		                	) }
-		                	style={ {
+						style={ {
 	                			color: shapeColor ? shapeColor : null,
 	                			height: ( shapeType && shapeType.includes( 'custom' ) ) ? `${ parseFloat( shapeHeight ) }%` : null
 							} }
 	            		>
-	            			{ shapes.hasOwnProperty( shapeType ) && (
+						{ shapes.hasOwnProperty( shapeType ) && (
 	            				shapes[shapeType]
 	            			) }
-	            		</div>
+					</div>
             		) }
 				</div>
 			</Fragment>

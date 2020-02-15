@@ -20,7 +20,7 @@ export default class Controls extends Component {
 
 	setObjUndefined( obj ) {
 		// Set all values of the object to undefined
-		for ( let key in obj ) {
+		for ( const key in obj ) {
 			if ( obj.hasOwnProperty( key ) ) {
 	  			obj[key] = undefined;
 	  		} // End If Statement
