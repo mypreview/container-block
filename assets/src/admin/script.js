@@ -3,12 +3,12 @@
  */
 import './style.css';
 import 'aos/dist/aos.css';
-import './utils/block-category.js';
+import './utils/category';
 
 /**
  * Import custom/built-in editor blocks.
  */
-import * as container from './index.jsx';
+import * as container from './index';
 
 export function registerBlocks () {
 	[
