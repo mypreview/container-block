@@ -1,48 +1,48 @@
 @-webkit-keyframes myScrollDown {
 	0% {
 		top: 12px;
-		background:transparent;
+		background: transparent;
 	}
 	10% {
 		top: 12px;
-		background:white;
+		background: #fff;
 	}
 	20% {
 		top: 12px;
-		background:white;
-		height:20px;
+		background: #fff;
+		height: 20px;
 	}
 	80% {
 		top: 28px;
-		background:white;
-		height:4px;
+		background: #fff;
+		height: 4px;
 	}
 	100% {
 		top: 28px;
-		background:transparent;
+		background: transparent;
 	}
 }
 @keyframes myScrollDown {
 	0% {
 		top: 12px;
-		background:transparent;
+		background: transparent;
 	}
 	10% {
 		top: 12px;
-		background:white;
+		background: #fff;
 	}
 	20% {
 		top: 12px;
-		background:white;
-		height:20px;
+		background: #fff;
+		height: 20px;
 	}
 	80% {
 		top: 28px;
-		background:white;
-		height:4px;
+		background: #fff;
+		height: 4px;
 	}
 	100% {
 		top: 28px;
-		background:transparent;
+		background: transparent;
 	}
 }
