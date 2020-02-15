@@ -875,34 +875,34 @@ msgctxt "upsell"
 msgid "Why not leave this plugin a %s review on WordPress.org!"
 msgstr ""
 
-#: assets/src/admin/index.jsx:19
+#: assets/src/admin/index.js:19
 msgctxt "block title"
 msgid "Container"
 msgstr ""
 
-#: assets/src/admin/index.jsx:28
+#: assets/src/admin/index.js:28
 msgctxt "block description"
 msgid ""
 "Container block is used to wrap several blocks in a parent wrapper and "
 "enables you to do more sophisticated styling as well."
 msgstr ""
 
-#: assets/src/admin/index.jsx:30
+#: assets/src/admin/index.js:30
 msgctxt "block keyword"
 msgid "Group"
 msgstr ""
 
-#: assets/src/admin/index.jsx:31
+#: assets/src/admin/index.js:31
 msgctxt "block keyword"
 msgid "Section"
 msgstr ""
 
-#: assets/src/admin/index.jsx:32
+#: assets/src/admin/index.js:32
 msgctxt "block keyword"
 msgid "Wrapper"
 msgstr ""
 
-#: assets/src/admin/utils/block-category.js:15
+#: assets/src/admin/utils/category.js:15
 msgctxt "block category"
 msgid "MyPreview"
 msgstr ""
