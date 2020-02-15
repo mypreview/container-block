@@ -39,9 +39,23 @@ const baseConfig = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx|mjs)$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader?cacheDirectory'
+                use: {
+                    loader: 'babel-loader?cacheDirectory',
+                    options: {
+                        presets: [ '@wordpress/babel-preset-default' ],
+                        plugins: [
+                            [ "@babel/plugin-proposal-object-rest-spread", { 
+                                "loose": true, 
+                                "useBuiltIns": true 
+                            } ],
+                            [ "@wordpress/babel-plugin-makepot", {
+                               "output": "languages/container-block-js.pot"
+                            } ]
+                        ]
+                    }
+                }
             },
             {
                 test:/\.css$/,
