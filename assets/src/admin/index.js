@@ -1,9 +1,9 @@
 /**
  * Block dependencies
  */
-import icons from './icons.jsx';
 import edit from './components/Edit.jsx';
 import save from './components/Save.jsx';
+import icons from './utils/icons.js';
 import attributes from './utils/attributes';
 import transforms from './utils/transforms';
 
