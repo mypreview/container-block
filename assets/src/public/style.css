@@ -24,7 +24,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-@import url("./keyframes.css");
+@import url(./keyframes.css);
 
 .wp-block-mypreview-container__wrapper,
 .wp-block-mypreview-container {

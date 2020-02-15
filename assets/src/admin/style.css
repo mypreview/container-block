@@ -9,7 +9,7 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-@import url("../public/style.css");
+@import url(../public/style.css);
 
 .wp-block-column:not([class*="is-vertically-aligned-"]) > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="mypreview/container"]:nth-last-child(2):first-child > .block-editor-block-list__block-edit > div:not([class]) > .wp-block-mypreview-container,
 .wp-block-column:not([class*="is-vertically-aligned-"]) > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-type="mypreview/container"]:nth-last-child(2):first-child > .block-editor-block-list__block-edit > div:not([class]),
