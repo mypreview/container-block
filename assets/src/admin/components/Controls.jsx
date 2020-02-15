@@ -1,7 +1,7 @@
 /**
  * Block dependencies
  */
-import icons from './../icons.jsx';
+import icons from './../utils/icons.js';
 
 /**
  * Internal block libraries
