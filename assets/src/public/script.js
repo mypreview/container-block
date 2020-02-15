@@ -12,7 +12,7 @@
  */
 import './style.css';
 import 'aos/dist/aos.css';
-import $ from 'jquery';
+import jQuery from 'jquery';
 import AOS from 'aos';
 import jump from 'jump.js';
 
@@ -20,7 +20,7 @@ import jump from 'jump.js';
 
 	const container = {
 
-		cache: function() {
+		cache: () => {
 			container.els = {};
 			container.vars = {};
 			container.vars.wpAdminBar = '#wpadminbar';
@@ -31,21 +31,21 @@ import jump from 'jump.js';
 			container.els.svgs = $( `${ container.vars.el }__shape > svg` );
 		},
 		// Run after the window is loaded
-		ready: function() {
+		ready: () => {
 			container.cache();
 			container.isAOS();
 			container.onHref();
 			container.onJump();
 			container.svgShim();
 		},
-		isAOS: function() {
+		isAOS: () => {
 			if ( container.els.aos.length ) {
 				AOS.init( {
 					startEvent: 'load'
 				} );
 			} // End If Statement
 		},
-		onHref: function() {
+		onHref: () => {
 			container.els.href.on( 'click', function( event ) {
 				// Default action of the event should not be triggered.
 	    		event.preventDefault();
@@ -59,7 +59,7 @@ import jump from 'jump.js';
 	    			// Open in a new window
 	    			if ( '_blank' === target ) {
 	    				// Avoid returning a reference from the window that opened this URL using open().
-	    				var windowOpen = window.open();
+	    				const windowOpen = window.open();
 						windowOpen.opener = null;
 						windowOpen.location = encodeURI( href );
 						windowOpen.target = '_blank';
@@ -70,7 +70,7 @@ import jump from 'jump.js';
 	    		} // End If Statement
 	    	} );
 		},
-		onJump: function() {
+		onJump: () => {
 			container.els.scrl.on( 'click', function( event ) {
 				// Default action of the event should not be triggered.
 	    		event.preventDefault();
@@ -88,15 +88,15 @@ import jump from 'jump.js';
 	    		} // End If Statement
 	    	} );
 		},
-		svgShim: function() {
+		svgShim: () => {
 			/MSIE \d|Trident.*rv:/.test( navigator.userAgent ) && [].forEach.call( container.els.svgs, function( target ) {
 				! function( target ) {
-					let color = window.getComputedStyle( target, null ).getPropertyValue( 'color' ),
-						element = ( new XMLSerializer ).serializeToString( target );
+					const color = window.getComputedStyle( target, null ).getPropertyValue( 'color' );
+					let	element = ( new XMLSerializer ).serializeToString( target );
 					element = "data:image/svg+xml," + ( element = ( element = ( element = ( element = ( element = ( element = element.replace( /currentColor/g, color ) ).replace(/\s\s+/g, ' ' ) ).replace( /</g, '%3C' ) ).replace( />/g, '%3E' ) ).replace( /#/g, '%23' ) ).replace( /"/g, "'" ) );
-					let object = document.createElement( 'img' );
+					const object = document.createElement( 'img' );
 					object.src = element, object.alt = '...';
-					let node = target.parentNode;
+					const node = target.parentNode;
 					node.appendChild( object ), node.removeChild( target );
 				}( target )
 			} );
