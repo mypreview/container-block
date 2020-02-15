@@ -3,7 +3,7 @@
  */
 import edit from './components/Edit.jsx';
 import save from './components/Save.jsx';
-import icons from './utils/icons.js';
+import icons from './utils/icons';
 import attributes from './utils/attributes';
 import transforms from './utils/transforms';
 
