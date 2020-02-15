@@ -13,7 +13,7 @@ setCategories( [
 	{
 		slug: 'mypreview',
 		title: _x( 'MyPreview', 'block category', 'container-block' ),
-		icon: icons.mypreview
+		icon: icons.mypreview,
 	},
 	...getCategories().filter( ( { slug } ) => slug !== 'mypreview' ),
 ] );

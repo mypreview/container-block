@@ -24,22 +24,26 @@ const icon = icons.container;
  * Block settings
  */
 const settings = {
-    title,
-    description: _x( 'Container block is used to wrap several blocks in a parent wrapper and enables you to do more sophisticated styling as well.', 'block description', 'container-block' ),
-    keywords: [
-        _x( 'Group', 'block keyword', 'container-block' ),
-        _x( 'Section', 'block keyword', 'container-block' ),
-        _x( 'Wrapper', 'block keyword', 'container-block' )
-    ],
-    supports: {
-        anchor: true,
-        html: false,
-        align: [ 'wide', 'full' ]
-    },
-    attributes,
-    transforms,
-    edit,
-    save
+	title,
+	description: _x(
+		'Container block is used to wrap several blocks in a parent wrapper and enables you to do more sophisticated styling as well.',
+		'block description',
+		'container-block'
+	),
+	keywords: [
+		_x( 'Group', 'block keyword', 'container-block' ),
+		_x( 'Section', 'block keyword', 'container-block' ),
+		_x( 'Wrapper', 'block keyword', 'container-block' ),
+	],
+	supports: {
+		anchor: true,
+		html: false,
+		align: [ 'wide', 'full' ],
+	},
+	attributes,
+	transforms,
+	edit,
+	save,
 };
 
 export { name, title, category, icon, settings };

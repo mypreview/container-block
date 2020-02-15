@@ -8,11 +8,15 @@ import icons from './../utils/icons';
  */
 const { _x } = wp.i18n;
 const { Fragment, Component } = wp.element;
-const { BlockControls, BlockVerticalAlignmentToolbar, MediaUpload, MediaUploadCheck } = wp.blockEditor;
+const {
+	BlockControls,
+	BlockVerticalAlignmentToolbar,
+	MediaUpload,
+	MediaUploadCheck,
+} = wp.blockEditor;
 const { Toolbar, IconButton } = wp.components;
 
 export default class Controls extends Component {
-
 	constructor( props ) {
 		super( ...arguments );
 		this.setObjUndefined = this.setObjUndefined.bind( this );
@@ -22,110 +26,136 @@ export default class Controls extends Component {
 		// Set all values of the object to undefined
 		for ( const key in obj ) {
 			if ( obj.hasOwnProperty( key ) ) {
-	  			obj[key] = undefined;
-	  		} // End If Statement
+				obj[ key ] = undefined;
+			} // End If Statement
 		} // End of the loop
 
 		return obj;
 	}
 
 	render() {
+		const { noticeUI, setAttributes, attributes } = this.props;
 
-		const { 
-			noticeUI,
-			setAttributes, 
-			attributes } = this.props;
-
-		const { 
-			isFH,
-			img,
-			video,
-			valign } = attributes;
+		const { isFH, img, video, valign } = attributes;
 
 		// Image
 		const {
 			id: imgID,
-	        src: imgSRC,
-	        position: imgPosition,
-	        focalPoint: imgFocalPoint,
-	        repeat: imgRepeat,
-	        effect: imgEffect } = img;
-	    // Video
-		const {
-			id: videoID } = video;
+			src: imgSRC,
+			position: imgPosition,
+			focalPoint: imgFocalPoint,
+			repeat: imgRepeat,
+			effect: imgEffect,
+		} = img;
+		// Video
+		const { id: videoID } = video;
 
 		// Image - Upload
-		const onUploadImage = value => {
+		const onUploadImage = ( value ) => {
 			if ( ! value || ! value.url ) {
 				return;
 			} // End If Statement
-			
-			setAttributes( { img: { 
-				...img,
-				id: value.id, 
-				src: value.url,
-				width: value.width
-			} } );
+
+			setAttributes( {
+				img: {
+					...img,
+					id: value.id,
+					src: value.url,
+					width: value.width,
+				},
+			} );
 		};
 		// Video - Upload
-		const onUploadVideo = value => {
+		const onUploadVideo = ( value ) => {
 			if ( ! value || ! value.url ) {
 				return;
 			} // End If Statement
-			
-			setAttributes( { video: { 
-				id: value.id, 
-				src: value.url
-			} } );
+
+			setAttributes( {
+				video: {
+					id: value.id,
+					src: value.url,
+				},
+			} );
 		};
 		// Image & Video - Remove (trash)
 		const onClickRemoveMedia = () => {
 			// Set all values of the object to undefined
-			setAttributes( { 
-				img: { ...this.setObjUndefined( img ) }, 
-				video: { ...this.setObjUndefined( video ) } 
+			setAttributes( {
+				img: { ...this.setObjUndefined( img ) },
+				video: { ...this.setObjUndefined( video ) },
 			} );
 		};
 		// Image - Effect
-		const onClickImgEffect = value => {
-			setAttributes( { img: { 
-				...img,
-				position: ( value && value.includes( 'animate' ) ) ? undefined : imgPosition,
-		        focalPoint: ( value && value.includes( 'animate' ) ) ? undefined : imgFocalPoint,
-		        repeat: ( value && value.includes( 'animate' ) ) ? undefined : imgRepeat,
-		        effect: value
-			} } );
+		const onClickImgEffect = ( value ) => {
+			setAttributes( {
+				img: {
+					...img,
+					position:
+						value && value.includes( 'animate' )
+							? undefined
+							: imgPosition,
+					focalPoint:
+						value && value.includes( 'animate' )
+							? undefined
+							: imgFocalPoint,
+					repeat:
+						value && value.includes( 'animate' )
+							? undefined
+							: imgRepeat,
+					effect: value,
+				},
+			} );
 		};
 		// Image - Effect controls
 		const imgEffectControls = [
 			{
 				icon: icons.rotateLeft,
-				title: _x( 'Animate left', 'toolbar button', 'container-block' ),
-				onClick: () => 'animate-left' === imgEffect ? onClickImgEffect( undefined ) : onClickImgEffect( 'animate-left' ),
-				isActive: imgEffect === 'animate-left'
+				title: _x(
+					'Animate left',
+					'toolbar button',
+					'container-block'
+				),
+				onClick: () =>
+					'animate-left' === imgEffect
+						? onClickImgEffect( undefined )
+						: onClickImgEffect( 'animate-left' ),
+				isActive: imgEffect === 'animate-left',
 			},
 			{
 				icon: icons.rotateRight,
-				title: _x( 'Animate right', 'toolbar button', 'container-block' ),
-				onClick: () => 'animate-right' === imgEffect ? onClickImgEffect( undefined ) : onClickImgEffect( 'animate-right' ),
-				isActive: imgEffect === 'animate-right'
+				title: _x(
+					'Animate right',
+					'toolbar button',
+					'container-block'
+				),
+				onClick: () =>
+					'animate-right' === imgEffect
+						? onClickImgEffect( undefined )
+						: onClickImgEffect( 'animate-right' ),
+				isActive: imgEffect === 'animate-right',
 			},
 			{
 				icon: icons.parallax,
 				title: _x( 'Parallax', 'toolbar button', 'container-block' ),
-				onClick: () => 'fixed' === imgEffect ? onClickImgEffect( undefined ) : onClickImgEffect( 'fixed' ),
-				isActive: imgEffect === 'fixed'
-			}
+				onClick: () =>
+					'fixed' === imgEffect
+						? onClickImgEffect( undefined )
+						: onClickImgEffect( 'fixed' ),
+				isActive: imgEffect === 'fixed',
+			},
 		];
 
 		return (
 			<Fragment>
 				<BlockControls>
 					{ isFH && (
-						<BlockVerticalAlignmentToolbar 
+						<BlockVerticalAlignmentToolbar
 							isCollapsed={ true }
 							value={ valign }
-							onChange={ value => setAttributes( { valign: value } ) }
+							onChange={ ( value ) =>
+								setAttributes( { valign: value } )
+							}
 						/>
 					) }
 					<Toolbar>
@@ -139,14 +169,29 @@ export default class Controls extends Component {
 									render={ ( { open } ) => (
 										<IconButton
 											className="components-toolbar__control"
-											label={ imgID ?	_x( 'Edit image', 'toolbar button', 'container-block' ) : _x( 'Add image', 'toolbar button', 'container-block' ) }
-											icon={ imgID  ?	icons.edit : icons.image }
+											label={
+												imgID
+													? _x(
+															'Edit image',
+															'toolbar button',
+															'container-block'
+													  )
+													: _x(
+															'Add image',
+															'toolbar button',
+															'container-block'
+													  )
+											}
+											icon={
+												imgID ? icons.edit : icons.image
+											}
 											onClick={ open }
 										/>
 									) }
 								/>
 							) }
-							{ ( ( !!! imgID && !!! videoID ) || !! videoID ) && (
+							{ ( ( !!! imgID && !!! videoID ) ||
+								!! videoID ) && (
 								<MediaUpload
 									allowedTypes="video"
 									notices={ noticeUI }
@@ -155,8 +200,24 @@ export default class Controls extends Component {
 									render={ ( { open } ) => (
 										<IconButton
 											className="components-toolbar__control"
-											label={ videoID ? _x( 'Edit video', 'toolbar button', 'container-block' ) : _x( 'Add video', 'toolbar button', 'container-block' ) }
-											icon={ videoID  ? icons.edit : icons.video }
+											label={
+												videoID
+													? _x(
+															'Edit video',
+															'toolbar button',
+															'container-block'
+													  )
+													: _x(
+															'Add video',
+															'toolbar button',
+															'container-block'
+													  )
+											}
+											icon={
+												videoID
+													? icons.edit
+													: icons.video
+											}
 											onClick={ open }
 										/>
 									) }
@@ -166,17 +227,17 @@ export default class Controls extends Component {
 						{ ( !! imgID || !! videoID ) && (
 							<IconButton
 								className="components-toolbar__control"
-								label={ _x( 'Remove media', 'toolbar button', 'container-block' ) }
+								label={ _x(
+									'Remove media',
+									'toolbar button',
+									'container-block'
+								) }
 								icon={ icons.trash }
 								onClick={ onClickRemoveMedia }
 							/>
 						) }
 					</Toolbar>
-					{ !! imgID && (
-						<Toolbar 
-							controls={ imgEffectControls } 
-						/>
-					) }
+					{ !! imgID && <Toolbar controls={ imgEffectControls } /> }
 				</BlockControls>
 			</Fragment>
 		);
