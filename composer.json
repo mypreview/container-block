@@ -1,6 +1,8 @@
 {
   "name": "mypreview/container-block",
   "type": "wordpress-plugin",
+  "license": "GPL-3.0-or-later",
+  "prefer-stable": true,
   "require": {
     "php": ">=7.2"
   },
