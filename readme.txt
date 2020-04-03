@@ -3,7 +3,7 @@ Contributors: mahdiyazdani, mypreview, gookaani
 Tags: container, shape divider, gutenberg, wrapper, animation, video background
 Donate link: https://www.mypreview.one
 Requires at least: 5.2
-Tested up to: 5.3.1
+Tested up to: 5.4.0
 Requires PHP: 7.2
 Stable tag: 1.2.0
 License: GPLv3 or later
@@ -69,22 +69,6 @@ A fully customizable Gutenberg editor block used for wrapping several blocks in 
 * Align full and wide support
 * Aria label — To define a string that labels the current block. You might use it in cases where the block content is not visible on the screen.
 
-**Translators & Non-English Speakers**
-
-Translators are welcome to contribute to the plugin. Please use the [WordPress translation website](https://translate.wordpress.org/projects/wp-plugins/container-block "WordPress translation website").
-
-**Get Involved**
-
-Want to contribute? Here's the [GitHub development repository](https://github.com/mypreview/container-block "GitHub development repository").
-
-**Free Support**
-
-All support is handled via a dedicated support forum, available at [Community Forums](https://wordpress.org/support/plugin/container-block "Community Forums"). Please head out there to open a new topic, in case you have any questions.
-
-**Support this plugin**
-
-Don't forget to rate this plugin [5 shining stars](https://wordpress.org/support/plugin/container-block/reviews/ "5 shining stars") if you like it, thanks!
-
 == Installation ==
 = Minimum Requirements =
 
@@ -117,6 +101,26 @@ Automatic updates should work smoothly, but we still recommend you back up your 
 = Why should I use a container block in a page? =
 The container div, and sometimes content div, are almost always used to allow for more sophisticated CSS styling. The body tag is special in some ways; However, browsers don't treat it like a normal div, and its position and dimensions are tied to the browser window.
 
+= How do I get help with the plugin? =
+The easiest way to receive support is to “Create a new topic” by visiting Community Forums page [here](https://wordpress.org/support/plugin/container-block "Container Block Support Forum").
+
+Make sure to check the “Notify me of follow-up replies via email” checkbox to receive notifications, as soon as a reply posted to your question or inquiry.
+
+*Please note that this is an opensource 100% volunteer project, and it’s not unusual to get reply days or even weeks later.*
+
+= Can I help in translating this plugin into a new language? =
+The plugin is fully translation-ready and localized using the GNU framework, and translators are welcome to contribute to the plugin.
+
+Here’s the [WordPress translation website &#8594;](https://translate.wordpress.org/projects/wp-plugins/container-block "WordPress translation website")
+
+= How do I contribute to this plugin? =
+We welcome contributions in any form, and you can help reporting, testing, and detailing bugs.
+
+Here’s the [GitHub development repository &#8594;](https://github.com/mypreview/container-block "GitHub development repository")
+
+= Did you like the idea behind this plugin? =
+Please share your experience by leaving this plugin [5 shining stars](https://wordpress.org/support/plugin/container-block/reviews/ "Rate Container Block 5 stars") if you like it, thanks!
+
 = I need help customizing this plugin? =
 I am a full-stack developer with over five years of experience in WordPress theme and plugin development and customization. I would love to have the opportunity to discuss your project with you.
 
@@ -132,6 +136,10 @@ I am a full-stack developer with over five years of experience in WordPress them
 7. Sliding background effect
 
 == Changelog ==
+= 1.2.0 =
+* Multiple code standards improvements.
+* Compatibility with WordPress 5.4.0
+
 = 1.1.0 =
 * Code tidy.
 * New range controls to have full control over the margins.
