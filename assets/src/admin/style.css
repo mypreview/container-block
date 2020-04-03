@@ -27,8 +27,8 @@
 # Editor
 --------------------------------------------------------------*/
 .components-base-control__flex {
-	display: flex;
 	align-items: center;
+	display: flex;
 }
 .components-base-control--label-block .components-base-control__label {
 	display: block;
@@ -43,16 +43,17 @@
 	margin-bottom: 1em;
 }
 .edit-post-sidebar .components-tab-panel__tabs > button {
-	display: inline-flex;
-	justify-content: center;
 	align-items: center;
 	background-color: transparent;
+	border-radius: 0;
 	border-style: solid;
 	border-width: 0 0 2px 0;
-	margin: 0;
-	padding-bottom: 5px;
-	outline: 0;
 	cursor: pointer;
+	display: inline-flex;
+	justify-content: center;
+	margin: 0;
+	outline: 0;
+	padding-bottom: 5px;
 }
 .edit-post-sidebar .components-insp-tabs__active {
 	border-color: #1e9ff2;
