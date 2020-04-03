@@ -10,17 +10,17 @@ const transforms = {
 			isMultiBlock: true,
 			blocks: [ '*' ],
 			__experimentalConvert( blocks ) {
-				// Avoid transforming a single `my/container` Block
+				// Avoid transforming a single `mypreview/container` Block
 				if (
 					blocks.length === 1 &&
-					blocks[ 0 ].name === 'my/container'
+					blocks[ 0 ].name === 'mypreview/container'
 				) {
 					return;
-				} // End If Statement
+				}
 
 				const alignments = [ 'wide', 'full' ];
 
-				// Determine the widest setting of all the blocks to be grouped
+				// Determine the widest setting of all the blocks to be combined
 				const widestAlignment = blocks.reduce(
 					( accumulator, block ) => {
 						const { align } = block.attributes;
@@ -32,23 +32,25 @@ const transforms = {
 					undefined
 				);
 
-				// Clone the Blocks to be wrapped into a container block
+				// Clone the Blocks to be Grouped
 				// Failing to create new block references causes the original blocks
 				// to be replaced in the switchToBlockType call thereby meaning they
 				// are removed both from their original location and within the
 				// new container block.
-				const wrapInnerBlocks = blocks.map(
-					( { name, attributes, innerBlocks } ) => {
-						return createBlock( name, attributes, innerBlocks );
-					}
-				);
+				const containerInnerBlocks = blocks.map( ( block ) => {
+					return createBlock(
+						block.name,
+						block.attributes,
+						block.innerBlocks
+					);
+				} );
 
 				return createBlock(
-					'my/container',
+					'mypreview/container',
 					{
 						align: widestAlignment,
 					},
-					wrapInnerBlocks
+					containerInnerBlocks
 				);
 			},
 		},
