@@ -222,13 +222,13 @@ if ( ! class_exists( 'Container_Block' ) ) :
     }
 endif;
 
-/**
- * Returns the main instance of Container_Block to prevent the need to use globals.
- *
- * @return  object(class)   Container_Block::instance
- */
 if ( ! function_exists( 'container_block_init' ) ) :
 
+    /**
+     * Returns the main instance of Container_Block to prevent the need to use globals.
+     *
+     * @return  object(class)   Container_Block::instance
+     */
     function container_block_init() {
 
         return Container_Block::instance();
